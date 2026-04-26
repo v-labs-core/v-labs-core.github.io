@@ -6,7 +6,7 @@ WORKSPACE="$(cd "$SCRIPT_DIR/.." && pwd)"
 PROMPT_FILE="$SCRIPT_DIR/ux_polish_prompt.txt"
 SUMMARY_FILE="$SCRIPT_DIR/last_run_summary.txt"
 CODEX_BIN="${CODEX_BIN:-/Users/mrv/.nvm/versions/node/v24.12.0/bin/codex}"
-CODEX_MODEL="${CODEX_MODEL:-gpt-5.2}"
+CODEX_MODEL="${CODEX_MODEL:-gpt-5.5}"
 PR_TITLE="Rolling UX updates"
 PR_LABELS=(enhancement design github-pages codex-automation)
 
