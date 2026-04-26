@@ -1,14 +1,26 @@
-# v-labs-core.github.io
+# Vindem Labs Site
 
-Static GitHub Pages site for the V Labs Core organization.
+Static GitHub Pages site for Vindem Labs.
 
-## Contact form setup
+## Files
 
-The contact form in `index.html` is wired for a static form relay workflow. To make the form send messages privately to `vindem.labs@gmail.com` without exposing an email address in the page source:
+- `index.html`: the full single-page site
+- `config.js`: public client-side form relay configuration
+- `assets/favicon.svg`: browser icon
+- `assets/og-card.svg`: social sharing preview
+- `.nojekyll`: tells GitHub Pages to serve files as-is
 
-1. Create a Web3Forms account or equivalent hosted form relay.
-2. Configure the destination inbox as `vindem.labs@gmail.com` in that service dashboard.
-3. Replace `REPLACE_WITH_WEB3FORMS_ACCESS_KEY` in `index.html` with the service access key.
-4. Commit and publish the updated file.
+## Contact form
 
-Once that key is in place, the site can stay fully static and still accept contact submissions.
+The contact form is designed for a static hosting setup and does not display a public email
+address on the page.
+
+To route submissions privately to `vindem.labs@gmail.com`:
+
+1. Create a Web3Forms account or another hosted form relay.
+2. Set `vindem.labs@gmail.com` as the destination inbox in that service.
+3. Put the provided public access key into `config.js` as `formAccessKey`.
+4. Publish the updated site.
+
+The access key is expected to be public in the browser for this kind of static form relay. The
+email destination itself remains hidden from the page UI and markup.
