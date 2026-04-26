@@ -1,17 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Vindem Labs">
   <defs>
-    <linearGradient id="bg" x1="8%" y1="6%" x2="92%" y2="94%">
-      <stop offset="0%" stop-color="#7de7dc" />
-      <stop offset="100%" stop-color="#1fabb3" />
+    <linearGradient id="mark-bg" x1="10%" y1="8%" x2="90%" y2="92%">
+      <stop offset="0%" stop-color="#e9fffb" />
+      <stop offset="100%" stop-color="#b7eee8" />
     </linearGradient>
-    <linearGradient id="shine" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.78" />
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    <linearGradient id="stroke" x1="14%" y1="12%" x2="86%" y2="88%">
+      <stop offset="0%" stop-color="#0aa7b1" />
+      <stop offset="100%" stop-color="#16333a" />
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="18" fill="url(#bg)" />
-  <path d="M14 13h36c-4.5 1.6-7.5 4.8-9.4 9.7L31.2 51H23L14 13Z" fill="#ffffff" fill-opacity="0.14" />
-  <path d="M17 16h7.7l7.1 22.3L39 16h7.7L35.8 48h-7.2L17 16Z" fill="#ffffff" />
-  <path d="M41.8 16H49v25.3h-5.8L41.8 48H34V33.7l7.8-17.7Z" fill="#ffffff" />
-  <path d="M14 14h36c-3.2 1.2-5.7 3.2-7.5 6H19.2L14 14Z" fill="url(#shine)" />
+  <rect x="3" y="3" width="58" height="58" rx="16" fill="url(#mark-bg)" />
+  <rect x="3.75" y="3.75" width="56.5" height="56.5" rx="15.25" fill="none" stroke="#ffffff" stroke-width="1.5" />
+  <path d="M15 17L28.4 47L38.8 17" fill="none" stroke="url(#stroke)" stroke-width="6.2" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M39 17V47H51" fill="none" stroke="url(#stroke)" stroke-width="6.2" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M31.5 34.8H43.5" fill="none" stroke="#f2b36d" stroke-width="4.4" stroke-linecap="round" />
 </svg>
