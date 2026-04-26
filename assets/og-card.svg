@@ -14,9 +14,8 @@
   <circle cx="180" cy="120" r="120" fill="#e8fbf8" />
   <rect x="86" y="88" width="96" height="96" rx="28" fill="url(#brand)" />
   <path
-    d="M116 112c17 0 35 17 35 35s-18 36-35 36v-13c10-1 22-12 22-23s-12-21-22-22v-13Zm18 0c17 0 35 17 35 35s-18 36-35 36v-13c10-1 22-12 22-23s-12-21-22-22v-13Z"
-    fill="#fff"
-    fill-opacity="0.92"
+    d="M112 112h11l11.2 33.5 11.2-33.5h10.7L139.5 160h-10L112 112Zm41.9 0H165v37.8h-16.2V160h-10.9V112Z"
+    fill="#ffffff"
   />
   <text x="86" y="272" fill="#16333a" font-family="Sora, Arial, sans-serif" font-size="74" font-weight="700">
     Vindem Labs
