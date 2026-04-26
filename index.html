@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Venture Streams Studio</title>
+    <meta
+      name="description"
+      content="A simple static single page app presenting a multi-stream digital business across consumer apps, enterprise products, service contracts, and publisher websites."
+    />
+    <style>
+      :root {
+        --bg: #f4f6f1;
+        --panel: rgba(255, 255, 255, 0.78);
+        --panel-strong: #ffffff;
+        --text: #1f2320;
+        --muted: #5b655d;
+        --line: rgba(31, 35, 32, 0.11);
+        --brand: #1fb45c;
+        --brand-deep: #12793b;
+        --accent: #d9f58e;
+        --shadow: 0 20px 60px rgba(18, 34, 22, 0.12);
+        --radius: 24px;
+        --max: 1180px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Sora", "Avenir Next", "Segoe UI", sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(217, 245, 142, 0.75), transparent 28%),
+          radial-gradient(circle at 85% 15%, rgba(31, 180, 92, 0.18), transparent 22%),
+          linear-gradient(180deg, #fbfcf8 0%, var(--bg) 48%, #eef2ec 100%);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img,
+      svg {
+        display: block;
+        max-width: 100%;
+      }
+
+      .shell {
+        width: min(calc(100% - 2rem), var(--max));
+        margin: 0 auto;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: blur(18px);
+        background: rgba(244, 246, 241, 0.72);
+        border-bottom: 1px solid rgba(31, 35, 32, 0.05);
+      }
+
+      .site-header .shell {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        min-height: 78px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+      }
+
+      .brand-mark {
+        width: 2.6rem;
+        height: 2.6rem;
+        border-radius: 0.9rem;
+        background:
+          linear-gradient(145deg, var(--brand), #44cf7d),
+          var(--brand);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+        position: relative;
+      }
+
+      .brand-mark::before,
+      .brand-mark::after {
+        content: "";
+        position: absolute;
+        inset: 20%;
+        border-radius: 999px 999px 999px 0;
+        border: 2px solid rgba(255, 255, 255, 0.8);
+        transform: rotate(45deg);
+      }
+
+      .brand-mark::after {
+        inset: 34%;
+        opacity: 0.7;
+      }
+
+      .brand-copy small {
+        display: block;
+        color: var(--muted);
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      nav a {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      nav a:hover,
+      nav a:focus-visible {
+        color: var(--text);
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+        border-radius: 999px;
+        padding: 0.9rem 1.25rem;
+        border: 1px solid transparent;
+        font-weight: 700;
+        transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+      }
+
+      .button:hover,
+      .button:focus-visible {
+        transform: translateY(-1px);
+      }
+
+      .button.primary {
+        background: var(--text);
+        color: #fff;
+      }
+
+      .button.secondary {
+        background: rgba(255, 255, 255, 0.62);
+        border-color: var(--line);
+      }
+
+      main section {
+        padding: 4.5rem 0;
+      }
+
+      .hero {
+        padding-top: 4rem;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.9fr;
+        gap: 2rem;
+        align-items: stretch;
+      }
+
+      .hero-copy {
+        padding: 1rem 0;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1.2rem;
+        padding: 0.5rem 0.85rem;
+        border-radius: 999px;
+        font-size: 0.82rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        background: rgba(31, 180, 92, 0.11);
+        color: var(--brand-deep);
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        font-size: clamp(2.8rem, 7vw, 5.7rem);
+        line-height: 0.96;
+        letter-spacing: -0.06em;
+        max-width: 12ch;
+      }
+
+      .hero-copy p {
+        margin-top: 1.35rem;
+        max-width: 62ch;
+        color: var(--muted);
+        font-size: 1.07rem;
+        line-height: 1.7;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 0.9rem;
+        flex-wrap: wrap;
+        margin-top: 1.75rem;
+      }
+
+      .metric-row {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.9rem;
+        margin-top: 2rem;
+      }
+
+      .metric-card,
+      .glass-card,
+      .stream-panel,
+      .path-card,
+      .pillar,
+      .timeline-card,
+      .cta-card {
+        background: var(--panel);
+        border: 1px solid rgba(255, 255, 255, 0.75);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(16px);
+      }
+
+      .metric-card {
+        border-radius: 1.25rem;
+        padding: 1.15rem;
+      }
+
+      .metric-card strong {
+        display: block;
+        font-size: 1.65rem;
+        letter-spacing: -0.05em;
+      }
+
+      .metric-card span {
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .glass-card {
+        border-radius: var(--radius);
+        padding: 1.5rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .glass-card::before {
+        content: "";
+        position: absolute;
+        inset: auto -10% -22% auto;
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(31, 180, 92, 0.22), transparent 66%);
+      }
+
+      .hero-board {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .hero-board h2 {
+        font-size: 1.5rem;
+        letter-spacing: -0.04em;
+        margin-bottom: 0.55rem;
+      }
+
+      .hero-board p,
+      .hero-board li,
+      .section-copy p,
+      .stream-content p,
+      .path-card p,
+      .pillar p,
+      .timeline-card p,
+      .cta-card p {
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      .pill-list,
+      .mini-grid,
+      .focus-list,
+      .stat-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.7rem;
+      }
+
+      .pill-list span,
+      .mini-grid span,
+      .focus-list span,
+      .stat-list span {
+        padding: 0.6rem 0.85rem;
+        border-radius: 999px;
+        font-size: 0.88rem;
+        background: rgba(31, 35, 32, 0.05);
+      }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: 0.92fr 1fr;
+        gap: 1.4rem;
+        align-items: end;
+        margin-bottom: 1.8rem;
+      }
+
+      .section-head h2 {
+        font-size: clamp(2rem, 5vw, 3.45rem);
+        line-height: 1.02;
+        letter-spacing: -0.05em;
+      }
+
+      .section-kicker {
+        color: var(--brand-deep);
+        font-size: 0.85rem;
+        font-weight: 800;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        margin-bottom: 0.55rem;
+      }
+
+      .stream-shell {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 1rem;
+        align-items: start;
+      }
+
+      .stream-tabs {
+        display: grid;
+        gap: 0.8rem;
+      }
+
+      .stream-tab {
+        appearance: none;
+        width: 100%;
+        text-align: left;
+        padding: 1.1rem 1.15rem;
+        border-radius: 1.2rem;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.62);
+        color: var(--text);
+        cursor: pointer;
+        transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+      }
+
+      .stream-tab:hover,
+      .stream-tab:focus-visible,
+      .stream-tab[aria-selected="true"] {
+        transform: translateX(4px);
+        border-color: rgba(31, 180, 92, 0.35);
+        background: rgba(217, 245, 142, 0.32);
+      }
+
+      .stream-tab strong {
+        display: block;
+        font-size: 1rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .stream-tab span {
+        color: var(--muted);
+        font-size: 0.9rem;
+        line-height: 1.45;
+      }
+
+      .stream-panel {
+        min-height: 460px;
+        border-radius: 1.75rem;
+        padding: 1.5rem;
+      }
+
+      .stream-panel[hidden] {
+        display: none;
+      }
+
+      .stream-header {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        align-items: start;
+        margin-bottom: 1rem;
+      }
+
+      .stream-header h3 {
+        font-size: 1.8rem;
+        letter-spacing: -0.04em;
+      }
+
+      .stream-badge {
+        padding: 0.45rem 0.7rem;
+        border-radius: 999px;
+        background: rgba(31, 180, 92, 0.1);
+        color: var(--brand-deep);
+        white-space: nowrap;
+        font-size: 0.82rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .stream-grid {
+        display: grid;
+        grid-template-columns: 1.3fr 0.9fr;
+        gap: 1rem;
+      }
+
+      .stream-content,
+      .stream-side {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .sub-list,
+      .checkpoint-list,
+      .timeline-list {
+        display: grid;
+        gap: 0.75rem;
+      }
+
+      .sub-item,
+      .checkpoint,
+      .timeline-card {
+        padding: 1rem;
+        border-radius: 1.1rem;
+        background: rgba(31, 35, 32, 0.04);
+        border: 1px solid rgba(31, 35, 32, 0.06);
+      }
+
+      .sub-item strong,
+      .checkpoint strong,
+      .pillar h3,
+      .path-card h3,
+      .timeline-card strong,
+      .cta-card h2 {
+        display: block;
+        margin-bottom: 0.4rem;
+        font-size: 1rem;
+      }
+
+      .path-grid,
+      .pillar-grid,
+      .timeline-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .path-card,
+      .pillar,
+      .timeline-card,
+      .cta-card {
+        border-radius: 1.5rem;
+        padding: 1.35rem;
+      }
+
+      .path-card em {
+        display: inline-block;
+        margin-bottom: 0.75rem;
+        font-style: normal;
+        color: var(--brand-deep);
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+      }
+
+      .pillar {
+        min-height: 100%;
+      }
+
+      .timeline-card {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .timeline-card::after {
+        content: "";
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: rgba(31, 180, 92, 0.12);
+      }
+
+      .cta-card {
+        display: grid;
+        grid-template-columns: 1.1fr auto;
+        align-items: center;
+        gap: 1rem;
+        background:
+          linear-gradient(135deg, rgba(31, 180, 92, 0.12), rgba(255, 255, 255, 0.85)),
+          var(--panel-strong);
+      }
+
+      .contact-layout {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 1rem;
+      }
+
+      .contact-card,
+      .contact-form {
+        border-radius: 1.5rem;
+        padding: 1.35rem;
+        background: var(--panel);
+        border: 1px solid rgba(255, 255, 255, 0.75);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(16px);
+      }
+
+      .contact-card {
+        display: grid;
+        gap: 1rem;
+        align-content: start;
+      }
+
+      .contact-form {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.9rem;
+      }
+
+      .field {
+        display: grid;
+        gap: 0.45rem;
+      }
+
+      .field.full {
+        grid-column: 1 / -1;
+      }
+
+      .field label {
+        font-size: 0.88rem;
+        font-weight: 700;
+      }
+
+      .field input,
+      .field textarea {
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: 1rem;
+        padding: 0.95rem 1rem;
+        background: rgba(255, 255, 255, 0.8);
+        color: var(--text);
+        font: inherit;
+      }
+
+      .field textarea {
+        min-height: 168px;
+        resize: vertical;
+      }
+
+      .field input:focus-visible,
+      .field textarea:focus-visible {
+        outline: 2px solid rgba(31, 180, 92, 0.22);
+        outline-offset: 1px;
+        border-color: rgba(31, 180, 92, 0.42);
+      }
+
+      .form-meta {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .form-status {
+        min-height: 1.5rem;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .contact-notes {
+        display: grid;
+        gap: 0.75rem;
+      }
+
+      footer {
+        padding: 0 0 3rem;
+      }
+
+      .footer-bar {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      @media (max-width: 980px) {
+        .hero-grid,
+        .section-head,
+        .stream-shell,
+        .stream-grid,
+        .path-grid,
+        .pillar-grid,
+        .timeline-grid,
+        .cta-card,
+        .contact-layout,
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .metric-row {
+          grid-template-columns: 1fr;
+        }
+
+        nav {
+          display: none;
+        }
+
+        .stream-panel {
+          min-height: auto;
+        }
+      }
+
+      @media (max-width: 640px) {
+        main section {
+          padding: 3.4rem 0;
+        }
+
+        .site-header .shell {
+          min-height: 70px;
+        }
+
+        h1 {
+          max-width: 9.5ch;
+        }
+
+        .glass-card,
+        .stream-panel,
+        .path-card,
+        .pillar,
+        .timeline-card,
+        .cta-card {
+          border-radius: 1.25rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="shell">
+        <a class="brand" href="#top" aria-label="Venture Streams Studio home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-copy">
+            Venture Streams Studio
+            <small>Web and mobile business model</small>
+          </span>
+        </a>
+
+        <nav aria-label="Primary">
+          <a href="#streams">Revenue streams</a>
+          <a href="#focus">Sector focus</a>
+          <a href="#engine">Operating engine</a>
+          <a href="#roadmap">Roadmap</a>
+          <a class="button secondary" href="#contact">Explore strategy</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="shell hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Inspired by digital product studios</span>
+            <h1>One business. Four revenue engines. Infinite room to scale.</h1>
+            <p>
+              This static single page app presents a digital venture model spanning consumer
+              applications, enterprise software, service contracts, and publisher websites powered
+              by advertising and affiliate opportunities. It is designed to be hosted anywhere
+              without a backend and shaped around a practical web and mobile product strategy.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button primary" href="#streams">See the streams</a>
+              <a class="button secondary" href="#roadmap">View rollout plan</a>
+            </div>
+
+            <div class="metric-row" aria-label="Business metrics summary">
+              <article class="metric-card">
+                <strong>4</strong>
+                <span>Core revenue streams working together</span>
+              </article>
+              <article class="metric-card">
+                <strong>Web + mobile</strong>
+                <span>Reusable experience layer across products</span>
+              </article>
+              <article class="metric-card">
+                <strong>Recurring mix</strong>
+                <span>Subscription, retainers, ads, and affiliate income</span>
+              </article>
+            </div>
+          </div>
+
+          <aside class="glass-card hero-board" aria-label="Business model snapshot">
+            <div>
+              <h2>Strategy snapshot</h2>
+              <p>
+                The strongest portfolio effect comes from building products, services, and media
+                assets that reinforce each other instead of competing for attention.
+              </p>
+            </div>
+
+            <div class="pill-list" aria-label="Strategic themes">
+              <span>Product-led growth</span>
+              <span>Industry-specific SaaS</span>
+              <span>Distribution through content</span>
+              <span>Long-term client retainers</span>
+              <span>IoT-enabled workflows</span>
+              <span>Data compounding</span>
+            </div>
+
+            <div class="sub-item">
+              <strong>Why this model works</strong>
+              <p>
+                Consumer products create audience and behavioral insight, enterprise tools create
+                high-value recurring contracts, service work funds innovation, and publisher
+                platforms amplify reach and monetization.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="streams">
+        <div class="shell">
+          <div class="section-head">
+            <div>
+              <p class="section-kicker">Revenue streams</p>
+              <h2>Four streams designed to cross-feed demand, data, and trust.</h2>
+            </div>
+            <div class="section-copy">
+              <p>
+                The structure below turns the business into a portfolio of connected products and
+                platforms. Each stream can stand on its own, but the real strength comes from
+                shared user insight, design systems, engineering assets, and acquisition channels.
+              </p>
+            </div>
+          </div>
+
+          <div class="stream-shell">
+            <div class="stream-tabs" role="tablist" aria-label="Revenue stream tabs">
+              <button class="stream-tab" role="tab" aria-selected="true" aria-controls="stream-consumer" id="tab-consumer">
+                <strong>Consumer applications</strong>
+                <span>Audience, engagement, subscriptions, and freemium upgrades.</span>
+              </button>
+              <button class="stream-tab" role="tab" aria-selected="false" aria-controls="stream-enterprise" id="tab-enterprise">
+                <strong>Enterprise products</strong>
+                <span>High-value SaaS and operational software for professional teams.</span>
+              </button>
+              <button class="stream-tab" role="tab" aria-selected="false" aria-controls="stream-services" id="tab-services">
+                <strong>Service contracts</strong>
+                <span>Discovery, delivery, integration, and evolution retainers.</span>
+              </button>
+              <button class="stream-tab" role="tab" aria-selected="false" aria-controls="stream-publisher" id="tab-publisher">
+                <strong>Publisher websites</strong>
+                <span>Content, SEO, affiliates, and ad-driven vertical media assets.</span>
+              </button>
+            </div>
+
+            <div>
+              <article class="stream-panel" role="tabpanel" id="stream-consumer" aria-labelledby="tab-consumer">
+                <div class="stream-header">
+                  <div>
+                    <span class="section-kicker">Stream 01</span>
+                    <h3>Consumer applications</h3>
+                  </div>
+                  <span class="stream-badge">Apps + community</span>
+                </div>
+                <div class="stream-grid">
+                  <div class="stream-content">
+                    <p>
+                      Consumer products can validate demand fast and create daily usage habits.
+                      Mobile and web experiences in PropTech or AI education can generate
+                      subscription revenue, in-app upgrades, and powerful first-party signals for
+                      the rest of the business.
+                    </p>
+                    <div class="sub-list">
+                      <div class="sub-item">
+                        <strong>PropTech companion apps</strong>
+                        <p>Search, budgeting, tenant services, neighborhood insights, and smart-home support.</p>
+                      </div>
+                      <div class="sub-item">
+                        <strong>AI education tools</strong>
+                        <p>Lesson copilots, guided learning paths, certification prep, and personalized study feedback.</p>
+                      </div>
+                      <div class="sub-item">
+                        <strong>Lifestyle utility apps</strong>
+                        <p>Smaller vertical tools that widen audience reach and uncover new acquisition channels.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <aside class="stream-side">
+                    <div class="checkpoint">
+                      <strong>Monetization</strong>
+                      <p>Subscriptions, premium plans, feature unlocks, partnerships, and selective commerce offers.</p>
+                    </div>
+                    <div class="checkpoint">
+                      <strong>Strategic value</strong>
+                      <p>Builds brand awareness, recurring usage, and reusable components for later B2B products.</p>
+                    </div>
+                    <div class="stat-list">
+                      <span>Retention loops</span>
+                      <span>Push and email CRM</span>
+                      <span>Behavioral data</span>
+                    </div>
+                  </aside>
+                </div>
+              </article>
+
+              <article class="stream-panel" role="tabpanel" id="stream-enterprise" aria-labelledby="tab-enterprise" hidden>
+                <div class="stream-header">
+                  <div>
+                    <span class="section-kicker">Stream 02</span>
+                    <h3>Enterprise products</h3>
+                  </div>
+                  <span class="stream-badge">SaaS + workflow</span>
+                </div>
+                <div class="stream-grid">
+                  <div class="stream-content">
+                    <p>
+                      Enterprise products turn domain knowledge into recurring software revenue.
+                      The strongest starting point is vertical software where workflows are complex,
+                      fragmented, and still under-digitized.
+                    </p>
+                    <div class="sub-list">
+                      <div class="sub-item">
+                        <strong>Property management software</strong>
+                        <p>Maintenance tickets, rent workflows, occupancy dashboards, vendor coordination, and reporting.</p>
+                      </div>
+                      <div class="sub-item">
+                        <strong>AI education platforms</strong>
+                        <p>Dashboards for schools, academies, and training teams with analytics, content distribution, and learner tracking.</p>
+                      </div>
+                      <div class="sub-item">
+                        <strong>IoT administration layers</strong>
+                        <p>Device monitoring, control panels, alerting, and automation rules for connected assets.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <aside class="stream-side">
+                    <div class="checkpoint">
+                      <strong>Monetization</strong>
+                      <p>Seat-based pricing, tiered subscriptions, implementation fees, and support add-ons.</p>
+                    </div>
+                    <div class="checkpoint">
+                      <strong>Strategic value</strong>
+                      <p>Creates predictable recurring revenue with larger account sizes and lower churn once embedded.</p>
+                    </div>
+                    <div class="stat-list">
+                      <span>B2B SaaS</span>
+                      <span>Workflow automation</span>
+                      <span>High ACV potential</span>
+                    </div>
+                  </aside>
+                </div>
+              </article>
+
+              <article class="stream-panel" role="tabpanel" id="stream-services" aria-labelledby="tab-services" hidden>
+                <div class="stream-header">
+                  <div>
+                    <span class="section-kicker">Stream 03</span>
+                    <h3>Service contracts</h3>
+                  </div>
+                  <span class="stream-badge">Delivery + retainer</span>
+                </div>
+                <div class="stream-grid">
+                  <div class="stream-content">
+                    <p>
+                      Service work can finance product development while deepening sector knowledge.
+                      It also creates a trust bridge into software sales when clients need more than
+                      bespoke delivery.
+                    </p>
+                    <div class="sub-list">
+                      <div class="sub-item">
+                        <strong>Product strategy and UX discovery</strong>
+                        <p>Research, positioning, journey mapping, prototypes, and validation sprints.</p>
+                      </div>
+                      <div class="sub-item">
+                        <strong>App and platform delivery</strong>
+                        <p>Web apps, mobile apps, IoT dashboards, internal tooling, and modernized digital services.</p>
+                      </div>
+                      <div class="sub-item">
+                        <strong>Optimization retainers</strong>
+                        <p>Analytics, experimentation, maintenance, growth support, and roadmap evolution.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <aside class="stream-side">
+                    <div class="checkpoint">
+                      <strong>Monetization</strong>
+                      <p>Fixed-scope projects, monthly retainers, strategic advisory, and support contracts.</p>
+                    </div>
+                    <div class="checkpoint">
+                      <strong>Strategic value</strong>
+                      <p>Provides cash flow, close customer access, case studies, and early design partners.</p>
+                    </div>
+                    <div class="stat-list">
+                      <span>Discovery sprints</span>
+                      <span>Implementation teams</span>
+                      <span>Expansion paths</span>
+                    </div>
+                  </aside>
+                </div>
+              </article>
+
+              <article class="stream-panel" role="tabpanel" id="stream-publisher" aria-labelledby="tab-publisher" hidden>
+                <div class="stream-header">
+                  <div>
+                    <span class="section-kicker">Stream 04</span>
+                    <h3>Publisher websites</h3>
+                  </div>
+                  <span class="stream-badge">SEO + affiliate</span>
+                </div>
+                <div class="stream-grid">
+                  <div class="stream-content">
+                    <p>
+                      Publisher websites can turn content and search demand into distribution
+                      infrastructure. In practical terms, these sites become acquisition engines for
+                      the other streams while generating direct media revenue of their own.
+                    </p>
+                    <div class="sub-list">
+                      <div class="sub-item">
+                        <strong>PropTech media hubs</strong>
+                        <p>Guides, market explainers, comparison pages, calculators, and localized content.</p>
+                      </div>
+                      <div class="sub-item">
+                        <strong>Education and AI content brands</strong>
+                        <p>Resource libraries, newsletters, tool reviews, and curated affiliate offers.</p>
+                      </div>
+                      <div class="sub-item">
+                        <strong>Industry comparison sites</strong>
+                        <p>Software reviews, best-of pages, lead generation funnels, and partner placements.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <aside class="stream-side">
+                    <div class="checkpoint">
+                      <strong>Monetization</strong>
+                      <p>Advertising, sponsored placements, affiliate commissions, and lead referrals.</p>
+                    </div>
+                    <div class="checkpoint">
+                      <strong>Strategic value</strong>
+                      <p>Builds organic traffic, lowers paid acquisition dependence, and supports every launch.</p>
+                    </div>
+                    <div class="stat-list">
+                      <span>Organic traffic</span>
+                      <span>Top-of-funnel capture</span>
+                      <span>Media moat</span>
+                    </div>
+                  </aside>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="focus">
+        <div class="shell">
+          <div class="section-head">
+            <div>
+              <p class="section-kicker">Sector focus</p>
+              <h2>High-fit categories for product expansion and service packaging.</h2>
+            </div>
+            <div class="section-copy">
+              <p>
+                These categories work well because they support consumer experiences, enterprise
+                tooling, long-term services, and media-led acquisition all at once.
+              </p>
+            </div>
+          </div>
+
+          <div class="path-grid">
+            <article class="path-card">
+              <em>PropTech</em>
+              <h3>Property search to operations</h3>
+              <p>
+                Start with consumer-facing experiences, then expand into landlord, operator, and
+                manager workflows with strong data reuse across the stack.
+              </p>
+            </article>
+            <article class="path-card">
+              <em>AI Education</em>
+              <h3>Learning products with institutional demand</h3>
+              <p>
+                AI tutoring, curriculum assistants, and learner analytics can serve both direct
+                users and organizations with different price points.
+              </p>
+            </article>
+            <article class="path-card">
+              <em>IoT Integrations</em>
+              <h3>Connected environments and automation</h3>
+              <p>
+                Sensors, devices, and dashboards become more valuable when paired with service
+                contracts and software subscriptions.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="engine">
+        <div class="shell">
+          <div class="section-head">
+            <div>
+              <p class="section-kicker">Operating engine</p>
+              <h2>One shared product engine powering all four streams.</h2>
+            </div>
+            <div class="section-copy">
+              <p>
+                The business model is most efficient when design, engineering, data, and growth are
+                shared capabilities rather than separate teams reinventing the same foundations.
+              </p>
+            </div>
+          </div>
+
+          <div class="pillar-grid">
+            <article class="pillar">
+              <h3>Reusable platform layer</h3>
+              <p>
+                Shared authentication patterns, design systems, analytics events, and content
+                components reduce launch time for every new product or site.
+              </p>
+            </article>
+            <article class="pillar">
+              <h3>Data and insight compounding</h3>
+              <p>
+                Audience behavior, content demand, and enterprise workflow feedback can guide what
+                to build next and which offers deserve dedicated sales effort.
+              </p>
+            </article>
+            <article class="pillar">
+              <h3>Balanced revenue portfolio</h3>
+              <p>
+                Projects and retainers stabilize cash flow while subscriptions, ads, and affiliates
+                increase long-term margin and enterprise value.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="roadmap">
+        <div class="shell">
+          <div class="section-head">
+            <div>
+              <p class="section-kicker">Suggested roadmap</p>
+              <h2>A realistic path from first contracts to a durable product portfolio.</h2>
+            </div>
+            <div class="section-copy">
+              <p>
+                This sequence keeps risk controlled: use service demand to finance the platform,
+                launch focused products, then use content and partnerships to accelerate growth.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-grid">
+            <article class="timeline-card">
+              <strong>Phase 1</strong>
+              <p>
+                Win service contracts in a chosen niche, refine positioning, and build reusable web
+                and mobile modules around real client needs.
+              </p>
+            </article>
+            <article class="timeline-card">
+              <strong>Phase 2</strong>
+              <p>
+                Turn repeated delivery patterns into an enterprise product, then package core
+                features into a lighter consumer offer where it makes sense.
+              </p>
+            </article>
+            <article class="timeline-card">
+              <strong>Phase 3</strong>
+              <p>
+                Launch publisher sites and content engines that attract organic traffic, support
+                affiliate income, and feed acquisition into the product portfolio.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="shell">
+          <div class="section-head">
+            <div>
+              <p class="section-kicker">Contact us</p>
+              <h2>Start a conversation without exposing a public email address.</h2>
+            </div>
+            <div class="section-copy">
+              <p>
+                The form below is built for a static hosting setup. It is ready to post to a
+                no-backend form relay so inquiries can be delivered privately behind the scenes.
+              </p>
+            </div>
+          </div>
+
+          <div class="contact-layout">
+            <aside class="contact-card">
+              <div>
+                <p class="section-kicker">Deployment-ready</p>
+                <h3>Static by design, ready for GitHub Pages</h3>
+              </div>
+              <p>
+                This project stays backend-free while still supporting inbound leads. The form uses
+                a JavaScript request to a form relay service, which means the page source does not
+                need to reveal the destination inbox.
+              </p>
+              <div class="contact-notes">
+                <div class="checkpoint">
+                  <strong>Recommended relay</strong>
+                  <p>Web3Forms or a similar hosted form service with an access key tied to the destination inbox.</p>
+                </div>
+                <div class="checkpoint">
+                  <strong>Delivery target</strong>
+                  <p>Configure the relay service dashboard to forward submissions to your private Gmail inbox.</p>
+                </div>
+                <div class="checkpoint">
+                  <strong>Spam control</strong>
+                  <p>Honeypot protection and message validation are included in the form structure below.</p>
+                </div>
+              </div>
+            </aside>
+
+            <form class="contact-form" id="contact-form" novalidate>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="name">Name</label>
+                  <input id="name" name="name" type="text" autocomplete="name" required />
+                </div>
+                <div class="field">
+                  <label for="company">Company</label>
+                  <input id="company" name="company" type="text" autocomplete="organization" />
+                </div>
+                <div class="field">
+                  <label for="email">Work email</label>
+                  <input id="email" name="email" type="email" autocomplete="email" required />
+                </div>
+                <div class="field">
+                  <label for="interest">Project focus</label>
+                  <input
+                    id="interest"
+                    name="interest"
+                    type="text"
+                    placeholder="Consumer app, enterprise SaaS, media site, IoT, etc."
+                    required
+                  />
+                </div>
+                <div class="field full">
+                  <label for="message">What are you building?</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Share your goals, current stage, timeline, and the kind of support you need."
+                    required
+                  ></textarea>
+                </div>
+              </div>
+
+              <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" hidden />
+
+              <div class="form-meta">
+                <button class="button primary" type="submit">Send inquiry</button>
+                <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="shell footer-bar">
+        <span>Venture Streams Studio</span>
+        <span>Static single page app for flexible hosting anywhere</span>
+      </div>
+    </footer>
+
+    <script>
+      const tabs = document.querySelectorAll('[role="tab"]');
+      const panels = document.querySelectorAll('[role="tabpanel"]');
+      const contactForm = document.getElementById("contact-form");
+      const formStatus = document.getElementById("form-status");
+      const FORM_ENDPOINT = "https://api.web3forms.com/submit";
+      const FORM_ACCESS_KEY = "REPLACE_WITH_WEB3FORMS_ACCESS_KEY";
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const targetId = tab.getAttribute("aria-controls");
+
+          tabs.forEach((item) => item.setAttribute("aria-selected", String(item === tab)));
+          panels.forEach((panel) => {
+            panel.hidden = panel.id !== targetId;
+          });
+        });
+      });
+
+      if (contactForm) {
+        contactForm.addEventListener("submit", async (event) => {
+          event.preventDefault();
+
+          if (FORM_ACCESS_KEY === "REPLACE_WITH_WEB3FORMS_ACCESS_KEY") {
+            formStatus.textContent =
+              "Add your form service access key in the script before going live.";
+            return;
+          }
+
+          if (!contactForm.reportValidity()) {
+            formStatus.textContent = "Please complete the required fields.";
+            return;
+          }
+
+          formStatus.textContent = "Sending your message...";
+
+          const payload = {
+            access_key: FORM_ACCESS_KEY,
+            subject: "New venture inquiry from v-labs-core.github.io",
+            from_name: "Venture Streams Studio",
+            name: contactForm.name.value.trim(),
+            company: contactForm.company.value.trim(),
+            email: contactForm.email.value.trim(),
+            interest: contactForm.interest.value.trim(),
+            message: contactForm.message.value.trim(),
+            botcheck: contactForm.botcheck.checked ? "1" : "",
+          };
+
+          try {
+            const response = await fetch(FORM_ENDPOINT, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+              },
+              body: JSON.stringify(payload),
+            });
+
+            const result = await response.json();
+
+            if (!response.ok || !result.success) {
+              throw new Error(result.message || "Unable to send message.");
+            }
+
+            contactForm.reset();
+            formStatus.textContent = "Thanks. Your message has been sent successfully.";
+          } catch (error) {
+            formStatus.textContent =
+              error instanceof Error ? error.message : "Something went wrong. Please try again.";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
