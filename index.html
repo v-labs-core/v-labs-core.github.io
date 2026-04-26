@@ -92,6 +92,7 @@
         justify-content: space-between;
         gap: 1rem;
         min-height: 78px;
+        position: relative;
       }
 
       .brand {
@@ -142,6 +143,59 @@
       nav a:hover,
       nav a:focus-visible {
         color: var(--text);
+      }
+
+      .mobile-nav {
+        display: none;
+        position: relative;
+      }
+
+      .mobile-nav summary {
+        list-style: none;
+      }
+
+      .mobile-nav summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .mobile-nav[open] summary {
+        border-color: rgba(76, 207, 197, 0.42);
+        background: rgba(191, 244, 239, 0.5);
+      }
+
+      .mobile-nav summary:focus-visible {
+        outline: 2px solid rgba(76, 207, 197, 0.35);
+        outline-offset: 3px;
+      }
+
+      .mobile-nav-panel {
+        position: absolute;
+        top: calc(100% + 0.75rem);
+        right: 0;
+        width: min(22rem, calc(100vw - 2rem));
+        display: grid;
+        gap: 0.25rem;
+        padding: 0.75rem;
+        border-radius: 1.25rem;
+        background: var(--panel-strong);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+        z-index: 30;
+      }
+
+      .mobile-nav-panel a {
+        display: block;
+        padding: 0.85rem 0.95rem;
+        border-radius: 0.95rem;
+        color: var(--text);
+        font-weight: 700;
+      }
+
+      .mobile-nav-panel a:hover,
+      .mobile-nav-panel a:focus-visible {
+        background: rgba(191, 244, 239, 0.5);
+        outline: 2px solid rgba(76, 207, 197, 0.25);
+        outline-offset: 2px;
       }
 
       .button {
@@ -650,6 +704,10 @@
           display: none;
         }
 
+        .mobile-nav {
+          display: block;
+        }
+
         .stream-panel {
           min-height: auto;
         }
@@ -719,6 +777,17 @@
           <a href="#roadmap">Roadmap</a>
           <a class="button secondary" href="#contact">Contact</a>
         </nav>
+
+        <details class="mobile-nav">
+          <summary class="button secondary" aria-label="Open navigation menu">Menu</summary>
+          <div class="mobile-nav-panel" role="navigation" aria-label="Primary">
+            <a href="#streams">Offerings</a>
+            <a href="#focus">Sectors</a>
+            <a href="#engine">Approach</a>
+            <a href="#roadmap">Roadmap</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </details>
       </div>
     </header>
 
