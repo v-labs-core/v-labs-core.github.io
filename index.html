@@ -3,24 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Venture Streams Studio</title>
+    <title>Vindem Labs | Digital Products, Media, and Intelligent Systems</title>
     <meta
       name="description"
-      content="A simple static single page app presenting a multi-stream digital business across consumer apps, enterprise products, service contracts, and publisher websites."
+      content="Vindem Labs builds consumer apps, enterprise software, service partnerships, and media platforms across PropTech, AI education, property operations, and IoT."
     />
+    <meta name="theme-color" content="#dff8f4" />
+    <meta property="og:title" content="Vindem Labs" />
+    <meta
+      property="og:description"
+      content="A digital venture studio spanning consumer applications, enterprise products, service contracts, and publisher platforms."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/og-card.svg" />
+    <meta property="og:url" content="https://v-labs-core.github.io" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <style>
       :root {
-        --bg: #f4f6f1;
-        --panel: rgba(255, 255, 255, 0.78);
-        --panel-strong: #ffffff;
-        --text: #1f2320;
-        --muted: #5b655d;
-        --line: rgba(31, 35, 32, 0.11);
-        --brand: #1fb45c;
-        --brand-deep: #12793b;
-        --accent: #d9f58e;
-        --shadow: 0 20px 60px rgba(18, 34, 22, 0.12);
-        --radius: 24px;
+        --bg: #effaf8;
+        --bg-deep: #dff8f4;
+        --panel: rgba(255, 255, 255, 0.82);
+        --panel-strong: rgba(255, 255, 255, 0.94);
+        --text: #16333a;
+        --muted: #53717a;
+        --line: rgba(22, 51, 58, 0.1);
+        --brand: #4ccfc5;
+        --brand-deep: #1d9ea7;
+        --brand-soft: #bff4ef;
+        --accent: #8be7da;
+        --shadow: 0 24px 64px rgba(24, 71, 79, 0.12);
+        --radius: 26px;
         --max: 1180px;
       }
 
@@ -37,9 +49,9 @@
         font-family: "Sora", "Avenir Next", "Segoe UI", sans-serif;
         color: var(--text);
         background:
-          radial-gradient(circle at top left, rgba(217, 245, 142, 0.75), transparent 28%),
-          radial-gradient(circle at 85% 15%, rgba(31, 180, 92, 0.18), transparent 22%),
-          linear-gradient(180deg, #fbfcf8 0%, var(--bg) 48%, #eef2ec 100%);
+          radial-gradient(circle at top left, rgba(139, 231, 218, 0.42), transparent 28%),
+          radial-gradient(circle at 92% 12%, rgba(76, 207, 197, 0.28), transparent 22%),
+          linear-gradient(180deg, #fbfefe 0%, var(--bg) 48%, var(--bg-deep) 100%);
       }
 
       a {
@@ -53,6 +65,12 @@
         max-width: 100%;
       }
 
+      button,
+      input,
+      textarea {
+        font: inherit;
+      }
+
       .shell {
         width: min(calc(100% - 2rem), var(--max));
         margin: 0 auto;
@@ -63,8 +81,8 @@
         top: 0;
         z-index: 20;
         backdrop-filter: blur(18px);
-        background: rgba(244, 246, 241, 0.72);
-        border-bottom: 1px solid rgba(31, 35, 32, 0.05);
+        background: rgba(239, 250, 248, 0.76);
+        border-bottom: 1px solid rgba(22, 51, 58, 0.05);
       }
 
       .site-header .shell {
@@ -84,29 +102,30 @@
       }
 
       .brand-mark {
-        width: 2.6rem;
-        height: 2.6rem;
-        border-radius: 0.9rem;
-        background:
-          linear-gradient(145deg, var(--brand), #44cf7d),
-          var(--brand);
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+        width: 2.7rem;
+        height: 2.7rem;
+        border-radius: 0.95rem;
+        background: linear-gradient(145deg, var(--brand), #7be4dc);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.45),
+          0 8px 22px rgba(29, 158, 167, 0.22);
         position: relative;
+        overflow: hidden;
       }
 
       .brand-mark::before,
       .brand-mark::after {
         content: "";
         position: absolute;
-        inset: 20%;
+        inset: 18%;
         border-radius: 999px 999px 999px 0;
-        border: 2px solid rgba(255, 255, 255, 0.8);
+        border: 2px solid rgba(255, 255, 255, 0.86);
         transform: rotate(45deg);
       }
 
       .brand-mark::after {
-        inset: 34%;
-        opacity: 0.7;
+        inset: 35%;
+        opacity: 0.72;
       }
 
       .brand-copy small {
@@ -121,7 +140,7 @@
       nav {
         display: flex;
         align-items: center;
-        gap: 1.2rem;
+        gap: 1.15rem;
         flex-wrap: wrap;
         justify-content: flex-end;
       }
@@ -142,9 +161,10 @@
         justify-content: center;
         gap: 0.6rem;
         border-radius: 999px;
-        padding: 0.9rem 1.25rem;
+        padding: 0.92rem 1.28rem;
         border: 1px solid transparent;
         font-weight: 700;
+        cursor: pointer;
         transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
       }
 
@@ -154,12 +174,12 @@
       }
 
       .button.primary {
-        background: var(--text);
+        background: linear-gradient(135deg, var(--brand-deep), #41c1bc);
         color: #fff;
       }
 
       .button.secondary {
-        background: rgba(255, 255, 255, 0.62);
+        background: rgba(255, 255, 255, 0.64);
         border-color: var(--line);
       }
 
@@ -173,7 +193,7 @@
 
       .hero-grid {
         display: grid;
-        grid-template-columns: 1.2fr 0.9fr;
+        grid-template-columns: 1.16fr 0.94fr;
         gap: 2rem;
         align-items: stretch;
       }
@@ -193,7 +213,7 @@
         font-weight: 800;
         letter-spacing: 0.08em;
         text-transform: uppercase;
-        background: rgba(31, 180, 92, 0.11);
+        background: rgba(76, 207, 197, 0.16);
         color: var(--brand-deep);
       }
 
@@ -205,7 +225,7 @@
       }
 
       h1 {
-        font-size: clamp(2.8rem, 7vw, 5.7rem);
+        font-size: clamp(2.9rem, 7vw, 5.8rem);
         line-height: 0.96;
         letter-spacing: -0.06em;
         max-width: 12ch;
@@ -216,7 +236,7 @@
         max-width: 62ch;
         color: var(--muted);
         font-size: 1.07rem;
-        line-height: 1.7;
+        line-height: 1.72;
       }
 
       .hero-actions {
@@ -239,9 +259,11 @@
       .path-card,
       .pillar,
       .timeline-card,
-      .cta-card {
+      .quote-card,
+      .contact-card,
+      .contact-form {
         background: var(--panel);
-        border: 1px solid rgba(255, 255, 255, 0.75);
+        border: 1px solid rgba(255, 255, 255, 0.78);
         box-shadow: var(--shadow);
         backdrop-filter: blur(16px);
       }
@@ -253,7 +275,7 @@
 
       .metric-card strong {
         display: block;
-        font-size: 1.65rem;
+        font-size: 1.7rem;
         letter-spacing: -0.05em;
       }
 
@@ -273,10 +295,10 @@
         content: "";
         position: absolute;
         inset: auto -10% -22% auto;
-        width: 220px;
-        height: 220px;
+        width: 240px;
+        height: 240px;
         border-radius: 50%;
-        background: radial-gradient(circle, rgba(31, 180, 92, 0.22), transparent 66%);
+        background: radial-gradient(circle, rgba(76, 207, 197, 0.24), transparent 66%);
       }
 
       .hero-board {
@@ -291,20 +313,18 @@
       }
 
       .hero-board p,
-      .hero-board li,
       .section-copy p,
       .stream-content p,
       .path-card p,
       .pillar p,
       .timeline-card p,
-      .cta-card p {
+      .quote-card p,
+      .contact-card p {
         color: var(--muted);
         line-height: 1.65;
       }
 
       .pill-list,
-      .mini-grid,
-      .focus-list,
       .stat-list {
         display: flex;
         flex-wrap: wrap;
@@ -312,13 +332,11 @@
       }
 
       .pill-list span,
-      .mini-grid span,
-      .focus-list span,
       .stat-list span {
         padding: 0.6rem 0.85rem;
         border-radius: 999px;
         font-size: 0.88rem;
-        background: rgba(31, 35, 32, 0.05);
+        background: rgba(22, 51, 58, 0.05);
       }
 
       .section-head {
@@ -346,7 +364,7 @@
 
       .stream-shell {
         display: grid;
-        grid-template-columns: 280px 1fr;
+        grid-template-columns: 290px 1fr;
         gap: 1rem;
         align-items: start;
       }
@@ -373,8 +391,8 @@
       .stream-tab:focus-visible,
       .stream-tab[aria-selected="true"] {
         transform: translateX(4px);
-        border-color: rgba(31, 180, 92, 0.35);
-        background: rgba(217, 245, 142, 0.32);
+        border-color: rgba(76, 207, 197, 0.42);
+        background: rgba(191, 244, 239, 0.5);
       }
 
       .stream-tab strong {
@@ -390,7 +408,7 @@
       }
 
       .stream-panel {
-        min-height: 460px;
+        min-height: 468px;
         border-radius: 1.75rem;
         padding: 1.5rem;
       }
@@ -415,7 +433,7 @@
       .stream-badge {
         padding: 0.45rem 0.7rem;
         border-radius: 999px;
-        background: rgba(31, 180, 92, 0.1);
+        background: rgba(76, 207, 197, 0.13);
         color: var(--brand-deep);
         white-space: nowrap;
         font-size: 0.82rem;
@@ -431,25 +449,21 @@
       }
 
       .stream-content,
-      .stream-side {
+      .stream-side,
+      .sub-list,
+      .contact-notes {
         display: grid;
         gap: 1rem;
       }
 
-      .sub-list,
-      .checkpoint-list,
-      .timeline-list {
-        display: grid;
-        gap: 0.75rem;
-      }
-
       .sub-item,
       .checkpoint,
-      .timeline-card {
+      .timeline-card,
+      .quote-card {
         padding: 1rem;
         border-radius: 1.1rem;
-        background: rgba(31, 35, 32, 0.04);
-        border: 1px solid rgba(31, 35, 32, 0.06);
+        background: rgba(22, 51, 58, 0.04);
+        border: 1px solid rgba(22, 51, 58, 0.06);
       }
 
       .sub-item strong,
@@ -457,7 +471,8 @@
       .pillar h3,
       .path-card h3,
       .timeline-card strong,
-      .cta-card h2 {
+      .quote-card strong,
+      .contact-card h3 {
         display: block;
         margin-bottom: 0.4rem;
         font-size: 1rem;
@@ -465,7 +480,8 @@
 
       .path-grid,
       .pillar-grid,
-      .timeline-grid {
+      .timeline-grid,
+      .quote-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 1rem;
@@ -474,7 +490,9 @@
       .path-card,
       .pillar,
       .timeline-card,
-      .cta-card {
+      .quote-card,
+      .contact-card,
+      .contact-form {
         border-radius: 1.5rem;
         padding: 1.35rem;
       }
@@ -507,33 +525,13 @@
         width: 42px;
         height: 42px;
         border-radius: 50%;
-        background: rgba(31, 180, 92, 0.12);
-      }
-
-      .cta-card {
-        display: grid;
-        grid-template-columns: 1.1fr auto;
-        align-items: center;
-        gap: 1rem;
-        background:
-          linear-gradient(135deg, rgba(31, 180, 92, 0.12), rgba(255, 255, 255, 0.85)),
-          var(--panel-strong);
+        background: rgba(76, 207, 197, 0.15);
       }
 
       .contact-layout {
         display: grid;
-        grid-template-columns: 0.9fr 1.1fr;
+        grid-template-columns: 0.92fr 1.08fr;
         gap: 1rem;
-      }
-
-      .contact-card,
-      .contact-form {
-        border-radius: 1.5rem;
-        padding: 1.35rem;
-        background: var(--panel);
-        border: 1px solid rgba(255, 255, 255, 0.75);
-        box-shadow: var(--shadow);
-        backdrop-filter: blur(16px);
       }
 
       .contact-card {
@@ -573,9 +571,8 @@
         border: 1px solid var(--line);
         border-radius: 1rem;
         padding: 0.95rem 1rem;
-        background: rgba(255, 255, 255, 0.8);
+        background: rgba(255, 255, 255, 0.88);
         color: var(--text);
-        font: inherit;
       }
 
       .field textarea {
@@ -585,9 +582,9 @@
 
       .field input:focus-visible,
       .field textarea:focus-visible {
-        outline: 2px solid rgba(31, 180, 92, 0.22);
+        outline: 2px solid rgba(76, 207, 197, 0.25);
         outline-offset: 1px;
-        border-color: rgba(31, 180, 92, 0.42);
+        border-color: rgba(76, 207, 197, 0.46);
       }
 
       .form-meta {
@@ -602,11 +599,6 @@
         min-height: 1.5rem;
         color: var(--muted);
         font-size: 0.92rem;
-      }
-
-      .contact-notes {
-        display: grid;
-        gap: 0.75rem;
       }
 
       footer {
@@ -631,7 +623,7 @@
         .path-grid,
         .pillar-grid,
         .timeline-grid,
-        .cta-card,
+        .quote-grid,
         .contact-layout,
         .form-grid {
           grid-template-columns: 1fr;
@@ -668,7 +660,9 @@
         .path-card,
         .pillar,
         .timeline-card,
-        .cta-card {
+        .quote-card,
+        .contact-card,
+        .contact-form {
           border-radius: 1.25rem;
         }
       }
@@ -677,20 +671,20 @@
   <body>
     <header class="site-header">
       <div class="shell">
-        <a class="brand" href="#top" aria-label="Venture Streams Studio home">
+        <a class="brand" href="#top" aria-label="Vindem Labs home">
           <span class="brand-mark" aria-hidden="true"></span>
           <span class="brand-copy">
-            Venture Streams Studio
-            <small>Web and mobile business model</small>
+            Vindem Labs
+            <small>Digital products and intelligent systems</small>
           </span>
         </a>
 
         <nav aria-label="Primary">
-          <a href="#streams">Revenue streams</a>
-          <a href="#focus">Sector focus</a>
-          <a href="#engine">Operating engine</a>
+          <a href="#streams">Streams</a>
+          <a href="#focus">Focus areas</a>
+          <a href="#engine">Operating model</a>
           <a href="#roadmap">Roadmap</a>
-          <a class="button secondary" href="#contact">Explore strategy</a>
+          <a class="button secondary" href="#contact">Contact</a>
         </nav>
       </div>
     </header>
@@ -699,60 +693,60 @@
       <section class="hero">
         <div class="shell hero-grid">
           <div class="hero-copy">
-            <span class="eyebrow">Inspired by digital product studios</span>
-            <h1>One business. Four revenue engines. Infinite room to scale.</h1>
+            <span class="eyebrow">Vindem Labs</span>
+            <h1>Building digital businesses across products, platforms, and partnerships.</h1>
             <p>
-              This static single page app presents a digital venture model spanning consumer
-              applications, enterprise software, service contracts, and publisher websites powered
-              by advertising and affiliate opportunities. It is designed to be hosted anywhere
-              without a backend and shaped around a practical web and mobile product strategy.
+              Vindem Labs is structured around four connected revenue streams: consumer
+              applications, enterprise software, long-term service engagements, and publisher-led
+              media properties. Together they create a business that can launch quickly, learn from
+              real usage, and grow into durable recurring revenue.
             </p>
 
             <div class="hero-actions">
-              <a class="button primary" href="#streams">See the streams</a>
-              <a class="button secondary" href="#roadmap">View rollout plan</a>
+              <a class="button primary" href="#streams">Explore the model</a>
+              <a class="button secondary" href="#contact">Start a conversation</a>
             </div>
 
-            <div class="metric-row" aria-label="Business metrics summary">
+            <div class="metric-row" aria-label="Business overview">
               <article class="metric-card">
-                <strong>4</strong>
-                <span>Core revenue streams working together</span>
+                <strong>4 revenue streams</strong>
+                <span>Products, services, subscriptions, media, and strategic distribution.</span>
               </article>
               <article class="metric-card">
                 <strong>Web + mobile</strong>
-                <span>Reusable experience layer across products</span>
+                <span>Shared foundations across user-facing products and operational software.</span>
               </article>
               <article class="metric-card">
-                <strong>Recurring mix</strong>
-                <span>Subscription, retainers, ads, and affiliate income</span>
+                <strong>Sector depth</strong>
+                <span>PropTech, AI education, property operations, and IoT-enabled workflows.</span>
               </article>
             </div>
           </div>
 
-          <aside class="glass-card hero-board" aria-label="Business model snapshot">
+          <aside class="glass-card hero-board" aria-label="Vindem Labs summary">
             <div>
-              <h2>Strategy snapshot</h2>
+              <h2>What makes the model resilient</h2>
               <p>
-                The strongest portfolio effect comes from building products, services, and media
-                assets that reinforce each other instead of competing for attention.
+                Each stream strengthens the others. Service work creates insight and cash flow,
+                software creates recurring value, media creates distribution, and consumer products
+                create daily user feedback.
               </p>
             </div>
 
-            <div class="pill-list" aria-label="Strategic themes">
-              <span>Product-led growth</span>
-              <span>Industry-specific SaaS</span>
-              <span>Distribution through content</span>
-              <span>Long-term client retainers</span>
-              <span>IoT-enabled workflows</span>
-              <span>Data compounding</span>
+            <div class="pill-list" aria-label="Core themes">
+              <span>Product strategy</span>
+              <span>Vertical SaaS</span>
+              <span>Audience building</span>
+              <span>Operational software</span>
+              <span>IoT integrations</span>
+              <span>Compounding data</span>
             </div>
 
             <div class="sub-item">
-              <strong>Why this model works</strong>
+              <strong>Designed for longevity</strong>
               <p>
-                Consumer products create audience and behavioral insight, enterprise tools create
-                high-value recurring contracts, service work funds innovation, and publisher
-                platforms amplify reach and monetization.
+                The goal is not to launch isolated projects. It is to build a connected operating
+                system for innovation, delivery, and growth across multiple digital business lines.
               </p>
             </div>
           </aside>
@@ -763,14 +757,14 @@
         <div class="shell">
           <div class="section-head">
             <div>
-              <p class="section-kicker">Revenue streams</p>
-              <h2>Four streams designed to cross-feed demand, data, and trust.</h2>
+              <p class="section-kicker">Revenue architecture</p>
+              <h2>Four revenue streams that can scale independently and reinforce each other.</h2>
             </div>
             <div class="section-copy">
               <p>
-                The structure below turns the business into a portfolio of connected products and
-                platforms. Each stream can stand on its own, but the real strength comes from
-                shared user insight, design systems, engineering assets, and acquisition channels.
+                Vindem Labs is built to balance near-term cash flow with long-term asset creation.
+                The structure below keeps the business flexible while creating pathways toward
+                subscription income, retained partnerships, and defensible distribution.
               </p>
             </div>
           </div>
@@ -779,19 +773,19 @@
             <div class="stream-tabs" role="tablist" aria-label="Revenue stream tabs">
               <button class="stream-tab" role="tab" aria-selected="true" aria-controls="stream-consumer" id="tab-consumer">
                 <strong>Consumer applications</strong>
-                <span>Audience, engagement, subscriptions, and freemium upgrades.</span>
+                <span>Direct-to-user mobile and web experiences with upgrade and retention potential.</span>
               </button>
               <button class="stream-tab" role="tab" aria-selected="false" aria-controls="stream-enterprise" id="tab-enterprise">
                 <strong>Enterprise products</strong>
-                <span>High-value SaaS and operational software for professional teams.</span>
+                <span>Operational platforms, analytics layers, and subscription software for teams.</span>
               </button>
               <button class="stream-tab" role="tab" aria-selected="false" aria-controls="stream-services" id="tab-services">
                 <strong>Service contracts</strong>
-                <span>Discovery, delivery, integration, and evolution retainers.</span>
+                <span>Strategy, design, delivery, and retained evolution for client partners.</span>
               </button>
               <button class="stream-tab" role="tab" aria-selected="false" aria-controls="stream-publisher" id="tab-publisher">
-                <strong>Publisher websites</strong>
-                <span>Content, SEO, affiliates, and ad-driven vertical media assets.</span>
+                <strong>Publisher platforms</strong>
+                <span>Search-driven websites with advertising, affiliate, and lead-generation value.</span>
               </button>
             </div>
 
@@ -802,44 +796,44 @@
                     <span class="section-kicker">Stream 01</span>
                     <h3>Consumer applications</h3>
                   </div>
-                  <span class="stream-badge">Apps + community</span>
+                  <span class="stream-badge">Apps + engagement</span>
                 </div>
                 <div class="stream-grid">
                   <div class="stream-content">
                     <p>
-                      Consumer products can validate demand fast and create daily usage habits.
-                      Mobile and web experiences in PropTech or AI education can generate
-                      subscription revenue, in-app upgrades, and powerful first-party signals for
-                      the rest of the business.
+                      Consumer products create direct relationships with end users and reveal where
+                      real demand exists. They are especially powerful when they solve focused,
+                      repeated problems in industries that are still underserved by elegant digital
+                      experiences.
                     </p>
                     <div class="sub-list">
                       <div class="sub-item">
-                        <strong>PropTech companion apps</strong>
-                        <p>Search, budgeting, tenant services, neighborhood insights, and smart-home support.</p>
+                        <strong>PropTech experiences</strong>
+                        <p>Search, budgeting, tenant services, portfolio visibility, and decision support for modern property journeys.</p>
                       </div>
                       <div class="sub-item">
-                        <strong>AI education tools</strong>
-                        <p>Lesson copilots, guided learning paths, certification prep, and personalized study feedback.</p>
+                        <strong>AI education products</strong>
+                        <p>Learning copilots, structured study flows, smart revision systems, and guided educational experiences.</p>
                       </div>
                       <div class="sub-item">
-                        <strong>Lifestyle utility apps</strong>
-                        <p>Smaller vertical tools that widen audience reach and uncover new acquisition channels.</p>
+                        <strong>Utility-led mobile tools</strong>
+                        <p>Focused products that open new acquisition channels and become testing grounds for product-led growth.</p>
                       </div>
                     </div>
                   </div>
                   <aside class="stream-side">
                     <div class="checkpoint">
-                      <strong>Monetization</strong>
-                      <p>Subscriptions, premium plans, feature unlocks, partnerships, and selective commerce offers.</p>
+                      <strong>Primary monetization</strong>
+                      <p>Subscriptions, premium features, usage-based upgrades, partnerships, and selected commerce opportunities.</p>
                     </div>
                     <div class="checkpoint">
-                      <strong>Strategic value</strong>
-                      <p>Builds brand awareness, recurring usage, and reusable components for later B2B products.</p>
+                      <strong>Strategic role</strong>
+                      <p>Creates audience, recurring engagement, and valuable insight that can guide both enterprise and media plays.</p>
                     </div>
                     <div class="stat-list">
                       <span>Retention loops</span>
-                      <span>Push and email CRM</span>
-                      <span>Behavioral data</span>
+                      <span>User insight</span>
+                      <span>Brand reach</span>
                     </div>
                   </aside>
                 </div>
@@ -851,43 +845,43 @@
                     <span class="section-kicker">Stream 02</span>
                     <h3>Enterprise products</h3>
                   </div>
-                  <span class="stream-badge">SaaS + workflow</span>
+                  <span class="stream-badge">SaaS + operations</span>
                 </div>
                 <div class="stream-grid">
                   <div class="stream-content">
                     <p>
-                      Enterprise products turn domain knowledge into recurring software revenue.
-                      The strongest starting point is vertical software where workflows are complex,
-                      fragmented, and still under-digitized.
+                      Enterprise products transform repeated operational friction into recurring
+                      software revenue. This is where sector knowledge becomes infrastructure that
+                      teams depend on every day.
                     </p>
                     <div class="sub-list">
                       <div class="sub-item">
                         <strong>Property management software</strong>
-                        <p>Maintenance tickets, rent workflows, occupancy dashboards, vendor coordination, and reporting.</p>
+                        <p>Maintenance workflows, occupancy dashboards, resident operations, vendor coordination, and reporting layers.</p>
                       </div>
                       <div class="sub-item">
                         <strong>AI education platforms</strong>
-                        <p>Dashboards for schools, academies, and training teams with analytics, content distribution, and learner tracking.</p>
+                        <p>Administrative analytics, content delivery, learner tracking, and institutional reporting for education teams.</p>
                       </div>
                       <div class="sub-item">
-                        <strong>IoT administration layers</strong>
-                        <p>Device monitoring, control panels, alerting, and automation rules for connected assets.</p>
+                        <strong>IoT control systems</strong>
+                        <p>Monitoring, automation rules, alerts, device orchestration, and data views for connected environments.</p>
                       </div>
                     </div>
                   </div>
                   <aside class="stream-side">
                     <div class="checkpoint">
-                      <strong>Monetization</strong>
-                      <p>Seat-based pricing, tiered subscriptions, implementation fees, and support add-ons.</p>
+                      <strong>Primary monetization</strong>
+                      <p>Subscription tiers, seat-based access, onboarding fees, integration packages, and support plans.</p>
                     </div>
                     <div class="checkpoint">
-                      <strong>Strategic value</strong>
-                      <p>Creates predictable recurring revenue with larger account sizes and lower churn once embedded.</p>
+                      <strong>Strategic role</strong>
+                      <p>Builds predictable recurring revenue and creates deeper relationships with professional operators.</p>
                     </div>
                     <div class="stat-list">
-                      <span>B2B SaaS</span>
-                      <span>Workflow automation</span>
-                      <span>High ACV potential</span>
+                      <span>Recurring ARR</span>
+                      <span>Workflow depth</span>
+                      <span>High-value accounts</span>
                     </div>
                   </aside>
                 </div>
@@ -899,43 +893,43 @@
                     <span class="section-kicker">Stream 03</span>
                     <h3>Service contracts</h3>
                   </div>
-                  <span class="stream-badge">Delivery + retainer</span>
+                  <span class="stream-badge">Strategy + delivery</span>
                 </div>
                 <div class="stream-grid">
                   <div class="stream-content">
                     <p>
-                      Service work can finance product development while deepening sector knowledge.
-                      It also creates a trust bridge into software sales when clients need more than
-                      bespoke delivery.
+                      Service work gives Vindem Labs close exposure to real-world operational needs
+                      while supporting revenue from day one. It is both a business line and a
+                      product discovery engine.
                     </p>
                     <div class="sub-list">
                       <div class="sub-item">
-                        <strong>Product strategy and UX discovery</strong>
-                        <p>Research, positioning, journey mapping, prototypes, and validation sprints.</p>
+                        <strong>Strategy and product definition</strong>
+                        <p>Research, positioning, UX planning, product framing, and validation before build decisions are made.</p>
                       </div>
                       <div class="sub-item">
-                        <strong>App and platform delivery</strong>
-                        <p>Web apps, mobile apps, IoT dashboards, internal tooling, and modernized digital services.</p>
+                        <strong>Web, mobile, and systems delivery</strong>
+                        <p>Application development, operational tooling, integrations, and digital modernization programs.</p>
                       </div>
                       <div class="sub-item">
-                        <strong>Optimization retainers</strong>
-                        <p>Analytics, experimentation, maintenance, growth support, and roadmap evolution.</p>
+                        <strong>Long-term partnerships</strong>
+                        <p>Optimization, analytics, experimentation, maintenance, and roadmap support for evolving platforms.</p>
                       </div>
                     </div>
                   </div>
                   <aside class="stream-side">
                     <div class="checkpoint">
-                      <strong>Monetization</strong>
-                      <p>Fixed-scope projects, monthly retainers, strategic advisory, and support contracts.</p>
+                      <strong>Primary monetization</strong>
+                      <p>Fixed-scope projects, monthly retainers, strategic advisory, implementation fees, and support agreements.</p>
                     </div>
                     <div class="checkpoint">
-                      <strong>Strategic value</strong>
-                      <p>Provides cash flow, close customer access, case studies, and early design partners.</p>
+                      <strong>Strategic role</strong>
+                      <p>Generates revenue, trust, case studies, and direct insight into which software opportunities deserve productization.</p>
                     </div>
                     <div class="stat-list">
-                      <span>Discovery sprints</span>
-                      <span>Implementation teams</span>
-                      <span>Expansion paths</span>
+                      <span>Cash flow</span>
+                      <span>Client access</span>
+                      <span>Product discovery</span>
                     </div>
                   </aside>
                 </div>
@@ -945,45 +939,45 @@
                 <div class="stream-header">
                   <div>
                     <span class="section-kicker">Stream 04</span>
-                    <h3>Publisher websites</h3>
+                    <h3>Publisher platforms</h3>
                   </div>
-                  <span class="stream-badge">SEO + affiliate</span>
+                  <span class="stream-badge">Media + affiliates</span>
                 </div>
                 <div class="stream-grid">
                   <div class="stream-content">
                     <p>
-                      Publisher websites can turn content and search demand into distribution
-                      infrastructure. In practical terms, these sites become acquisition engines for
-                      the other streams while generating direct media revenue of their own.
+                      Publisher properties create a distribution moat. They can attract search
+                      demand, educate potential users, and generate media revenue while feeding
+                      qualified traffic back into software and service offerings.
                     </p>
                     <div class="sub-list">
                       <div class="sub-item">
-                        <strong>PropTech media hubs</strong>
-                        <p>Guides, market explainers, comparison pages, calculators, and localized content.</p>
+                        <strong>PropTech media properties</strong>
+                        <p>Guides, calculators, comparisons, market explainers, and local content that attracts organic demand.</p>
                       </div>
                       <div class="sub-item">
-                        <strong>Education and AI content brands</strong>
-                        <p>Resource libraries, newsletters, tool reviews, and curated affiliate offers.</p>
+                        <strong>Education and AI content platforms</strong>
+                        <p>Resources, tool directories, curated reviews, newsletters, and specialized knowledge hubs.</p>
                       </div>
                       <div class="sub-item">
-                        <strong>Industry comparison sites</strong>
-                        <p>Software reviews, best-of pages, lead generation funnels, and partner placements.</p>
+                        <strong>Decision-support websites</strong>
+                        <p>Comparison engines, partner pages, software reviews, and conversion-led editorial content.</p>
                       </div>
                     </div>
                   </div>
                   <aside class="stream-side">
                     <div class="checkpoint">
-                      <strong>Monetization</strong>
-                      <p>Advertising, sponsored placements, affiliate commissions, and lead referrals.</p>
+                      <strong>Primary monetization</strong>
+                      <p>Advertising, affiliate commissions, sponsored placements, lead referrals, and partner distribution agreements.</p>
                     </div>
                     <div class="checkpoint">
-                      <strong>Strategic value</strong>
-                      <p>Builds organic traffic, lowers paid acquisition dependence, and supports every launch.</p>
+                      <strong>Strategic role</strong>
+                      <p>Reduces paid acquisition dependence while building long-term discoverability and brand authority.</p>
                     </div>
                     <div class="stat-list">
-                      <span>Organic traffic</span>
-                      <span>Top-of-funnel capture</span>
-                      <span>Media moat</span>
+                      <span>Organic reach</span>
+                      <span>Lead capture</span>
+                      <span>Media revenue</span>
                     </div>
                   </aside>
                 </div>
@@ -997,13 +991,14 @@
         <div class="shell">
           <div class="section-head">
             <div>
-              <p class="section-kicker">Sector focus</p>
-              <h2>High-fit categories for product expansion and service packaging.</h2>
+              <p class="section-kicker">Focus areas</p>
+              <h2>Categories where product, media, and services naturally reinforce each other.</h2>
             </div>
             <div class="section-copy">
               <p>
-                These categories work well because they support consumer experiences, enterprise
-                tooling, long-term services, and media-led acquisition all at once.
+                Vindem Labs is especially well-positioned in sectors where the same expertise can
+                power end-user experiences, enterprise workflows, strategic delivery, and content
+                distribution at the same time.
               </p>
             </div>
           </div>
@@ -1011,26 +1006,26 @@
           <div class="path-grid">
             <article class="path-card">
               <em>PropTech</em>
-              <h3>Property search to operations</h3>
+              <h3>From discovery to operations</h3>
               <p>
-                Start with consumer-facing experiences, then expand into landlord, operator, and
-                manager workflows with strong data reuse across the stack.
+                Property-facing products can span search, tenant workflows, portfolio operations,
+                and owner intelligence with strong shared data and repeated user needs.
               </p>
             </article>
             <article class="path-card">
               <em>AI Education</em>
-              <h3>Learning products with institutional demand</h3>
+              <h3>Learning tools for people and institutions</h3>
               <p>
-                AI tutoring, curriculum assistants, and learner analytics can serve both direct
-                users and organizations with different price points.
+                Educational products can serve individuals directly while also expanding into
+                institutional dashboards, analytics, and content ecosystems.
               </p>
             </article>
             <article class="path-card">
-              <em>IoT Integrations</em>
-              <h3>Connected environments and automation</h3>
+              <em>IoT Systems</em>
+              <h3>Connected environments with software value</h3>
               <p>
-                Sensors, devices, and dashboards become more valuable when paired with service
-                contracts and software subscriptions.
+                Devices become far more useful when paired with automation, visibility, and
+                decision-support layers delivered through modern web and mobile interfaces.
               </p>
             </article>
           </div>
@@ -1041,38 +1036,72 @@
         <div class="shell">
           <div class="section-head">
             <div>
-              <p class="section-kicker">Operating engine</p>
-              <h2>One shared product engine powering all four streams.</h2>
+              <p class="section-kicker">Operating model</p>
+              <h2>One shared operating engine behind every launch, partnership, and product line.</h2>
             </div>
             <div class="section-copy">
               <p>
-                The business model is most efficient when design, engineering, data, and growth are
-                shared capabilities rather than separate teams reinventing the same foundations.
+                Rather than rebuilding from scratch for every initiative, Vindem Labs compounds
+                advantage through shared design systems, product thinking, engineering patterns,
+                analytics structures, and growth feedback loops.
               </p>
             </div>
           </div>
 
           <div class="pillar-grid">
             <article class="pillar">
-              <h3>Reusable platform layer</h3>
+              <h3>Reusable digital foundations</h3>
               <p>
-                Shared authentication patterns, design systems, analytics events, and content
-                components reduce launch time for every new product or site.
+                Common UI systems, analytics patterns, workflow components, and integration
+                approaches reduce time to launch across web and mobile.
               </p>
             </article>
             <article class="pillar">
-              <h3>Data and insight compounding</h3>
+              <h3>Insight that compounds over time</h3>
               <p>
-                Audience behavior, content demand, and enterprise workflow feedback can guide what
-                to build next and which offers deserve dedicated sales effort.
+                Product behavior, editorial demand, and operational client needs all feed into
+                sharper decisions about what to build next.
               </p>
             </article>
             <article class="pillar">
-              <h3>Balanced revenue portfolio</h3>
+              <h3>Balanced revenue exposure</h3>
               <p>
-                Projects and retainers stabilize cash flow while subscriptions, ads, and affiliates
-                increase long-term margin and enterprise value.
+                A mix of contracts, subscriptions, affiliates, and media income creates a more
+                durable business than any single stream on its own.
               </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="shell">
+          <div class="section-head">
+            <div>
+              <p class="section-kicker">Why it fits</p>
+              <h2>A structure designed for both near-term execution and long-term value creation.</h2>
+            </div>
+            <div class="section-copy">
+              <p>
+                The same business can serve clients, launch products, build traffic assets, and
+                refine software with every cycle of delivery. That makes it easier to learn, adapt,
+                and allocate effort where the strongest returns are emerging.
+              </p>
+            </div>
+          </div>
+
+          <div class="quote-grid">
+            <article class="quote-card">
+              <strong>Product opportunities</strong>
+              <p>Patterns discovered in service delivery can evolve into repeatable software products with better margins.</p>
+            </article>
+            <article class="quote-card">
+              <strong>Distribution advantages</strong>
+              <p>Publisher platforms can steadily lower customer acquisition costs while strengthening authority in chosen categories.</p>
+            </article>
+            <article class="quote-card">
+              <strong>Relationship depth</strong>
+              <p>Long-term partnerships create trusted access to complex workflows that many product teams never get to observe closely.</p>
             </article>
           </div>
         </div>
@@ -1083,12 +1112,12 @@
           <div class="section-head">
             <div>
               <p class="section-kicker">Suggested roadmap</p>
-              <h2>A realistic path from first contracts to a durable product portfolio.</h2>
+              <h2>A practical path from focused delivery to a broader digital portfolio.</h2>
             </div>
             <div class="section-copy">
               <p>
-                This sequence keeps risk controlled: use service demand to finance the platform,
-                launch focused products, then use content and partnerships to accelerate growth.
+                The strongest approach is usually to begin with concentrated execution in one or two
+                verticals, then expand carefully as reusable product and content foundations mature.
               </p>
             </div>
           </div>
@@ -1097,22 +1126,22 @@
             <article class="timeline-card">
               <strong>Phase 1</strong>
               <p>
-                Win service contracts in a chosen niche, refine positioning, and build reusable web
-                and mobile modules around real client needs.
+                Build market credibility through service partnerships and use those engagements to
+                clarify repeated workflow problems worth solving in software.
               </p>
             </article>
             <article class="timeline-card">
               <strong>Phase 2</strong>
               <p>
-                Turn repeated delivery patterns into an enterprise product, then package core
-                features into a lighter consumer offer where it makes sense.
+                Productize recurring patterns into enterprise tools and launch tightly scoped
+                consumer experiences where user demand and retention signals are strongest.
               </p>
             </article>
             <article class="timeline-card">
               <strong>Phase 3</strong>
               <p>
-                Launch publisher sites and content engines that attract organic traffic, support
-                affiliate income, and feed acquisition into the product portfolio.
+                Expand into publisher-led platforms that capture search demand, support affiliate
+                monetization, and create organic distribution for the broader ecosystem.
               </p>
             </article>
           </div>
@@ -1123,13 +1152,13 @@
         <div class="shell">
           <div class="section-head">
             <div>
-              <p class="section-kicker">Contact us</p>
-              <h2>Start a conversation without exposing a public email address.</h2>
+              <p class="section-kicker">Contact</p>
+              <h2>Share what you are building and where Vindem Labs could be useful.</h2>
             </div>
             <div class="section-copy">
               <p>
-                The form below is built for a static hosting setup. It is ready to post to a
-                no-backend form relay so inquiries can be delivered privately behind the scenes.
+                This site is fully static and can still route inquiries privately through a managed
+                submission gateway. The public page does not display a contact email address.
               </p>
             </div>
           </div>
@@ -1137,26 +1166,26 @@
           <div class="contact-layout">
             <aside class="contact-card">
               <div>
-                <p class="section-kicker">Deployment-ready</p>
-                <h3>Static by design, ready for GitHub Pages</h3>
+                <p class="section-kicker">How we can help</p>
+                <h3>Early concepts, operational software, product delivery, and growth infrastructure.</h3>
               </div>
               <p>
-                This project stays backend-free while still supporting inbound leads. The form uses
-                a JavaScript request to a form relay service, which means the page source does not
-                need to reveal the destination inbox.
+                Vindem Labs can work across strategy, design, development, and connected platform
+                execution. If there is a web, mobile, media, or IoT dimension to the opportunity,
+                this is the right place to start the conversation.
               </p>
               <div class="contact-notes">
                 <div class="checkpoint">
-                  <strong>Recommended relay</strong>
-                  <p>Web3Forms or a similar hosted form service with an access key tied to the destination inbox.</p>
+                  <strong>Relevant conversations</strong>
+                  <p>PropTech products, AI education platforms, property operations, internal tools, and digital media opportunities.</p>
                 </div>
                 <div class="checkpoint">
-                  <strong>Delivery target</strong>
-                  <p>Configure the relay service dashboard to forward submissions to your private Gmail inbox.</p>
+                  <strong>Delivery model</strong>
+                  <p>Project-based work, retained partnerships, product definition, and long-term software evolution.</p>
                 </div>
                 <div class="checkpoint">
-                  <strong>Spam control</strong>
-                  <p>Honeypot protection and message validation are included in the form structure below.</p>
+                  <strong>Private routing</strong>
+                  <p>Messages are intended to be forwarded behind the scenes to the Vindem Labs inbox through a managed form service.</p>
                 </div>
               </div>
             </aside>
@@ -1172,25 +1201,25 @@
                   <input id="company" name="company" type="text" autocomplete="organization" />
                 </div>
                 <div class="field">
-                  <label for="email">Work email</label>
+                  <label for="email">Email</label>
                   <input id="email" name="email" type="email" autocomplete="email" required />
                 </div>
                 <div class="field">
-                  <label for="interest">Project focus</label>
+                  <label for="interest">Area of interest</label>
                   <input
                     id="interest"
                     name="interest"
                     type="text"
-                    placeholder="Consumer app, enterprise SaaS, media site, IoT, etc."
+                    placeholder="Product strategy, SaaS, media platform, IoT, or another focus"
                     required
                   />
                 </div>
                 <div class="field full">
-                  <label for="message">What are you building?</label>
+                  <label for="message">Project details</label>
                   <textarea
                     id="message"
                     name="message"
-                    placeholder="Share your goals, current stage, timeline, and the kind of support you need."
+                    placeholder="Share your goals, current stage, timeline, and the kind of support you are looking for."
                     required
                   ></textarea>
                 </div>
@@ -1199,7 +1228,7 @@
               <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" hidden />
 
               <div class="form-meta">
-                <button class="button primary" type="submit">Send inquiry</button>
+                <button class="button primary" type="submit">Send message</button>
                 <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
               </div>
             </form>
@@ -1210,18 +1239,20 @@
 
     <footer>
       <div class="shell footer-bar">
-        <span>Venture Streams Studio</span>
-        <span>Static single page app for flexible hosting anywhere</span>
+        <span>Vindem Labs</span>
+        <span>Digital products, intelligent systems, and modern revenue infrastructure.</span>
       </div>
     </footer>
 
+    <script src="config.js"></script>
     <script>
       const tabs = document.querySelectorAll('[role="tab"]');
       const panels = document.querySelectorAll('[role="tabpanel"]');
       const contactForm = document.getElementById("contact-form");
       const formStatus = document.getElementById("form-status");
-      const FORM_ENDPOINT = "https://api.web3forms.com/submit";
-      const FORM_ACCESS_KEY = "REPLACE_WITH_WEB3FORMS_ACCESS_KEY";
+      const siteConfig = window.VINDEM_LABS_CONFIG || {};
+      const formEndpoint = siteConfig.formEndpoint || "https://api.web3forms.com/submit";
+      const formAccessKey = siteConfig.formAccessKey || "";
 
       tabs.forEach((tab) => {
         tab.addEventListener("click", () => {
@@ -1238,23 +1269,22 @@
         contactForm.addEventListener("submit", async (event) => {
           event.preventDefault();
 
-          if (FORM_ACCESS_KEY === "REPLACE_WITH_WEB3FORMS_ACCESS_KEY") {
-            formStatus.textContent =
-              "Add your form service access key in the script before going live.";
+          if (!contactForm.reportValidity()) {
+            formStatus.textContent = "Please complete the required fields.";
             return;
           }
 
-          if (!contactForm.reportValidity()) {
-            formStatus.textContent = "Please complete the required fields.";
+          if (!formAccessKey) {
+            formStatus.textContent = "Message delivery is temporarily unavailable. Please try again shortly.";
             return;
           }
 
           formStatus.textContent = "Sending your message...";
 
           const payload = {
-            access_key: FORM_ACCESS_KEY,
-            subject: "New venture inquiry from v-labs-core.github.io",
-            from_name: "Venture Streams Studio",
+            access_key: formAccessKey,
+            subject: "New inquiry from vindemlabs.com",
+            from_name: "Vindem Labs",
             name: contactForm.name.value.trim(),
             company: contactForm.company.value.trim(),
             email: contactForm.email.value.trim(),
@@ -1264,7 +1294,7 @@
           };
 
           try {
-            const response = await fetch(FORM_ENDPOINT, {
+            const response = await fetch(formEndpoint, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -1276,14 +1306,16 @@
             const result = await response.json();
 
             if (!response.ok || !result.success) {
-              throw new Error(result.message || "Unable to send message.");
+              throw new Error(result.message || "Unable to send message right now.");
             }
 
             contactForm.reset();
-            formStatus.textContent = "Thanks. Your message has been sent successfully.";
+            formStatus.textContent = "Your message has been sent. Thank you.";
           } catch (error) {
             formStatus.textContent =
-              error instanceof Error ? error.message : "Something went wrong. Please try again.";
+              error instanceof Error
+                ? error.message
+                : "Something went wrong while sending your message.";
           }
         });
       }
