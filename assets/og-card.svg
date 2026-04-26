@@ -1,29 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f8fffe" />
-      <stop offset="100%" stop-color="#dff8f4" />
+      <stop offset="0%" stop-color="#fbfefe" />
+      <stop offset="100%" stop-color="#dff7f4" />
     </linearGradient>
-    <linearGradient id="brand" x1="10%" y1="8%" x2="90%" y2="92%">
-      <stop offset="0%" stop-color="#7de7dc" />
-      <stop offset="100%" stop-color="#1fabb3" />
+    <linearGradient id="tile" x1="10%" y1="8%" x2="90%" y2="92%">
+      <stop offset="0%" stop-color="#e9fffb" />
+      <stop offset="100%" stop-color="#b7eee8" />
+    </linearGradient>
+    <linearGradient id="stroke" x1="14%" y1="12%" x2="86%" y2="88%">
+      <stop offset="0%" stop-color="#0aa7b1" />
+      <stop offset="100%" stop-color="#16333a" />
     </linearGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)" />
-  <circle cx="1038" cy="114" r="176" fill="#c8f5ef" opacity="0.72" />
-  <circle cx="148" cy="108" r="132" fill="#ebfcf9" />
-  <circle cx="1126" cy="534" r="94" fill="#d4f8f2" opacity="0.84" />
-  <rect x="86" y="84" width="104" height="104" rx="30" fill="url(#brand)" />
-  <path d="M107 102h62c-7.9 2.7-13.6 8-17.2 15.9L134.4 170h-14.6L107 102Z" fill="#ffffff" fill-opacity="0.14" />
-  <path d="M116 112h12.5l11.6 36.3 11.7-36.3h12.5L146.9 164h-11.8L116 112Z" fill="#ffffff" />
-  <path d="M156.8 112h11.8v41.2h-9.4l-2.4 10.8H144V140.7l12.8-28.7Z" fill="#ffffff" />
-  <text x="86" y="276" fill="#16333a" font-family="Sora, Arial, sans-serif" font-size="76" font-weight="700">
-    Vindem Labs
-  </text>
-  <text x="86" y="352" fill="#53717a" font-family="Sora, Arial, sans-serif" font-size="31">
-    Consumer applications, enterprise software, publisher platforms, and connected systems.
-  </text>
-  <text x="86" y="442" fill="#1d9ea7" font-family="Sora, Arial, sans-serif" font-size="22" font-weight="700">
-    PropTech  •  AI Education  •  Property Operations  •  IoT Integrations
-  </text>
+  <path d="M742 0H1200V630H882C792 506 754 367 768 214C775 137 767 66 742 0Z" fill="#caefea" opacity="0.5" />
+  <path d="M0 512C152 485 292 496 420 545C524 585 626 586 726 550V630H0Z" fill="#f2b36d" opacity="0.18" />
+  <rect x="86" y="82" width="116" height="116" rx="30" fill="url(#tile)" />
+  <rect x="87" y="83" width="114" height="114" rx="29" fill="none" stroke="#ffffff" stroke-width="2" />
+  <path d="M111 110L135.4 168L154.2 110" fill="none" stroke="url(#stroke)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M154.5 110V168H178" fill="none" stroke="url(#stroke)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M141 145H165" fill="none" stroke="#f2b36d" stroke-width="8" stroke-linecap="round" />
+  <text x="86" y="294" fill="#172f35" font-family="Sora, Arial, sans-serif" font-size="78" font-weight="700">Vindem Labs</text>
+  <text x="86" y="366" fill="#546b71" font-family="Sora, Arial, sans-serif" font-size="31">Digital products, business software, publishing platforms, and connected systems.</text>
+  <text x="86" y="456" fill="#087f8c" font-family="Sora, Arial, sans-serif" font-size="23" font-weight="700">PropTech | AI Education | Property Operations | IoT Integrations</text>
 </svg>
