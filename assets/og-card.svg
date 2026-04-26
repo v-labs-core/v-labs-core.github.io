@@ -1,29 +1,29 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
   <defs>
-    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#f8fffe" />
       <stop offset="100%" stop-color="#dff8f4" />
     </linearGradient>
-    <linearGradient id="brand" x1="0%" x2="100%" y1="0%" y2="100%">
-      <stop offset="0%" stop-color="#4ccfc5" />
-      <stop offset="100%" stop-color="#8be7da" />
+    <linearGradient id="brand" x1="10%" y1="8%" x2="90%" y2="92%">
+      <stop offset="0%" stop-color="#7de7dc" />
+      <stop offset="100%" stop-color="#1fabb3" />
     </linearGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)" />
-  <circle cx="1040" cy="120" r="170" fill="#c8f5ef" opacity="0.7" />
-  <circle cx="180" cy="120" r="120" fill="#e8fbf8" />
-  <rect x="86" y="88" width="96" height="96" rx="28" fill="url(#brand)" />
-  <path
-    d="M112 112h11l11.2 33.5 11.2-33.5h10.7L139.5 160h-10L112 112Zm41.9 0H165v37.8h-16.2V160h-10.9V112Z"
-    fill="#ffffff"
-  />
-  <text x="86" y="272" fill="#16333a" font-family="Sora, Arial, sans-serif" font-size="74" font-weight="700">
+  <circle cx="1038" cy="114" r="176" fill="#c8f5ef" opacity="0.72" />
+  <circle cx="148" cy="108" r="132" fill="#ebfcf9" />
+  <circle cx="1126" cy="534" r="94" fill="#d4f8f2" opacity="0.84" />
+  <rect x="86" y="84" width="104" height="104" rx="30" fill="url(#brand)" />
+  <path d="M107 102h62c-7.9 2.7-13.6 8-17.2 15.9L134.4 170h-14.6L107 102Z" fill="#ffffff" fill-opacity="0.14" />
+  <path d="M116 112h12.5l11.6 36.3 11.7-36.3h12.5L146.9 164h-11.8L116 112Z" fill="#ffffff" />
+  <path d="M156.8 112h11.8v41.2h-9.4l-2.4 10.8H144V140.7l12.8-28.7Z" fill="#ffffff" />
+  <text x="86" y="276" fill="#16333a" font-family="Sora, Arial, sans-serif" font-size="76" font-weight="700">
     Vindem Labs
   </text>
-  <text x="86" y="350" fill="#53717a" font-family="Sora, Arial, sans-serif" font-size="30">
-    Consumer apps, enterprise software, digital media, and intelligent systems.
+  <text x="86" y="352" fill="#53717a" font-family="Sora, Arial, sans-serif" font-size="31">
+    Consumer applications, enterprise software, publisher platforms, and connected systems.
   </text>
-  <text x="86" y="440" fill="#1d9ea7" font-family="Sora, Arial, sans-serif" font-size="22" font-weight="700">
+  <text x="86" y="442" fill="#1d9ea7" font-family="Sora, Arial, sans-serif" font-size="22" font-weight="700">
     PropTech  •  AI Education  •  Property Operations  •  IoT Integrations
   </text>
 </svg>

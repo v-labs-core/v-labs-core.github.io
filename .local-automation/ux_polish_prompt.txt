@@ -1,0 +1,8 @@
+Review the current website and make one bounded, public-facing UX improvement on the `ux-only` branch.
+
+Rules:
+- Keep the change static-site compatible.
+- Focus on visible UX, layout, visual clarity, copy polish, responsiveness, accessibility, or branding.
+- Avoid backend work.
+- Keep the change small enough for a rolling PR.
+- After the change, commit it to `ux-only` with a concise message and push it.
