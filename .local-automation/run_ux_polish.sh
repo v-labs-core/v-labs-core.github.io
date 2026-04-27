@@ -6,6 +6,7 @@ WORKSPACE="$(cd "$SCRIPT_DIR/.." && pwd)"
 PROMPT_FILE="$SCRIPT_DIR/ux_polish_prompt.txt"
 SUMMARY_FILE="$SCRIPT_DIR/last_run_summary.txt"
 CODEX_BIN="${CODEX_BIN:-/Users/mrv/.nvm/versions/node/v24.12.0/bin/codex}"
+CODEX_MODEL="${CODEX_MODEL:-gpt-5.5}"
 PR_TITLE="Rolling UX updates"
 PR_LABELS=(enhancement design github-pages codex-automation)
 
@@ -28,14 +29,19 @@ extract_pr_number() {
 
 ensure_pull_request() {
   local existing_pr
-  existing_pr="$(gh pr list --head ux-only --base main --state open --json number,url --jq '.[0] | "#\(.number) \(.url)"' 2>/dev/null || true)"
+  existing_pr="$(gh pr list --head ux-only --base main --state open --json number,url --jq 'if length > 0 then .[0] | "#\(.number) \(.url)" else empty end' 2>/dev/null || true)"
 
   if [[ -n "$existing_pr" && "$existing_pr" != "null" ]]; then
-    PR_NUMBER="$(extract_pr_number "$existing_pr" || true)"
+    PR_NUMBER="$(extract_pr_number "$existing_pr")"
     PR_URL="${existing_pr##* }"
   else
     PR_URL="$(gh pr create --base main --head ux-only --title "$PR_TITLE" --body "This PR tracks rolling UX-only improvements from the \`ux-only\` branch.")"
-    PR_NUMBER="$(extract_pr_number "$PR_URL" || true)"
+    PR_NUMBER="$(extract_pr_number "$PR_URL")"
+  fi
+
+  if [[ -z "${PR_NUMBER:-}" ]]; then
+    echo "Unable to determine rolling PR number"
+    exit 1
   fi
 
   for label in "${PR_LABELS[@]}"; do
@@ -45,6 +51,11 @@ ensure_pull_request() {
 
 ensure_tracking_issue() {
   local commit_subject="$1"
+
+  if [[ -z "${PR_NUMBER:-}" ]]; then
+    echo "Cannot create tracking issue without a PR number"
+    exit 1
+  fi
 
   local existing_issue
   existing_issue="$(gh issue list --state open --json number,title,url,body --limit 100 --jq '.[] | select((.body // "") | contains("PR #'"$PR_NUMBER"'")) | "#\(.number) \(.url)"' 2>/dev/null || true)"
@@ -97,6 +108,7 @@ main() {
 
   "$CODEX_BIN" exec \
     --full-auto \
+    --model "$CODEX_MODEL" \
     --cd "$WORKSPACE" \
     --sandbox workspace-write \
     --output-last-message "$SUMMARY_FILE" \
