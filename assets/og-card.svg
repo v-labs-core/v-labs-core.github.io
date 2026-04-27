@@ -14,11 +14,14 @@
       <stop offset="0%" stop-color="#00a7b3" />
       <stop offset="100%" stop-color="#11343b" />
     </linearGradient>
-    <linearGradient id="sunset" x1="116" y1="184" x2="204" y2="194" gradientUnits="userSpaceOnUse">
+    <linearGradient id="sunset" x1="118" y1="184" x2="204" y2="194" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#ffd26f" />
       <stop offset="42%" stop-color="#ff9f4a" />
       <stop offset="100%" stop-color="#d95f52" />
     </linearGradient>
+    <filter id="accent-lift" x="-20%" y="-120%" width="140%" height="340%">
+      <feDropShadow dx="0" dy="3" stdDeviation="2.2" flood-color="#d95f52" flood-opacity="0.24" />
+    </filter>
     <filter id="lift" x="-16%" y="-16%" width="132%" height="132%">
       <feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#07545d" flood-opacity="0.2" />
     </filter>
@@ -36,7 +39,7 @@
     <path d="M110 108L141 175L168 108" stroke-width="14" />
     <path d="M175 108V162C175 171 181 177 190 177H203" stroke-width="14" />
   </g>
-  <rect x="116" y="184" width="88" height="12" rx="6" fill="url(#sunset)" />
+  <rect x="118" y="184" width="86" height="11" rx="5.5" fill="url(#sunset)" filter="url(#accent-lift)" />
 
   <text x="86" y="302" fill="#133138" font-family="Sora, Avenir Next, Segoe UI, sans-serif" font-size="78" font-weight="800">Vindem Labs</text>
   <text x="86" y="374" fill="#55747b" font-family="Sora, Avenir Next, Segoe UI, sans-serif" font-size="31">Web, mobile, software, and connected digital platforms.</text>
