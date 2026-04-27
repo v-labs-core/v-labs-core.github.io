@@ -1,24 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Vindem Labs">
   <defs>
-    <linearGradient id="tile" x1="8%" y1="4%" x2="92%" y2="96%">
-      <stop offset="0%" stop-color="#fff2dc" />
-      <stop offset="46%" stop-color="#dff8ef" />
-      <stop offset="100%" stop-color="#62d4d0" />
+    <linearGradient id="tile" x1="8%" y1="6%" x2="92%" y2="94%">
+      <stop offset="0%" stop-color="#fff6e8" />
+      <stop offset="52%" stop-color="#d7f8f0" />
+      <stop offset="100%" stop-color="#6ddbd5" />
     </linearGradient>
-    <linearGradient id="ribbon" x1="14%" y1="8%" x2="86%" y2="92%">
+    <linearGradient id="ink" x1="20%" y1="12%" x2="82%" y2="88%">
       <stop offset="0%" stop-color="#00a7b3" />
-      <stop offset="100%" stop-color="#07545d" />
+      <stop offset="100%" stop-color="#11343b" />
     </linearGradient>
-    <filter id="lift" x="-16%" y="-16%" width="132%" height="132%">
-      <feDropShadow dx="0" dy="3" stdDeviation="2.4" flood-color="#07545d" flood-opacity="0.22" />
+    <filter id="soft-shadow" x="-18%" y="-18%" width="136%" height="136%">
+      <feDropShadow dx="0" dy="3" stdDeviation="2.2" flood-color="#07545d" flood-opacity="0.2" />
     </filter>
   </defs>
-  <rect x="4" y="4" width="56" height="56" rx="18" fill="url(#tile)" />
-  <path d="M11 45C19 50 29 52 39 49C49 46 55 37 53 27C52 19 46 12 38 10C48 14 53 23 50 33C46 47 29 54 11 45Z" fill="#ffffff" opacity="0.62" />
-  <g filter="url(#lift)">
-    <path d="M13.6 17H22.2L31.9 43.7L41.6 17H50.4L36.8 49H27.4L13.6 17Z" fill="url(#ribbon)" />
-    <path d="M41.7 17H50.4V42.1H56V49H41.7V17Z" fill="#133138" />
+  <rect x="3" y="3" width="58" height="58" rx="18" fill="url(#tile)" />
+  <path d="M9 18C17 10 31 8 43 13C54 18 59 29 56 41C53 52 44 58 31 57C18 56 9 48 8 36C7 28 5 22 9 18Z" fill="#ffffff" opacity="0.58" />
+  <g filter="url(#soft-shadow)" fill="none" stroke="url(#ink)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14.5 17L28.7 48L42.8 17" stroke-width="7.2" />
+    <path d="M45.5 17V44.2C45.5 47 47.5 49 50.3 49H55" stroke-width="7.2" />
   </g>
-  <path d="M22.2 31.7C28.9 27.2 37.2 27.2 44.2 31.7" fill="none" stroke="#fff2dc" stroke-width="4.2" stroke-linecap="round" />
-  <circle cx="47.5" cy="20.2" r="3.4" fill="#f4976c" />
+  <path d="M20 18.2L29 38.2L37.9 18.2" fill="none" stroke="#eafffb" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" opacity="0.82" />
+  <path d="M50.8 18.2V42.3C50.8 43.1 51.2 43.5 52 43.5H55" fill="none" stroke="#eafffb" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" opacity="0.7" />
 </svg>
