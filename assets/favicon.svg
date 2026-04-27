@@ -19,6 +19,6 @@
     <path d="M14.2 17L28.4 47.5L40.8 17" stroke-width="6.6" />
     <path d="M43.8 17V44.4C43.8 47 45.8 49 48.4 49H54" stroke-width="6.6" />
   </g>
-  <path d="M24.2 35.2C30.6 29.6 38.1 29.4 46.6 34.5" fill="none" stroke="#f4976c" stroke-width="3.2" stroke-linecap="round" opacity="0.95" />
-  <path d="M24.2 35.2C30.6 29.6 38.1 29.4 46.6 34.5" fill="none" stroke="#fff6e8" stroke-width="1.15" stroke-linecap="round" opacity="0.7" />
+  <path d="M21.8 52.2H47.2" fill="none" stroke="#f4976c" stroke-width="3.5" stroke-linecap="round" opacity="0.95" />
+  <path d="M23 51.1H46" fill="none" stroke="#fff6e8" stroke-width="1.1" stroke-linecap="round" opacity="0.6" />
 </svg>
