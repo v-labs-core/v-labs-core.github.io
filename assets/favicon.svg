@@ -9,10 +9,10 @@
       <stop offset="0%" stop-color="#00a7b3" />
       <stop offset="100%" stop-color="#11343b" />
     </linearGradient>
-    <linearGradient id="sunset" x1="20%" y1="0%" x2="82%" y2="100%">
-      <stop offset="0%" stop-color="#ffd28a" />
-      <stop offset="48%" stop-color="#f4976c" />
-      <stop offset="100%" stop-color="#df6f5e" />
+    <linearGradient id="sunset" x1="17" y1="50" x2="51" y2="55" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffd26f" />
+      <stop offset="42%" stop-color="#ff9f4a" />
+      <stop offset="100%" stop-color="#d95f52" />
     </linearGradient>
     <filter id="lift" x="-16%" y="-16%" width="132%" height="132%">
       <feDropShadow dx="0" dy="3" stdDeviation="2.3" flood-color="#07545d" flood-opacity="0.2" />
@@ -24,5 +24,5 @@
     <path d="M14.2 17L28.4 47.5L40.8 17" stroke-width="6.6" />
     <path d="M43.8 17V44.4C43.8 47 45.8 49 48.4 49H54" stroke-width="6.6" />
   </g>
-  <path d="M21.8 52.2H47.2" fill="none" stroke="url(#sunset)" stroke-width="3.7" stroke-linecap="round" />
+  <rect x="17" y="50" width="34" height="5.8" rx="2.9" fill="url(#sunset)" />
 </svg>
