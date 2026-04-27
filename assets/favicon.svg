@@ -2,23 +2,23 @@
   <defs>
     <linearGradient id="tile" x1="8%" y1="6%" x2="92%" y2="94%">
       <stop offset="0%" stop-color="#fff6e8" />
-      <stop offset="52%" stop-color="#d7f8f0" />
+      <stop offset="55%" stop-color="#d7f8f0" />
       <stop offset="100%" stop-color="#6ddbd5" />
     </linearGradient>
-    <linearGradient id="ink" x1="20%" y1="12%" x2="82%" y2="88%">
+    <linearGradient id="ink" x1="16%" y1="12%" x2="84%" y2="88%">
       <stop offset="0%" stop-color="#00a7b3" />
       <stop offset="100%" stop-color="#11343b" />
     </linearGradient>
-    <filter id="soft-shadow" x="-18%" y="-18%" width="136%" height="136%">
-      <feDropShadow dx="0" dy="3" stdDeviation="2.2" flood-color="#07545d" flood-opacity="0.2" />
+    <filter id="lift" x="-16%" y="-16%" width="132%" height="132%">
+      <feDropShadow dx="0" dy="3" stdDeviation="2.3" flood-color="#07545d" flood-opacity="0.2" />
     </filter>
   </defs>
   <rect x="3" y="3" width="58" height="58" rx="18" fill="url(#tile)" />
-  <path d="M9 18C17 10 31 8 43 13C54 18 59 29 56 41C53 52 44 58 31 57C18 56 9 48 8 36C7 28 5 22 9 18Z" fill="#ffffff" opacity="0.58" />
-  <g filter="url(#soft-shadow)" fill="none" stroke="url(#ink)" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M14.5 17L28.7 48L42.8 17" stroke-width="7.2" />
-    <path d="M45.5 17V44.2C45.5 47 47.5 49 50.3 49H55" stroke-width="7.2" />
+  <path d="M10 18C20 9 35 9 47 17C55 22 59 31 56 42C53 53 44 58 32 57C20 56 10 49 8 37C7 29 6 23 10 18Z" fill="#ffffff" opacity="0.65" />
+  <g filter="url(#lift)" fill="none" stroke="url(#ink)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14.2 17L28.4 47.5L40.8 17" stroke-width="6.6" />
+    <path d="M43.8 17V44.4C43.8 47 45.8 49 48.4 49H54" stroke-width="6.6" />
   </g>
-  <path d="M20 18.2L29 38.2L37.9 18.2" fill="none" stroke="#eafffb" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" opacity="0.82" />
-  <path d="M50.8 18.2V42.3C50.8 43.1 51.2 43.5 52 43.5H55" fill="none" stroke="#eafffb" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" opacity="0.7" />
+  <path d="M24.2 35.2C30.6 29.6 38.1 29.4 46.6 34.5" fill="none" stroke="#f4976c" stroke-width="3.2" stroke-linecap="round" opacity="0.95" />
+  <path d="M24.2 35.2C30.6 29.6 38.1 29.4 46.6 34.5" fill="none" stroke="#fff6e8" stroke-width="1.15" stroke-linecap="round" opacity="0.7" />
 </svg>
