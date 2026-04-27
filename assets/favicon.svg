@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Vindem Labs">
   <defs>
     <linearGradient id="tile" x1="8%" y1="6%" x2="92%" y2="94%">
-      <stop offset="0%" stop-color="#fff6e8" />
-      <stop offset="55%" stop-color="#d7f8f0" />
-      <stop offset="100%" stop-color="#6ddbd5" />
+      <stop offset="0%" stop-color="#fff7e9" />
+      <stop offset="55%" stop-color="#d8fbf5" />
+      <stop offset="100%" stop-color="#70ded8" />
     </linearGradient>
     <linearGradient id="ink" x1="16%" y1="12%" x2="84%" y2="88%">
       <stop offset="0%" stop-color="#00a7b3" />
@@ -14,18 +14,17 @@
       <stop offset="42%" stop-color="#ff9f4a" />
       <stop offset="100%" stop-color="#d95f52" />
     </linearGradient>
-    <filter id="accent-lift" x="-20%" y="-120%" width="140%" height="340%">
-      <feDropShadow dx="0" dy="1.2" stdDeviation="0.9" flood-color="#d95f52" flood-opacity="0.24" />
-    </filter>
-    <filter id="lift" x="-16%" y="-16%" width="132%" height="132%">
-      <feDropShadow dx="0" dy="3" stdDeviation="2.3" flood-color="#07545d" flood-opacity="0.2" />
-    </filter>
   </defs>
   <rect x="3" y="3" width="58" height="58" rx="18" fill="url(#tile)" />
   <path d="M10 18C20 9 35 9 47 17C55 22 59 31 56 42C53 53 44 58 32 57C20 56 10 49 8 37C7 29 6 23 10 18Z" fill="#ffffff" opacity="0.65" />
-  <g filter="url(#lift)" fill="none" stroke="url(#ink)" stroke-linecap="round" stroke-linejoin="round">
+  <g fill="none" stroke="#07545d" stroke-linecap="round" stroke-linejoin="round" opacity="0.16">
+    <path d="M15.2 18.2L29.4 48.7L41.8 18.2" stroke-width="7" />
+    <path d="M44.8 18.2V45.6C44.8 48.2 46.8 50.2 49.4 50.2H55" stroke-width="7" />
+  </g>
+  <g fill="none" stroke="url(#ink)" stroke-linecap="round" stroke-linejoin="round">
     <path d="M14.2 17L28.4 47.5L40.8 17" stroke-width="6.6" />
     <path d="M43.8 17V44.4C43.8 47 45.8 49 48.4 49H54" stroke-width="6.6" />
   </g>
-  <rect x="18" y="50.2" width="33" height="5.2" rx="2.6" fill="url(#sunset)" filter="url(#accent-lift)" />
+  <rect x="18" y="50.2" width="33" height="5.2" rx="2.6" fill="#d95f52" opacity="0.16" />
+  <rect x="18" y="49.6" width="33" height="5.2" rx="2.6" fill="url(#sunset)" />
 </svg>
