@@ -1,17 +1,28 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Vindem Labs">
   <defs>
-    <linearGradient id="mark-bg" x1="10%" y1="8%" x2="90%" y2="92%">
-      <stop offset="0%" stop-color="#e9fffb" />
-      <stop offset="100%" stop-color="#b7eee8" />
+    <linearGradient id="tile" x1="8%" y1="6%" x2="92%" y2="94%">
+      <stop offset="0%" stop-color="#fff6e8" />
+      <stop offset="55%" stop-color="#d7f8f0" />
+      <stop offset="100%" stop-color="#6ddbd5" />
     </linearGradient>
-    <linearGradient id="stroke" x1="14%" y1="12%" x2="86%" y2="88%">
-      <stop offset="0%" stop-color="#0aa7b1" />
-      <stop offset="100%" stop-color="#16333a" />
+    <linearGradient id="ink" x1="16%" y1="12%" x2="84%" y2="88%">
+      <stop offset="0%" stop-color="#00a7b3" />
+      <stop offset="100%" stop-color="#11343b" />
     </linearGradient>
+    <linearGradient id="sunset" x1="17" y1="50" x2="51" y2="55" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffd26f" />
+      <stop offset="42%" stop-color="#ff9f4a" />
+      <stop offset="100%" stop-color="#d95f52" />
+    </linearGradient>
+    <filter id="lift" x="-16%" y="-16%" width="132%" height="132%">
+      <feDropShadow dx="0" dy="3" stdDeviation="2.3" flood-color="#07545d" flood-opacity="0.2" />
+    </filter>
   </defs>
-  <rect x="3" y="3" width="58" height="58" rx="16" fill="url(#mark-bg)" />
-  <rect x="3.75" y="3.75" width="56.5" height="56.5" rx="15.25" fill="none" stroke="#ffffff" stroke-width="1.5" />
-  <path d="M15 17L28.4 47L38.8 17" fill="none" stroke="url(#stroke)" stroke-width="6.2" stroke-linecap="round" stroke-linejoin="round" />
-  <path d="M39 17V47H51" fill="none" stroke="url(#stroke)" stroke-width="6.2" stroke-linecap="round" stroke-linejoin="round" />
-  <path d="M31.5 34.8H43.5" fill="none" stroke="#f2b36d" stroke-width="4.4" stroke-linecap="round" />
+  <rect x="3" y="3" width="58" height="58" rx="18" fill="url(#tile)" />
+  <path d="M10 18C20 9 35 9 47 17C55 22 59 31 56 42C53 53 44 58 32 57C20 56 10 49 8 37C7 29 6 23 10 18Z" fill="#ffffff" opacity="0.65" />
+  <g filter="url(#lift)" fill="none" stroke="url(#ink)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14.2 17L28.4 47.5L40.8 17" stroke-width="6.6" />
+    <path d="M43.8 17V44.4C43.8 47 45.8 49 48.4 49H54" stroke-width="6.6" />
+  </g>
+  <rect x="17" y="50" width="34" height="5.8" rx="2.9" fill="url(#sunset)" />
 </svg>

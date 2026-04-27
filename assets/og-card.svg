@@ -1,27 +1,44 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#fbfefe" />
-      <stop offset="100%" stop-color="#dff7f4" />
+      <stop offset="0%" stop-color="#fffefd" />
+      <stop offset="47%" stop-color="#f5fbf8" />
+      <stop offset="100%" stop-color="#d9f4f1" />
     </linearGradient>
-    <linearGradient id="tile" x1="10%" y1="8%" x2="90%" y2="92%">
-      <stop offset="0%" stop-color="#e9fffb" />
-      <stop offset="100%" stop-color="#b7eee8" />
+    <linearGradient id="tile" x1="8%" y1="6%" x2="92%" y2="94%">
+      <stop offset="0%" stop-color="#fff6e8" />
+      <stop offset="55%" stop-color="#d7f8f0" />
+      <stop offset="100%" stop-color="#6ddbd5" />
     </linearGradient>
-    <linearGradient id="stroke" x1="14%" y1="12%" x2="86%" y2="88%">
-      <stop offset="0%" stop-color="#0aa7b1" />
-      <stop offset="100%" stop-color="#16333a" />
+    <linearGradient id="ink" x1="16%" y1="12%" x2="84%" y2="88%">
+      <stop offset="0%" stop-color="#00a7b3" />
+      <stop offset="100%" stop-color="#11343b" />
     </linearGradient>
+    <linearGradient id="sunset" x1="116" y1="184" x2="204" y2="194" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffd26f" />
+      <stop offset="42%" stop-color="#ff9f4a" />
+      <stop offset="100%" stop-color="#d95f52" />
+    </linearGradient>
+    <filter id="lift" x="-16%" y="-16%" width="132%" height="132%">
+      <feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#07545d" flood-opacity="0.2" />
+    </filter>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)" />
-  <path d="M742 0H1200V630H882C792 506 754 367 768 214C775 137 767 66 742 0Z" fill="#caefea" opacity="0.5" />
-  <path d="M0 512C152 485 292 496 420 545C524 585 626 586 726 550V630H0Z" fill="#f2b36d" opacity="0.18" />
-  <rect x="86" y="82" width="116" height="116" rx="30" fill="url(#tile)" />
-  <rect x="87" y="83" width="114" height="114" rx="29" fill="none" stroke="#ffffff" stroke-width="2" />
-  <path d="M111 110L135.4 168L154.2 110" fill="none" stroke="url(#stroke)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" />
-  <path d="M154.5 110V168H178" fill="none" stroke="url(#stroke)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" />
-  <path d="M141 145H165" fill="none" stroke="#f2b36d" stroke-width="8" stroke-linecap="round" />
-  <text x="86" y="294" fill="#172f35" font-family="Sora, Arial, sans-serif" font-size="78" font-weight="700">Vindem Labs</text>
-  <text x="86" y="366" fill="#546b71" font-family="Sora, Arial, sans-serif" font-size="31">Digital products, business software, publishing platforms, and connected systems.</text>
-  <text x="86" y="456" fill="#087f8c" font-family="Sora, Arial, sans-serif" font-size="23" font-weight="700">PropTech | AI Education | Property Operations | IoT Integrations</text>
+  <circle cx="1018" cy="108" r="190" fill="#beece7" opacity="0.68" />
+  <circle cx="1058" cy="145" r="86" fill="#f4976c" opacity="0.2" />
+  <path d="M0 505C144 468 292 493 428 546C546 592 662 588 780 535C900 481 1036 472 1200 518V630H0Z" fill="#62d4d0" opacity="0.24" />
+  <path d="M762 0H1200V630H888C792 508 754 364 779 212C793 128 805 60 762 0Z" fill="#fff2dc" opacity="0.66" />
+  <path d="M970 390C1016 348 1084 348 1138 390" fill="none" stroke="#00a7b3" stroke-width="22" stroke-linecap="round" opacity="0.18" />
+
+  <rect x="86" y="78" width="124" height="124" rx="38" fill="url(#tile)" />
+  <path d="M101 111C118 91 153 89 180 106C199 119 206 143 195 165C184 188 156 199 127 189C104 181 90 159 92 135C93 125 94 117 101 111Z" fill="#ffffff" opacity="0.64" />
+  <g filter="url(#lift)" fill="none" stroke="url(#ink)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M110 108L141 175L168 108" stroke-width="14" />
+    <path d="M175 108V162C175 171 181 177 190 177H203" stroke-width="14" />
+  </g>
+  <rect x="116" y="184" width="88" height="12" rx="6" fill="url(#sunset)" />
+
+  <text x="86" y="302" fill="#133138" font-family="Sora, Avenir Next, Segoe UI, sans-serif" font-size="78" font-weight="800">Vindem Labs</text>
+  <text x="86" y="374" fill="#55747b" font-family="Sora, Avenir Next, Segoe UI, sans-serif" font-size="31">Web, mobile, software, and connected digital platforms.</text>
+  <text x="86" y="464" fill="#07545d" font-family="Sora, Avenir Next, Segoe UI, sans-serif" font-size="23" font-weight="800">PropTech | AI Education | Property Operations | IoT Integrations</text>
 </svg>

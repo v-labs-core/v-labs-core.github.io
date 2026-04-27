@@ -5,4 +5,5 @@ Rules:
 - Focus on visible UX, layout, visual clarity, copy polish, responsiveness, accessibility, or branding.
 - Avoid backend work.
 - Keep the change small enough for a rolling PR.
+- Do not change this protected homepage line or its simple left-accent treatment: "Built around outcomes, usability, and long-term maintainability."
 - After the change, commit it to `ux-only` with a concise message and push it.
