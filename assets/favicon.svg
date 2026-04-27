@@ -1,19 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Vindem Labs">
   <defs>
-    <linearGradient id="tile" x1="7%" y1="6%" x2="93%" y2="94%">
-      <stop offset="0%" stop-color="#fff4df" />
-      <stop offset="48%" stop-color="#ccefe4" />
-      <stop offset="100%" stop-color="#68d8d1" />
+    <linearGradient id="tile" x1="8%" y1="4%" x2="92%" y2="96%">
+      <stop offset="0%" stop-color="#fff2dc" />
+      <stop offset="46%" stop-color="#dff8ef" />
+      <stop offset="100%" stop-color="#62d4d0" />
     </linearGradient>
-    <linearGradient id="mark" x1="18%" y1="12%" x2="82%" y2="88%">
-      <stop offset="0%" stop-color="#0aa6a6" />
-      <stop offset="100%" stop-color="#15313a" />
+    <linearGradient id="ribbon" x1="14%" y1="8%" x2="86%" y2="92%">
+      <stop offset="0%" stop-color="#00a7b3" />
+      <stop offset="100%" stop-color="#07545d" />
     </linearGradient>
+    <filter id="lift" x="-16%" y="-16%" width="132%" height="132%">
+      <feDropShadow dx="0" dy="3" stdDeviation="2.4" flood-color="#07545d" flood-opacity="0.22" />
+    </filter>
   </defs>
-  <rect x="3" y="3" width="58" height="58" rx="17" fill="url(#tile)" />
-  <path d="M13 18C20 10 34 8 46 15C55 20 59 30 55 42C51 54 39 59 27 55C15 51 8 40 10 29C11 24 11 21 13 18Z" fill="#ffffff" opacity="0.58" />
-  <path d="M15 18H23L31.2 43.5L40.2 18H48L35.7 50H26.5L15 18Z" fill="url(#mark)" />
-  <path d="M41.2 18H49V42.7H55V50H41.2V18Z" fill="#15313a" opacity="0.92" />
-  <path d="M21.4 32.5C28.5 27.2 36.8 27.2 46.4 32.6" fill="none" stroke="#fff4df" stroke-width="4.6" stroke-linecap="round" />
-  <circle cx="47.8" cy="22.2" r="3.4" fill="#ffb86b" />
+  <rect x="4" y="4" width="56" height="56" rx="18" fill="url(#tile)" />
+  <path d="M11 45C19 50 29 52 39 49C49 46 55 37 53 27C52 19 46 12 38 10C48 14 53 23 50 33C46 47 29 54 11 45Z" fill="#ffffff" opacity="0.62" />
+  <g filter="url(#lift)">
+    <path d="M13.6 17H22.2L31.9 43.7L41.6 17H50.4L36.8 49H27.4L13.6 17Z" fill="url(#ribbon)" />
+    <path d="M41.7 17H50.4V42.1H56V49H41.7V17Z" fill="#133138" />
+  </g>
+  <path d="M22.2 31.7C28.9 27.2 37.2 27.2 44.2 31.7" fill="none" stroke="#fff2dc" stroke-width="4.2" stroke-linecap="round" />
+  <circle cx="47.5" cy="20.2" r="3.4" fill="#f4976c" />
 </svg>
