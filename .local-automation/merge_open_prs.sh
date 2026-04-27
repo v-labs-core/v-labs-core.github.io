@@ -11,7 +11,7 @@ fi
 
 gh auth status >/dev/null
 
-prs_json="$(gh pr list --state open --json number,headRefName,baseRefName,url,mergeStateStatus --limit 100)"
+prs_json="$(gh pr list --state open --json number --limit 100)"
 
 if [[ "$prs_json" == "[]" ]]; then
   echo "No open PRs to process."
@@ -29,19 +29,23 @@ while IFS=$'\t' read -r pr_number head_branch base_branch pr_url merge_state; do
       [[ -z "$issue_number" ]] && continue
       gh issue close "$issue_number" --comment "Completed in merged PR #${pr_number}: ${pr_url}" >/dev/null 2>&1 || true
     done <<< "$issue_numbers"
+
+    if [[ "$head_branch" == "ux-only" && "$base_branch" == "main" ]]; then
+      git fetch origin main
+      if [[ "$(git branch --show-current)" == "ux-only" ]]; then
+        git reset --hard origin/main
+        git push origin HEAD:ux-only --force-with-lease
+      else
+        echo "Merged ux-only PR #${pr_number}; reset local ux-only before the next polish run."
+      fi
+    fi
   else
     echo "Skipping PR #${pr_number} with merge state ${merge_state}"
   fi
 done < <(
-  echo "$prs_json" | python3 - <<'PY'
-import json,sys
-for pr in json.load(sys.stdin):
-    print("\t".join([
-        str(pr.get("number","")),
-        pr.get("headRefName",""),
-        pr.get("baseRefName",""),
-        pr.get("url",""),
-        pr.get("mergeStateStatus",""),
-    ]))
-PY
+  gh pr list \
+    --state open \
+    --json number,headRefName,baseRefName,url,mergeStateStatus \
+    --limit 100 \
+    --jq '.[] | [.number, .headRefName, .baseRefName, .url, .mergeStateStatus] | @tsv'
 )

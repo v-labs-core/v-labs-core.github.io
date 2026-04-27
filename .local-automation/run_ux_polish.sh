@@ -49,6 +49,44 @@ ensure_pull_request() {
   done
 }
 
+close_tracking_issues_for_pr() {
+  local pr_number="$1"
+  local pr_url="$2"
+
+  local issue_numbers
+  issue_numbers="$(gh issue list --state open --json number,body --limit 100 --jq '.[] | select((.body // "") | contains("PR #'"$pr_number"'")) | .number' 2>/dev/null || true)"
+
+  while IFS= read -r issue_number; do
+    [[ -z "$issue_number" ]] && continue
+    gh issue close "$issue_number" --comment "Completed in merged PR #${pr_number}: ${pr_url}" >/dev/null 2>&1 || true
+  done <<< "$issue_numbers"
+}
+
+tidy_completed_workflow() {
+  while IFS=$'\t' read -r pr_number pr_url; do
+    [[ -z "$pr_number" ]] && continue
+    close_tracking_issues_for_pr "$pr_number" "$pr_url"
+  done < <(
+    gh pr list \
+      --head ux-only \
+      --base main \
+      --state closed \
+      --json number,url,mergedAt \
+      --jq '.[] | select(.mergedAt != null) | [.number, .url] | @tsv' 2>/dev/null || true
+  )
+}
+
+sync_ux_branch() {
+  git fetch --all --prune
+  git reset --hard origin/ux-only
+  git rebase origin/main
+
+  if [[ -z "$(git cherry origin/main HEAD)" ]]; then
+    git reset --hard origin/main
+    git push origin HEAD:ux-only --force-with-lease
+  fi
+}
+
 ensure_tracking_issue() {
   local commit_subject="$1"
 
@@ -102,9 +140,8 @@ main() {
   fi
 
   require_gh
-  git fetch --all --prune
-  git reset --hard origin/ux-only
-  git rebase origin/main
+  tidy_completed_workflow
+  sync_ux_branch
 
   "$CODEX_BIN" exec \
     --full-auto \
@@ -115,6 +152,11 @@ main() {
     - < "$PROMPT_FILE"
 
   git fetch origin ux-only
+
+  if [[ -z "$(git cherry origin/main origin/ux-only)" ]]; then
+    echo "No ux-only changes to publish."
+    exit 0
+  fi
 
   local remote_sha commit_subject
   remote_sha="$(git rev-parse origin/ux-only)"
