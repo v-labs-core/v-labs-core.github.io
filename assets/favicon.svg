@@ -1,17 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Vindem Labs">
   <defs>
-    <linearGradient id="mark-bg" x1="10%" y1="8%" x2="90%" y2="92%">
-      <stop offset="0%" stop-color="#e9fffb" />
-      <stop offset="100%" stop-color="#b7eee8" />
+    <linearGradient id="tile" x1="8%" y1="6%" x2="92%" y2="94%">
+      <stop offset="0%" stop-color="#f4fffd" />
+      <stop offset="58%" stop-color="#bff7ef" />
+      <stop offset="100%" stop-color="#74eadf" />
     </linearGradient>
-    <linearGradient id="stroke" x1="14%" y1="12%" x2="86%" y2="88%">
-      <stop offset="0%" stop-color="#0aa7b1" />
-      <stop offset="100%" stop-color="#16333a" />
+    <linearGradient id="ink" x1="18%" y1="12%" x2="82%" y2="88%">
+      <stop offset="0%" stop-color="#00d6c9" />
+      <stop offset="100%" stop-color="#0d3440" />
+    </linearGradient>
+    <linearGradient id="glow" x1="20%" y1="18%" x2="80%" y2="82%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
     </linearGradient>
   </defs>
-  <rect x="3" y="3" width="58" height="58" rx="16" fill="url(#mark-bg)" />
-  <rect x="3.75" y="3.75" width="56.5" height="56.5" rx="15.25" fill="none" stroke="#ffffff" stroke-width="1.5" />
-  <path d="M15 17L28.4 47L38.8 17" fill="none" stroke="url(#stroke)" stroke-width="6.2" stroke-linecap="round" stroke-linejoin="round" />
-  <path d="M39 17V47H51" fill="none" stroke="url(#stroke)" stroke-width="6.2" stroke-linecap="round" stroke-linejoin="round" />
-  <path d="M31.5 34.8H43.5" fill="none" stroke="#f2b36d" stroke-width="4.4" stroke-linecap="round" />
+  <rect x="3" y="3" width="58" height="58" rx="18" fill="url(#tile)" />
+  <path d="M10 18C20 9 35 9 47 17C55 22 59 31 56 42C53 53 44 58 32 57C20 56 10 49 8 37C7 29 6 23 10 18Z" fill="url(#glow)" opacity="0.7" />
+  <path d="M14 17L27.8 47L39.5 17" fill="none" stroke="url(#ink)" stroke-width="6.4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M40 17V45.5C40 47.4 41.6 49 43.5 49H52" fill="none" stroke="url(#ink)" stroke-width="6.4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M24 35C30 29 37 28.5 45 33.5" fill="none" stroke="#e8fffb" stroke-width="4" stroke-linecap="round" opacity="0.95" />
+  <path d="M24 35C30 29 37 28.5 45 33.5" fill="none" stroke="#00d6c9" stroke-width="2" stroke-linecap="round" />
 </svg>

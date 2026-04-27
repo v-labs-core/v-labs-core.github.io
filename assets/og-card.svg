@@ -1,27 +1,38 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#fbfefe" />
-      <stop offset="100%" stop-color="#dff7f4" />
+      <stop offset="0%" stop-color="#fbfffe" />
+      <stop offset="52%" stop-color="#effffc" />
+      <stop offset="100%" stop-color="#d9fbf7" />
     </linearGradient>
-    <linearGradient id="tile" x1="10%" y1="8%" x2="90%" y2="92%">
-      <stop offset="0%" stop-color="#e9fffb" />
-      <stop offset="100%" stop-color="#b7eee8" />
+    <linearGradient id="tile" x1="8%" y1="6%" x2="92%" y2="94%">
+      <stop offset="0%" stop-color="#f4fffd" />
+      <stop offset="58%" stop-color="#bff7ef" />
+      <stop offset="100%" stop-color="#74eadf" />
     </linearGradient>
-    <linearGradient id="stroke" x1="14%" y1="12%" x2="86%" y2="88%">
-      <stop offset="0%" stop-color="#0aa7b1" />
-      <stop offset="100%" stop-color="#16333a" />
+    <linearGradient id="ink" x1="18%" y1="12%" x2="82%" y2="88%">
+      <stop offset="0%" stop-color="#00d6c9" />
+      <stop offset="100%" stop-color="#0d3440" />
+    </linearGradient>
+    <linearGradient id="glow" x1="20%" y1="18%" x2="80%" y2="82%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
     </linearGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)" />
-  <path d="M742 0H1200V630H882C792 506 754 367 768 214C775 137 767 66 742 0Z" fill="#caefea" opacity="0.5" />
-  <path d="M0 512C152 485 292 496 420 545C524 585 626 586 726 550V630H0Z" fill="#f2b36d" opacity="0.18" />
-  <rect x="86" y="82" width="116" height="116" rx="30" fill="url(#tile)" />
-  <rect x="87" y="83" width="114" height="114" rx="29" fill="none" stroke="#ffffff" stroke-width="2" />
-  <path d="M111 110L135.4 168L154.2 110" fill="none" stroke="url(#stroke)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" />
-  <path d="M154.5 110V168H178" fill="none" stroke="url(#stroke)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" />
-  <path d="M141 145H165" fill="none" stroke="#f2b36d" stroke-width="8" stroke-linecap="round" />
-  <text x="86" y="294" fill="#172f35" font-family="Sora, Arial, sans-serif" font-size="78" font-weight="700">Vindem Labs</text>
-  <text x="86" y="366" fill="#546b71" font-family="Sora, Arial, sans-serif" font-size="31">Digital products, business software, publishing platforms, and connected systems.</text>
-  <text x="86" y="456" fill="#087f8c" font-family="Sora, Arial, sans-serif" font-size="23" font-weight="700">PropTech | AI Education | Property Operations | IoT Integrations</text>
+  <circle cx="1030" cy="104" r="190" fill="#bff7ef" opacity="0.55" />
+  <circle cx="1032" cy="112" r="108" fill="#00d6c9" opacity="0.14" />
+  <path d="M0 518C156 488 298 499 426 548C536 590 646 588 756 546V630H0Z" fill="#74eadf" opacity="0.28" />
+  <path d="M782 0H1200V630H892C794 500 756 358 775 204C784 127 805 58 782 0Z" fill="#d0faf5" opacity="0.58" />
+
+  <rect x="86" y="82" width="118" height="118" rx="34" fill="url(#tile)" />
+  <path d="M103 112C122 94 158 93 181 112C197 125 200 153 184 174C168 195 128 199 107 180C89 164 87 128 103 112Z" fill="url(#glow)" opacity="0.72" />
+  <path d="M113 111L138.5 171L160.5 111" fill="none" stroke="url(#ink)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M161 111V167C161 171.5 164.5 175 169 175H186" fill="none" stroke="url(#ink)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M130 147C143 135 158 134 174 144" fill="none" stroke="#e8fffb" stroke-width="7" stroke-linecap="round" opacity="0.95" />
+  <path d="M130 147C143 135 158 134 174 144" fill="none" stroke="#00d6c9" stroke-width="3.5" stroke-linecap="round" />
+
+  <text x="86" y="294" fill="#11333b" font-family="Sora, Arial, sans-serif" font-size="78" font-weight="700">Vindem Labs</text>
+  <text x="86" y="366" fill="#4f6f76" font-family="Sora, Arial, sans-serif" font-size="31">Digital products, business software, publishing platforms, and connected systems.</text>
+  <text x="86" y="456" fill="#007985" font-family="Sora, Arial, sans-serif" font-size="23" font-weight="700">PropTech | AI Education | Property Operations | IoT Integrations</text>
 </svg>
