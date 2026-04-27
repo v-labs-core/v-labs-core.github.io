@@ -796,6 +796,25 @@
         font-size: 0.92rem;
       }
 
+      .privacy-note {
+        padding: 1rem;
+        border-radius: 1rem;
+        border: 1px solid rgba(0, 167, 179, 0.16);
+        background: linear-gradient(135deg, rgba(216, 251, 245, 0.58), rgba(255, 243, 221, 0.5));
+      }
+
+      .privacy-note strong {
+        display: block;
+        margin-bottom: 0.45rem;
+        color: var(--brand-deep);
+      }
+
+      .privacy-note p {
+        color: var(--muted);
+        font-size: 0.9rem;
+        line-height: 1.62;
+      }
+
       footer {
         padding: 0 0 3rem;
       }
@@ -1505,6 +1524,16 @@
               <div class="form-meta">
                 <button class="button primary" type="submit">Send message</button>
                 <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+              </div>
+
+              <div class="privacy-note" aria-label="Privacy policy">
+                <strong>Privacy policy</strong>
+                <p>
+                  Vindem Labs LLC does not share, sell, or rent your mobile phone number or any
+                  personal information collected through SMS messaging with third parties for their
+                  marketing purposes. Your mobile number will only be used to send you the SMS
+                  messages you have opted in to receive.
+                </p>
               </div>
             </form>
           </div>
