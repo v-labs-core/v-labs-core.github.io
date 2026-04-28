@@ -15,3 +15,4 @@ Main scripts:
 These scripts assume the folder is a real Git checkout of `v-labs-core/v-labs-core.github.io`.
 The hosted website lives in `docs/` and is deployed by the GitHub Pages workflow; root-level
 automation files and repository notes are not part of the public web artifact.
+The `deploy` branch is an automation-managed mirror of `docs/` contents only.
