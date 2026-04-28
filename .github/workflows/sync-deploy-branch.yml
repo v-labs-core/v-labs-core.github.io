@@ -27,30 +27,28 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v4
         with:
-          path: source
+          fetch-depth: 0
 
-      - name: Prepare deploy branch workspace
+      - name: Sync docs to deploy branch
         run: |
           set -euo pipefail
 
-          mkdir -p "$RUNNER_TEMP/deploy-worktree"
-          cd "$RUNNER_TEMP/deploy-worktree"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git init
-          git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          git fetch --depth=1 origin "${DEPLOY_BRANCH}" || true
+          mkdir -p "$RUNNER_TEMP/deploy-snapshot"
+          rsync -a --delete "${PUBLIC_ROOT}/" "$RUNNER_TEMP/deploy-snapshot/"
 
-          if git show-ref --verify --quiet "refs/remotes/origin/${DEPLOY_BRANCH}"; then
-            git checkout -B "${DEPLOY_BRANCH}" "origin/${DEPLOY_BRANCH}"
+          if git ls-remote --exit-code --heads origin "${DEPLOY_BRANCH}" >/dev/null 2>&1; then
+            git fetch origin "${DEPLOY_BRANCH}:${DEPLOY_BRANCH}"
+            git checkout "${DEPLOY_BRANCH}"
           else
             git checkout --orphan "${DEPLOY_BRANCH}"
+            git rm -rf . >/dev/null 2>&1 || true
           fi
 
           find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
-          rsync -a --delete "$GITHUB_WORKSPACE/source/${PUBLIC_ROOT}/" ./
-
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          rsync -a --delete "$RUNNER_TEMP/deploy-snapshot/" ./
           git add -A
 
           if git diff --cached --quiet; then
@@ -60,5 +58,3 @@ jobs:
 
           git commit -m "Sync deploy branch from ${PUBLIC_ROOT}"
           git push origin "${DEPLOY_BRANCH}" --force-with-lease
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
