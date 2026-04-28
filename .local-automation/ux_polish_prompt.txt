@@ -2,6 +2,7 @@ Review the current website and make one bounded, public-facing UX improvement on
 
 Rules:
 - Keep the change static-site compatible.
+- Treat `docs/` as the public web root. Do not move hosted files back to the repository root.
 - Focus on visible UX, layout, visual clarity, copy polish, responsiveness, accessibility, or branding.
 - Avoid backend work.
 - Keep the change small enough for a rolling PR.
