@@ -17,6 +17,10 @@ GitHub Pages deploys through `.github/workflows/pages.yml`, which uploads only t
 folder. Repo automation, README files, and workflow notes are not included in the hosted
 artifact.
 
+`.github/workflows/sync-deploy-branch.yml` also mirrors only the contents of `docs/` to the
+dedicated `deploy` branch. That branch is a clean deploy artifact branch and should not contain
+repo automation, README files, or source-only workflow notes.
+
 ## Contact form
 
 The contact form is designed for a static hosting setup and does not display a public email
