@@ -13,8 +13,9 @@ Static GitHub Pages site for Vindem Labs.
 - `docs/.nojekyll`: tells GitHub Pages to serve files as-is
 - `.local-automation/`: local workflow scripts that are not part of the hosted site
 
-GitHub Pages should publish from the `main` branch and `/docs` folder so repo automation,
-README files, and workflow notes are not served as website assets.
+GitHub Pages deploys through `.github/workflows/pages.yml`, which uploads only the `docs/`
+folder. Repo automation, README files, and workflow notes are not included in the hosted
+artifact.
 
 ## Contact form
 
