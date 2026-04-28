@@ -13,3 +13,5 @@ Main scripts:
 - `merge_open_prs.sh`: merges mergeable open PRs and closes linked issues
 
 These scripts assume the folder is a real Git checkout of `v-labs-core/v-labs-core.github.io`.
+The hosted website lives in `docs/`; root-level automation files and repository notes are not
+part of the public web root.

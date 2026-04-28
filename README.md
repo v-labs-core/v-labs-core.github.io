@@ -4,11 +4,17 @@ Static GitHub Pages site for Vindem Labs.
 
 ## Files
 
-- `index.html`: the full single-page site
-- `config.js`: public client-side form relay configuration
-- `assets/favicon.svg`: browser icon
-- `assets/og-card.svg`: social sharing preview
-- `.nojekyll`: tells GitHub Pages to serve files as-is
+- `docs/`: public web root for GitHub Pages hosting
+- `docs/index.html`: the full single-page site
+- `docs/privacy.html`: standalone privacy policy page
+- `docs/config.js`: public client-side form relay configuration
+- `docs/assets/favicon.svg`: browser icon
+- `docs/assets/og-card.svg`: social sharing preview
+- `docs/.nojekyll`: tells GitHub Pages to serve files as-is
+- `.local-automation/`: local workflow scripts that are not part of the hosted site
+
+GitHub Pages should publish from the `main` branch and `/docs` folder so repo automation,
+README files, and workflow notes are not served as website assets.
 
 ## Contact form
 
@@ -19,7 +25,7 @@ To route submissions privately to `vindem.labs@gmail.com`:
 
 1. Create a Web3Forms account or another hosted form relay.
 2. Set `vindem.labs@gmail.com` as the destination inbox in that service.
-3. Put the provided public access key into `config.js` as `formAccessKey`.
+3. Put the provided public access key into `docs/config.js` as `formAccessKey`.
 4. Publish the updated site.
 
 The access key is expected to be public in the browser for this kind of static form relay. The
