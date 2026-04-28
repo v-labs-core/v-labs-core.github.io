@@ -26,35 +26,12 @@ jobs:
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Sync docs to deploy branch
-        run: |
-          set -euo pipefail
-
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          mkdir -p "$RUNNER_TEMP/deploy-snapshot"
-          rsync -a --delete "${PUBLIC_ROOT}/" "$RUNNER_TEMP/deploy-snapshot/"
-
-          if git ls-remote --exit-code --heads origin "${DEPLOY_BRANCH}" >/dev/null 2>&1; then
-            git fetch origin "${DEPLOY_BRANCH}:${DEPLOY_BRANCH}"
-            git checkout "${DEPLOY_BRANCH}"
-          else
-            git checkout --orphan "${DEPLOY_BRANCH}"
-            git rm -rf . >/dev/null 2>&1 || true
-          fi
-
-          find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
-          rsync -a --delete "$RUNNER_TEMP/deploy-snapshot/" ./
-          git add -A
-
-          if git diff --cached --quiet; then
-            echo "Deploy branch already matches ${PUBLIC_ROOT}/."
-            exit 0
-          fi
-
-          git commit -m "Sync deploy branch from ${PUBLIC_ROOT}"
-          git push origin "${DEPLOY_BRANCH}" --force-with-lease
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: ${{ env.DEPLOY_BRANCH }}
+          publish_dir: ./${{ env.PUBLIC_ROOT }}
+          force_orphan: true
+          commit_message: Sync deploy branch from ${{ env.PUBLIC_ROOT }}
