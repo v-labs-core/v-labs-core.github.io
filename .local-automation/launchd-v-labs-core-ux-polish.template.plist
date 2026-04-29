@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.mrv.v-labs-core-ux-polish</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/zsh</string>
+    <string>/Users/mrv/workspace/v-labs-core.github.io/.local-automation/run_ux_polish.sh</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>/Users/mrv/workspace/v-labs-core.github.io</string>
+
+  <key>RunAtLoad</key>
+  <true/>
+
+  <key>StartInterval</key>
+  <integer>21600</integer>
+
+  <key>StandardOutPath</key>
+  <string>/Users/mrv/workspace/v-labs-core.github.io/.local-automation/launchd.stdout.log</string>
+
+  <key>StandardErrorPath</key>
+  <string>/Users/mrv/workspace/v-labs-core.github.io/.local-automation/launchd.stderr.log</string>
+</dict>
+</plist>
