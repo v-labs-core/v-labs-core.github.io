@@ -14,6 +14,12 @@
   <key>WorkingDirectory</key>
   <string>/Users/mrv/workspace/v-labs-core.github.io</string>
 
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/opt/homebrew/bin:/usr/local/bin:/Users/mrv/.nvm/versions/node/v24.12.0/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+  </dict>
+
   <key>RunAtLoad</key>
   <true/>
 
