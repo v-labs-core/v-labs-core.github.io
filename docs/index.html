@@ -909,6 +909,49 @@
           font-size: 2rem;
         }
 
+        .stream-tabs {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 0.55rem;
+        }
+
+        .stream-tab {
+          min-height: 4.25rem;
+          padding: 0.85rem 0.75rem;
+          text-align: center;
+          border-radius: 0.9rem;
+          display: grid;
+          place-items: center;
+        }
+
+        .stream-tab:hover,
+        .stream-tab:focus-visible,
+        .stream-tab[aria-selected="true"] {
+          transform: translateY(-2px);
+        }
+
+        .stream-tab strong {
+          margin-bottom: 0;
+          font-size: 0.9rem;
+          line-height: 1.25;
+        }
+
+        .stream-tab span {
+          display: none;
+        }
+
+        .stream-panel {
+          padding: 1.1rem;
+        }
+
+        .stream-header {
+          display: grid;
+        }
+
+        .stream-badge {
+          justify-self: start;
+          white-space: normal;
+        }
+
         .delivery-item {
           grid-template-columns: 1fr;
           gap: 0.25rem;
