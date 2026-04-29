@@ -7,7 +7,7 @@
 
   <key>ProgramArguments</key>
   <array>
-    <string>/bin/zsh</string>
+    <string>/bin/bash</string>
     <string>/Users/mrv/workspace/v-labs-core.github.io/.local-automation/run_ux_polish.sh</string>
   </array>
 
