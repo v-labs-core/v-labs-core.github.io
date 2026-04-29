@@ -33,5 +33,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: ${{ env.DEPLOY_BRANCH }}
           publish_dir: ./${{ env.PUBLIC_ROOT }}
-          force_orphan: true
           commit_message: Sync deploy branch from ${{ env.PUBLIC_ROOT }}

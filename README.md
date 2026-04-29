@@ -18,7 +18,8 @@ artifact.
 
 `.github/workflows/sync-deploy-branch.yml` also mirrors only the contents of `docs/` to the
 dedicated `deploy` branch. That branch is a clean deploy artifact branch and should not contain
-repo automation, README files, or source-only workflow notes.
+repo automation, README files, or source-only workflow notes. The branch is updated with normal
+history so downstream hosts can pull it without reconciling force-rewritten commits.
 
 ## Contact form
 
