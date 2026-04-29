@@ -6,7 +6,6 @@ Static GitHub Pages site for Vindem Labs.
 
 - `docs/`: public web root for GitHub Pages hosting
 - `docs/index.html`: the full single-page site
-- `docs/privacy.html`: standalone privacy policy page
 - `docs/config.js`: public client-side form relay configuration
 - `docs/assets/favicon.svg`: browser icon
 - `docs/assets/og-card.svg`: social sharing preview
