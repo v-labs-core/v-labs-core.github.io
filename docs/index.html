@@ -857,6 +857,27 @@
         font-size: 0.92rem;
       }
 
+      .contact-fallback {
+        display: none;
+        width: 100%;
+        padding: 0.9rem 1rem;
+        border: 1px solid rgba(0, 167, 179, 0.16);
+        border-radius: 1rem;
+        background: rgba(216, 251, 245, 0.48);
+        color: var(--ink);
+        font-size: 0.92rem;
+        line-height: 1.55;
+      }
+
+      .contact-form.is-unavailable .contact-fallback {
+        display: block;
+      }
+
+      .contact-form.is-unavailable button[type="submit"] {
+        cursor: not-allowed;
+        opacity: 0.68;
+      }
+
       .privacy-note {
         padding: 1rem;
         border-radius: 1rem;
@@ -1634,6 +1655,10 @@
               <div class="form-meta">
                 <button class="button primary" type="submit">Send message</button>
                 <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+                <p class="contact-fallback" id="contact-fallback">
+                  The web form is temporarily unavailable while message delivery is being configured.
+                  Please check back shortly before sending project details.
+                </p>
               </div>
 
               <section class="privacy-note" id="privacy-policy" aria-labelledby="privacy-title">
@@ -1667,6 +1692,19 @@
       const siteConfig = window.VINDEM_LABS_CONFIG || {};
       const formEndpoint = siteConfig.formEndpoint || "https://api.web3forms.com/submit";
       const formAccessKey = siteConfig.formAccessKey || "";
+
+      if (contactForm && !formAccessKey) {
+        contactForm.classList.add("is-unavailable");
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+
+        if (submitButton) {
+          submitButton.disabled = true;
+        }
+
+        if (formStatus) {
+          formStatus.textContent = "Message delivery is temporarily unavailable.";
+        }
+      }
 
       tabs.forEach((tab) => {
         tab.addEventListener("click", () => {
