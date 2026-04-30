@@ -646,6 +646,11 @@
         background: rgba(190, 236, 231, 0.5);
       }
 
+      .stream-tab:focus-visible {
+        outline: 3px solid rgba(255, 152, 97, 0.5);
+        outline-offset: 3px;
+      }
+
       .stream-tab strong {
         display: block;
         font-size: 1rem;
@@ -1197,19 +1202,19 @@
 
           <div class="stream-shell">
             <div class="stream-tabs" role="tablist" aria-label="Offering tabs">
-              <button class="stream-tab" role="tab" aria-selected="true" aria-controls="stream-consumer" id="tab-consumer">
+              <button class="stream-tab" role="tab" aria-selected="true" aria-controls="stream-consumer" id="tab-consumer" tabindex="0">
                 <strong>Consumer applications</strong>
                 <span>Web and mobile products built for direct user engagement and growth.</span>
               </button>
-              <button class="stream-tab" role="tab" aria-selected="false" aria-controls="stream-enterprise" id="tab-enterprise">
+              <button class="stream-tab" role="tab" aria-selected="false" aria-controls="stream-enterprise" id="tab-enterprise" tabindex="-1">
                 <strong>Enterprise products</strong>
                 <span>Software platforms, dashboards, and workflow tools for business operations.</span>
               </button>
-              <button class="stream-tab" role="tab" aria-selected="false" aria-controls="stream-services" id="tab-services">
+              <button class="stream-tab" role="tab" aria-selected="false" aria-controls="stream-services" id="tab-services" tabindex="-1">
                 <strong>Service contracts</strong>
                 <span>Advisory, design, build, and long-term delivery partnerships.</span>
               </button>
-              <button class="stream-tab" role="tab" aria-selected="false" aria-controls="stream-publisher" id="tab-publisher">
+              <button class="stream-tab" role="tab" aria-selected="false" aria-controls="stream-publisher" id="tab-publisher" tabindex="-1">
                 <strong>Publisher platforms</strong>
                 <span>Content-led websites, digital media properties, and monetized publishing platforms.</span>
               </button>
@@ -1706,14 +1711,45 @@
         }
       }
 
-      tabs.forEach((tab) => {
-        tab.addEventListener("click", () => {
+      const selectTab = (tab, shouldFocus = false) => {
           const targetId = tab.getAttribute("aria-controls");
 
-          tabs.forEach((item) => item.setAttribute("aria-selected", String(item === tab)));
+          tabs.forEach((item) => {
+            const isSelected = item === tab;
+            item.setAttribute("aria-selected", String(isSelected));
+            item.setAttribute("tabindex", isSelected ? "0" : "-1");
+          });
           panels.forEach((panel) => {
             panel.hidden = panel.id !== targetId;
           });
+
+          if (shouldFocus) {
+            tab.focus();
+          }
+        };
+
+      tabs.forEach((tab, index) => {
+        tab.addEventListener("click", () => {
+          selectTab(tab);
+        });
+
+        tab.addEventListener("keydown", (event) => {
+          const keyActions = {
+            ArrowDown: (index + 1) % tabs.length,
+            ArrowRight: (index + 1) % tabs.length,
+            ArrowUp: (index - 1 + tabs.length) % tabs.length,
+            ArrowLeft: (index - 1 + tabs.length) % tabs.length,
+            Home: 0,
+            End: tabs.length - 1,
+          };
+          const nextIndex = keyActions[event.key];
+
+          if (nextIndex === undefined) {
+            return;
+          }
+
+          event.preventDefault();
+          selectTab(tabs[nextIndex], true);
         });
       });
 
