@@ -312,6 +312,7 @@
 
       main section {
         padding: 3.65rem 0;
+        scroll-margin-top: 6.5rem;
       }
 
       .hero {
@@ -1692,6 +1693,7 @@
     <script>
       const tabs = document.querySelectorAll('[role="tab"]');
       const panels = document.querySelectorAll('[role="tabpanel"]');
+      const mobileNav = document.querySelector(".mobile-nav");
       const contactForm = document.getElementById("contact-form");
       const formStatus = document.getElementById("form-status");
       const siteConfig = window.VINDEM_LABS_CONFIG || {};
@@ -1752,6 +1754,14 @@
           selectTab(tabs[nextIndex], true);
         });
       });
+
+      if (mobileNav) {
+        mobileNav.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileNav.open = false;
+          });
+        });
+      }
 
       if (contactForm) {
         contactForm.addEventListener("submit", async (event) => {
