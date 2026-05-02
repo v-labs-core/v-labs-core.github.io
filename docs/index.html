@@ -786,8 +786,36 @@
         overflow: hidden;
       }
 
+      .timeline-card::before {
+        content: "";
+        position: absolute;
+        inset: 0 0 auto;
+        height: 4px;
+        background: linear-gradient(90deg, var(--brand), var(--accent));
+      }
+
       .timeline-card::after {
         content: none;
+      }
+
+      .timeline-card strong {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.65rem;
+        margin-bottom: 0.65rem;
+        color: var(--brand-deep);
+      }
+
+      .timeline-card strong span {
+        display: inline-grid;
+        place-items: center;
+        width: 2.1rem;
+        height: 2.1rem;
+        border-radius: 0.7rem;
+        background: rgba(0, 167, 179, 0.13);
+        color: var(--brand-deep);
+        font-size: 0.78rem;
+        font-weight: 800;
       }
 
       .contact-layout {
@@ -1595,21 +1623,21 @@
 
           <div class="timeline-grid">
             <article class="timeline-card">
-              <strong>Step 1</strong>
+              <strong><span aria-hidden="true">01</span>Clarify</strong>
               <p>
                 Clarify the need, the audience, the business context, and the right digital shape
                 for the opportunity.
               </p>
             </article>
             <article class="timeline-card">
-              <strong>Step 2</strong>
+              <strong><span aria-hidden="true">02</span>Build</strong>
               <p>
                 Design and build the right product, platform, or website with attention to
                 usability, technical quality, and future scalability.
               </p>
             </article>
             <article class="timeline-card">
-              <strong>Step 3</strong>
+              <strong><span aria-hidden="true">03</span>Improve</strong>
               <p>
                 Improve, extend, and support the platform after launch so it continues to deliver
                 value as the business evolves.
