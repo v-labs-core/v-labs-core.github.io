@@ -346,6 +346,15 @@
         color: #fff;
       }
 
+      .button.primary:disabled {
+        background: rgba(19, 49, 56, 0.12);
+        color: rgba(19, 49, 56, 0.66);
+        border-color: rgba(19, 49, 56, 0.08);
+        box-shadow: none;
+        cursor: not-allowed;
+        transform: none;
+      }
+
       .button.secondary {
         background: rgba(255, 255, 255, 0.64);
         border-color: var(--line);
@@ -997,10 +1006,11 @@
       .contact-fallback {
         display: none;
         width: 100%;
-        padding: 0.9rem 1rem;
-        border: 1px solid rgba(0, 167, 179, 0.16);
+        padding: 1rem 1.05rem;
+        border: 1px solid rgba(7, 84, 93, 0.16);
+        border-left: 4px solid var(--accent);
         border-radius: 1rem;
-        background: rgba(216, 251, 245, 0.48);
+        background: rgba(255, 243, 221, 0.52);
         color: var(--ink);
         font-size: 0.92rem;
         line-height: 1.55;
@@ -1011,8 +1021,7 @@
       }
 
       .contact-form.is-unavailable button[type="submit"] {
-        cursor: not-allowed;
-        opacity: 0.68;
+        min-width: 11.5rem;
       }
 
       .privacy-note {
@@ -1922,6 +1931,7 @@
 
         if (submitButton) {
           submitButton.disabled = true;
+          submitButton.textContent = "Message unavailable";
         }
 
         if (formStatus) {
