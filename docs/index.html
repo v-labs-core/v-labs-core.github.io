@@ -667,6 +667,10 @@
         gap: 0.8rem;
       }
 
+      .stream-mobile-summary {
+        display: none;
+      }
+
       .stream-tab {
         appearance: none;
         width: 100%;
@@ -1131,6 +1135,35 @@
           gap: 0.55rem;
         }
 
+        .stream-mobile-summary {
+          display: grid;
+          gap: 0.35rem;
+          margin-top: 0.15rem;
+          padding: 0.9rem 1rem;
+          border: 1px solid rgba(0, 167, 179, 0.18);
+          border-radius: 1rem;
+          background: rgba(255, 255, 255, 0.68);
+          box-shadow: 0 12px 28px rgba(7, 84, 93, 0.07);
+        }
+
+        .stream-mobile-summary span {
+          color: var(--brand-deep);
+          font-size: 0.74rem;
+          font-weight: 800;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+        }
+
+        .stream-mobile-summary strong {
+          font-size: 1rem;
+        }
+
+        .stream-mobile-summary p {
+          color: var(--muted);
+          font-size: 0.9rem;
+          line-height: 1.5;
+        }
+
         .stream-tab {
           min-height: 4.25rem;
           padding: 0.85rem 0.75rem;
@@ -1366,6 +1399,11 @@
                 <strong>Publisher platforms</strong>
                 <span>Content-led websites, digital media properties, and monetized publishing platforms.</span>
               </button>
+            </div>
+            <div class="stream-mobile-summary" aria-live="polite">
+              <span>Selected offering</span>
+              <strong>Consumer applications</strong>
+              <p>Web and mobile products built for direct user engagement and growth.</p>
             </div>
 
             <div>
@@ -1871,6 +1909,7 @@
       const tabs = document.querySelectorAll('[role="tab"]');
       const panels = document.querySelectorAll('[role="tabpanel"]');
       const mobileNav = document.querySelector(".mobile-nav");
+      const streamMobileSummary = document.querySelector(".stream-mobile-summary");
       const contactForm = document.getElementById("contact-form");
       const formStatus = document.getElementById("form-status");
       const siteConfig = window.VINDEM_LABS_CONFIG || {};
@@ -1901,6 +1940,21 @@
           panels.forEach((panel) => {
             panel.hidden = panel.id !== targetId;
           });
+
+          if (streamMobileSummary) {
+            const summaryTitle = streamMobileSummary.querySelector("strong");
+            const summaryCopy = streamMobileSummary.querySelector("p");
+            const tabTitle = tab.querySelector("strong");
+            const tabCopy = tab.querySelector("span");
+
+            if (summaryTitle && tabTitle) {
+              summaryTitle.textContent = tabTitle.textContent;
+            }
+
+            if (summaryCopy && tabCopy) {
+              summaryCopy.textContent = tabCopy.textContent;
+            }
+          }
 
           if (shouldFocus) {
             tab.focus();
