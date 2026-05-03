@@ -135,6 +135,18 @@
         margin: 0 auto;
       }
 
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
       .site-header {
         position: sticky;
         top: 0;
@@ -235,6 +247,9 @@
 
       .mobile-nav summary {
         list-style: none;
+        width: 3rem;
+        height: 3rem;
+        padding: 0;
       }
 
       .mobile-nav summary::-webkit-details-marker {
@@ -249,6 +264,32 @@
       .mobile-nav summary:focus-visible {
         outline: 2px solid rgba(0, 167, 179, 0.35);
         outline-offset: 3px;
+      }
+
+      .menu-icon {
+        display: grid;
+        gap: 0.28rem;
+        width: 1.2rem;
+      }
+
+      .menu-icon span {
+        display: block;
+        height: 2px;
+        border-radius: 999px;
+        background: currentColor;
+        transition: transform 180ms ease, opacity 180ms ease;
+      }
+
+      .mobile-nav[open] .menu-icon span:first-child {
+        transform: translateY(0.39rem) rotate(45deg);
+      }
+
+      .mobile-nav[open] .menu-icon span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .mobile-nav[open] .menu-icon span:last-child {
+        transform: translateY(-0.39rem) rotate(-45deg);
       }
 
       .mobile-nav-panel {
@@ -626,6 +667,10 @@
         gap: 0.8rem;
       }
 
+      .stream-mobile-summary {
+        display: none;
+      }
+
       .stream-tab {
         appearance: none;
         width: 100%;
@@ -777,6 +822,25 @@
         font-size: 0.8rem;
       }
 
+      .path-highlights {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(19, 49, 56, 0.08);
+      }
+
+      .path-highlights span {
+        padding: 0.5rem 0.65rem;
+        border-radius: 0.65rem;
+        background: rgba(0, 167, 179, 0.1);
+        color: var(--brand-deep);
+        font-size: 0.82rem;
+        font-weight: 800;
+        line-height: 1.25;
+      }
+
       .pillar {
         min-height: 100%;
       }
@@ -786,8 +850,36 @@
         overflow: hidden;
       }
 
+      .timeline-card::before {
+        content: "";
+        position: absolute;
+        inset: 0 0 auto;
+        height: 4px;
+        background: linear-gradient(90deg, var(--brand), var(--accent));
+      }
+
       .timeline-card::after {
         content: none;
+      }
+
+      .timeline-card strong {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.65rem;
+        margin-bottom: 0.65rem;
+        color: var(--brand-deep);
+      }
+
+      .timeline-card strong span {
+        display: inline-grid;
+        place-items: center;
+        width: 2.1rem;
+        height: 2.1rem;
+        border-radius: 0.7rem;
+        background: rgba(0, 167, 179, 0.13);
+        color: var(--brand-deep);
+        font-size: 0.78rem;
+        font-weight: 800;
       }
 
       .contact-layout {
@@ -805,6 +897,45 @@
       .contact-form {
         display: grid;
         gap: 1rem;
+      }
+
+      .form-intro {
+        display: grid;
+        gap: 0.85rem;
+        padding: 1rem;
+        border-radius: 1rem;
+        border: 1px solid rgba(0, 167, 179, 0.14);
+        background: rgba(216, 251, 245, 0.42);
+      }
+
+      .form-intro strong {
+        display: block;
+      }
+
+      .form-intro p {
+        color: var(--muted);
+        font-size: 0.92rem;
+        line-height: 1.58;
+      }
+
+      .form-prompts {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.6rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .form-prompts li {
+        min-height: 100%;
+        padding: 0.7rem 0.8rem;
+        border-radius: 0.75rem;
+        background: rgba(255, 255, 255, 0.72);
+        color: var(--ink);
+        font-size: 0.86rem;
+        font-weight: 700;
+        line-height: 1.38;
       }
 
       .form-grid {
@@ -929,7 +1060,8 @@
         .timeline-grid,
         .quote-grid,
         .contact-layout,
-        .form-grid {
+        .form-grid,
+        .form-prompts {
           grid-template-columns: 1fr;
         }
 
@@ -985,7 +1117,8 @@
         }
 
         .mobile-nav summary {
-          padding: 0.78rem 1rem;
+          width: 2.85rem;
+          height: 2.85rem;
         }
 
         h1 {
@@ -1000,6 +1133,35 @@
         .stream-tabs {
           grid-template-columns: repeat(2, minmax(0, 1fr));
           gap: 0.55rem;
+        }
+
+        .stream-mobile-summary {
+          display: grid;
+          gap: 0.35rem;
+          margin-top: 0.15rem;
+          padding: 0.9rem 1rem;
+          border: 1px solid rgba(0, 167, 179, 0.18);
+          border-radius: 1rem;
+          background: rgba(255, 255, 255, 0.68);
+          box-shadow: 0 12px 28px rgba(7, 84, 93, 0.07);
+        }
+
+        .stream-mobile-summary span {
+          color: var(--brand-deep);
+          font-size: 0.74rem;
+          font-weight: 800;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+        }
+
+        .stream-mobile-summary strong {
+          font-size: 1rem;
+        }
+
+        .stream-mobile-summary p {
+          color: var(--muted);
+          font-size: 0.9rem;
+          line-height: 1.5;
         }
 
         .stream-tab {
@@ -1057,6 +1219,17 @@
           border-radius: 1.25rem;
         }
       }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.001ms !important;
+          animation-duration: 0.001ms !important;
+          animation-iteration-count: 1 !important;
+        }
+      }
     </style>
   </head>
   <body>
@@ -1084,7 +1257,14 @@
         </nav>
 
         <details class="mobile-nav">
-          <summary class="button secondary" aria-label="Open navigation menu">Menu</summary>
+          <summary class="button secondary" aria-label="Open navigation menu">
+            <span class="menu-icon" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+            <span class="visually-hidden">Open navigation menu</span>
+          </summary>
           <div class="mobile-nav-panel" role="navigation" aria-label="Primary">
             <a href="#streams">Offerings</a>
             <a href="#focus">Sectors</a>
@@ -1219,6 +1399,11 @@
                 <strong>Publisher platforms</strong>
                 <span>Content-led websites, digital media properties, and monetized publishing platforms.</span>
               </button>
+            </div>
+            <div class="stream-mobile-summary" aria-live="polite">
+              <span>Selected offering</span>
+              <strong>Consumer applications</strong>
+              <p>Web and mobile products built for direct user engagement and growth.</p>
             </div>
 
             <div>
@@ -1442,6 +1627,11 @@
                 Consumer experiences, operational platforms, and service workflows for property,
                 housing, resident services, and related digital ecosystems.
               </p>
+              <div class="path-highlights" aria-label="PropTech focus areas">
+                <span>Resident journeys</span>
+                <span>Service workflows</span>
+                <span>Operations portals</span>
+              </div>
             </article>
             <article class="path-card">
               <em>AI Education</em>
@@ -1450,6 +1640,11 @@
                 Applications and software for learners, educators, training teams, and institutions
                 looking to modernize delivery and engagement.
               </p>
+              <div class="path-highlights" aria-label="AI Education focus areas">
+                <span>Learner tools</span>
+                <span>Training platforms</span>
+                <span>Admin visibility</span>
+              </div>
             </article>
             <article class="path-card">
               <em>IoT Systems</em>
@@ -1458,6 +1653,11 @@
                 Interfaces and software layers for IoT-backed workflows, monitoring, alerts, and
                 device-connected services.
               </p>
+              <div class="path-highlights" aria-label="IoT Systems focus areas">
+                <span>Monitoring views</span>
+                <span>Device workflows</span>
+                <span>Alert handling</span>
+              </div>
             </article>
           </div>
         </div>
@@ -1555,21 +1755,21 @@
 
           <div class="timeline-grid">
             <article class="timeline-card">
-              <strong>Step 1</strong>
+              <strong><span aria-hidden="true">01</span>Clarify</strong>
               <p>
                 Clarify the need, the audience, the business context, and the right digital shape
                 for the opportunity.
               </p>
             </article>
             <article class="timeline-card">
-              <strong>Step 2</strong>
+              <strong><span aria-hidden="true">02</span>Build</strong>
               <p>
                 Design and build the right product, platform, or website with attention to
                 usability, technical quality, and future scalability.
               </p>
             </article>
             <article class="timeline-card">
-              <strong>Step 3</strong>
+              <strong><span aria-hidden="true">03</span>Improve</strong>
               <p>
                 Improve, extend, and support the platform after launch so it continues to deliver
                 value as the business evolves.
@@ -1622,6 +1822,21 @@
             </aside>
 
             <form class="contact-form" id="contact-form" novalidate>
+              <div class="form-intro" aria-labelledby="contact-form-title">
+                <div>
+                  <strong id="contact-form-title">Start with the useful context.</strong>
+                  <p>
+                    A clear note about the product, timeline, and decision point helps shape the
+                    first response around the right next step.
+                  </p>
+                </div>
+                <ul class="form-prompts" aria-label="Helpful project details">
+                  <li>What needs to be built or improved</li>
+                  <li>Who will use it and why it matters</li>
+                  <li>Target timeline or launch window</li>
+                </ul>
+              </div>
+
               <div class="form-grid">
                 <div class="field">
                   <label for="name">Name</label>
@@ -1694,6 +1909,7 @@
       const tabs = document.querySelectorAll('[role="tab"]');
       const panels = document.querySelectorAll('[role="tabpanel"]');
       const mobileNav = document.querySelector(".mobile-nav");
+      const streamMobileSummary = document.querySelector(".stream-mobile-summary");
       const contactForm = document.getElementById("contact-form");
       const formStatus = document.getElementById("form-status");
       const siteConfig = window.VINDEM_LABS_CONFIG || {};
@@ -1724,6 +1940,21 @@
           panels.forEach((panel) => {
             panel.hidden = panel.id !== targetId;
           });
+
+          if (streamMobileSummary) {
+            const summaryTitle = streamMobileSummary.querySelector("strong");
+            const summaryCopy = streamMobileSummary.querySelector("p");
+            const tabTitle = tab.querySelector("strong");
+            const tabCopy = tab.querySelector("span");
+
+            if (summaryTitle && tabTitle) {
+              summaryTitle.textContent = tabTitle.textContent;
+            }
+
+            if (summaryCopy && tabCopy) {
+              summaryCopy.textContent = tabCopy.textContent;
+            }
+          }
 
           if (shouldFocus) {
             tab.focus();
