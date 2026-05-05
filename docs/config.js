@@ -13,6 +13,6 @@ window.VINDEM_LABS_CONFIG = {
 
   fallback.setAttribute("role", "status");
   fallback.innerHTML =
-    "<strong>Contact form temporarily unavailable</strong> Message delivery is being configured. Please check back shortly before sending project details.";
+    "<strong>Contact form temporarily unavailable</strong> Message delivery is being configured before inquiries can be sent. The form fields are paused for now.";
   contactForm.insertBefore(fallback, contactForm.firstElementChild);
 })();
