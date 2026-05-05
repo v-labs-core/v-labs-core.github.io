@@ -1259,7 +1259,7 @@
           <a href="#focus">Sectors</a>
           <a href="#engine">Approach</a>
           <a href="#roadmap">Roadmap</a>
-          <a href="https://vindem.tech/privacy.html">Privacy</a>
+          <a href="https://vindem.tech/privacy.html?v=20260505">Privacy</a>
           <a class="button secondary" href="#contact">Contact</a>
         </nav>
 
@@ -1277,7 +1277,7 @@
             <a href="#focus">Sectors</a>
             <a href="#engine">Approach</a>
             <a href="#roadmap">Roadmap</a>
-            <a href="https://vindem.tech/privacy.html">Privacy</a>
+            <a href="https://vindem.tech/privacy.html?v=20260505">Privacy</a>
             <a href="#contact">Contact</a>
           </div>
         </details>
@@ -1889,7 +1889,7 @@
                 </p>
               </div>
 
-              <p class="privacy-note"><a href="https://vindem.tech/privacy.html">Privacy policy</a></p>
+              <p class="privacy-note"><a href="https://vindem.tech/privacy.html?v=20260505">Privacy policy</a></p>
             </form>
           </div>
         </div>
@@ -1905,6 +1905,10 @@
 
     <script src="config.js"></script>
     <script>
+      if (window.location.hash === "#privacy-policy") {
+        window.location.replace("https://vindem.tech/privacy.html?v=20260505");
+      }
+
       const tabs = document.querySelectorAll('[role="tab"]');
       const panels = document.querySelectorAll('[role="tabpanel"]');
       const mobileNav = document.querySelector(".mobile-nav");
