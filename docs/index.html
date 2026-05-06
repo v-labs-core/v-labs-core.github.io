@@ -681,6 +681,8 @@
       .stream-tab {
         appearance: none;
         width: 100%;
+        position: relative;
+        overflow: hidden;
         text-align: left;
         padding: 1.1rem 1.15rem;
         border-radius: 1.2rem;
@@ -691,12 +693,31 @@
         transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
       }
 
+      .stream-tab::before {
+        content: "";
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 4px;
+        background: linear-gradient(180deg, var(--brand), var(--accent));
+        opacity: 0;
+        transition: opacity 180ms ease;
+      }
+
       .stream-tab:hover,
       .stream-tab:focus-visible,
       .stream-tab[aria-selected="true"] {
         transform: translateX(4px);
         border-color: rgba(0, 167, 179, 0.42);
         background: rgba(190, 236, 231, 0.5);
+      }
+
+      .stream-tab[aria-selected="true"] {
+        color: var(--brand-deep);
+        box-shadow: 0 16px 34px rgba(7, 84, 93, 0.12);
+      }
+
+      .stream-tab[aria-selected="true"]::before {
+        opacity: 1;
       }
 
       .stream-tab:focus-visible {
@@ -1208,6 +1229,12 @@
           border-radius: 0.9rem;
           display: grid;
           place-items: center;
+        }
+
+        .stream-tab::before {
+          inset: 0 0 auto;
+          width: 100%;
+          height: 4px;
         }
 
         .stream-tab:hover,
