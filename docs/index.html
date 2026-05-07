@@ -1035,12 +1035,34 @@
         line-height: 1.55;
       }
 
+      .contact-fallback strong {
+        display: block;
+        margin-bottom: 0.25rem;
+        color: var(--brand-deep);
+      }
+
       .contact-form.is-unavailable .contact-fallback {
         display: block;
       }
 
       .contact-form.is-unavailable button[type="submit"] {
         min-width: 11.5rem;
+      }
+
+      .contact-form.is-unavailable .form-grid {
+        opacity: 0.62;
+      }
+
+      .contact-form.is-unavailable .field label {
+        color: var(--muted);
+      }
+
+      .contact-form.is-unavailable .field input,
+      .contact-form.is-unavailable .field textarea {
+        border-style: dashed;
+        background: rgba(255, 255, 255, 0.54);
+        color: rgba(19, 49, 56, 0.68);
+        cursor: not-allowed;
       }
 
       .privacy-note {
@@ -1916,6 +1938,12 @@
             </aside>
 
             <form class="contact-form" id="contact-form" novalidate>
+              <p class="contact-fallback" id="contact-fallback" role="status">
+                <strong>Contact form temporarily unavailable</strong>
+                Message delivery is being configured before inquiries can be sent. The form fields
+                are paused for now.
+              </p>
+
               <div class="form-intro" aria-labelledby="contact-form-title">
                 <div>
                   <strong id="contact-form-title">Start with the useful context.</strong>
@@ -1970,10 +1998,6 @@
               <div class="form-meta">
                 <button class="button primary" type="submit">Send message</button>
                 <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-                <p class="contact-fallback" id="contact-fallback">
-                  The web form is temporarily unavailable while message delivery is being configured.
-                  Please check back shortly before sending project details.
-                </p>
               </div>
 
               <div class="privacy-note" aria-labelledby="privacy-note-title">
