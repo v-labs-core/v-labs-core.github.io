@@ -1072,10 +1072,34 @@
         line-height: 1.55;
       }
 
+      .contact-fallback p {
+        margin: 0;
+        color: var(--ink);
+      }
+
       .contact-fallback strong {
         display: block;
         margin-bottom: 0.25rem;
         color: var(--brand-deep);
+      }
+
+      .contact-fallback a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 2.35rem;
+        margin-top: 0.7rem;
+        padding: 0.55rem 0.75rem;
+        border-radius: 0.65rem;
+        background: rgba(7, 84, 93, 0.09);
+        color: var(--brand-deep);
+        font-weight: 800;
+      }
+
+      .contact-fallback a:hover,
+      .contact-fallback a:focus-visible {
+        background: rgba(0, 167, 179, 0.16);
+        outline: 2px solid rgba(0, 167, 179, 0.25);
+        outline-offset: 2px;
       }
 
       .contact-form.is-unavailable .contact-fallback {
@@ -1978,11 +2002,15 @@
             </aside>
 
             <form class="contact-form" id="contact-form" novalidate>
-              <p class="contact-fallback" id="contact-fallback" role="status">
+              <div class="contact-fallback" id="contact-fallback" role="status">
                 <strong>Contact form temporarily unavailable</strong>
-                Message delivery is being configured before inquiries can be sent. The form fields
-                are paused for now.
-              </p>
+                <p>
+                  Message delivery is being configured before inquiries can be sent. The planning
+                  prompts below remain available so you can shape the right project context before
+                  the form opens.
+                </p>
+                <a href="https://vindem.tech/privacy.html?v=20260505">Review privacy terms</a>
+              </div>
 
               <div class="form-intro" aria-labelledby="contact-form-title">
                 <div>
