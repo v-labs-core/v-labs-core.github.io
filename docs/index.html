@@ -458,6 +458,39 @@
         box-shadow: 0 10px 24px rgba(7, 84, 93, 0.06);
       }
 
+      .hero-fit {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.7rem;
+        margin-top: 1.35rem;
+      }
+
+      .hero-fit-item {
+        min-height: 100%;
+        padding: 0.9rem;
+        border: 1px solid rgba(7, 84, 93, 0.1);
+        border-radius: 1rem;
+        background: rgba(255, 255, 255, 0.7);
+        box-shadow: 0 12px 26px rgba(7, 84, 93, 0.06);
+      }
+
+      .hero-fit-item strong {
+        display: block;
+        color: var(--brand-deep);
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        line-height: 1.25;
+        text-transform: uppercase;
+      }
+
+      .hero-fit-item span {
+        display: block;
+        margin-top: 0.35rem;
+        color: var(--ink);
+        font-size: 0.92rem;
+        line-height: 1.45;
+      }
+
       .metric-row {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(min(100%, 12.5rem), 1fr));
@@ -1205,6 +1238,7 @@
         .section-head,
         .stream-shell,
         .stream-grid,
+        .hero-fit,
         .path-grid,
         .pillar-grid,
         .timeline-grid,
@@ -1469,6 +1503,21 @@
               <span>Business software</span>
               <span>Publishing platforms</span>
               <span>Connected systems</span>
+            </div>
+
+            <div class="hero-fit" aria-label="Common starting points">
+              <div class="hero-fit-item">
+                <strong>Launch</strong>
+                <span>Shape and build a new product, website, or platform from the ground up.</span>
+              </div>
+              <div class="hero-fit-item">
+                <strong>Modernize</strong>
+                <span>Improve an existing workflow, interface, or software experience.</span>
+              </div>
+              <div class="hero-fit-item">
+                <strong>Grow</strong>
+                <span>Extend a digital platform with clearer content, data, or connected systems.</span>
+              </div>
             </div>
 
             <div class="metric-row" aria-label="Business overview">
