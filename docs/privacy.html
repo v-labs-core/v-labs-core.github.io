@@ -82,11 +82,25 @@
       }
 
       .policy-text {
+        display: grid;
+        gap: 1rem;
         margin-top: 2rem;
         padding: 1.2rem;
         border-left: 4px solid var(--accent);
         border-radius: 1rem;
         background: rgba(255, 255, 255, 0.72);
+      }
+
+      .policy-item {
+        display: grid;
+        gap: 0.35rem;
+      }
+
+      .policy-item h2 {
+        margin: 0;
+        color: var(--brand);
+        font-size: 1rem;
+        line-height: 1.35;
       }
 
       .policy-text p {
@@ -108,6 +122,31 @@
         text-decoration: none;
         box-shadow: 0 14px 32px rgba(7, 84, 93, 0.16);
       }
+
+      .back-link:hover,
+      .back-link:focus-visible {
+        background: #0a6570;
+        outline: 3px solid rgba(255, 152, 97, 0.45);
+        outline-offset: 3px;
+      }
+
+      @media (max-width: 640px) {
+        main {
+          padding: 2rem 0;
+        }
+
+        .policy-card {
+          border-radius: 20px;
+        }
+
+        h1 {
+          letter-spacing: -0.035em;
+        }
+
+        .policy-text {
+          padding: 1rem;
+        }
+      }
     </style>
   </head>
   <body>
@@ -121,14 +160,24 @@
         </p>
 
         <section class="policy-text" aria-label="SMS and mobile privacy policy">
-          <p>
-            Vindem Labs LLC does not share, sell, or rent your mobile phone number or any personal
-            information collected through SMS messaging with third parties for their marketing
-            purposes. Your mobile number will only be used to send you the SMS messages you have
-            opted in to receive.
+          <div class="policy-item">
+            <h2>SMS use</h2>
+            <p>
+              Vindem Labs LLC does not share, sell, or rent your mobile phone number or any personal
+              information collected through SMS messaging with third parties for their marketing
+              purposes. Your mobile number will only be used to send you the SMS messages you have
+              opted in to receive.
+            </p>
+          </div>
 
-            No mobile information will be shared with third parties/affiliates for marketing/promotional purposes. All other categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties
-          </p>
+          <div class="policy-item">
+            <h2>Mobile information sharing</h2>
+            <p>
+              No mobile information will be shared with third parties/affiliates for
+              marketing/promotional purposes. All other categories exclude text messaging originator
+              opt-in data and consent; this information will not be shared with any third parties.
+            </p>
+          </div>
         </section>
 
         <a class="back-link" href="https://vindem.tech/">Back to Vindem Labs</a>
