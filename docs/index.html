@@ -1103,27 +1103,19 @@
       }
 
       .contact-form.is-unavailable .contact-fallback {
-        display: block;
+        display: grid;
+        gap: 0.25rem;
+        box-shadow: 0 16px 34px rgba(7, 84, 93, 0.09);
       }
 
-      .contact-form.is-unavailable button[type="submit"] {
-        min-width: 11.5rem;
+      .contact-form.is-unavailable .form-intro {
+        border-color: rgba(7, 84, 93, 0.12);
+        background: rgba(255, 255, 255, 0.78);
       }
 
+      .contact-form.is-unavailable .form-meta,
       .contact-form.is-unavailable .form-grid {
-        opacity: 0.62;
-      }
-
-      .contact-form.is-unavailable .field label {
-        color: var(--muted);
-      }
-
-      .contact-form.is-unavailable .field input,
-      .contact-form.is-unavailable .field textarea {
-        border-style: dashed;
-        background: rgba(255, 255, 255, 0.54);
-        color: rgba(19, 49, 56, 0.68);
-        cursor: not-allowed;
+        display: none;
       }
 
       .privacy-note {
