@@ -23,12 +23,9 @@ history so downstream hosts can pull it without reconciling force-rewritten comm
 
 ## Contact form
 
-The contact form is designed for a static hosting setup. It opens the visitor's email client with
-the form details prefilled and addressed to `info@vindem.tech`; no backend or hosted form relay is
-required.
+The contact form posts to `docs/contact.php`, which is deployed with the public site for Hostinger
+PHP hosting. The handler validates the submitted fields, ignores the honeypot field, sends the
+message to `info@vindem.tech`, and returns JSON to the page.
 
-The destination email is configured in `docs/config.js` as `contactEmail`.
-
-To submit without opening an email client, deploy the Worker in `serverless/contact-worker.js` and
-set `contactEndpoint` in `docs/config.js` to the Worker URL. The static form will then POST to that
-endpoint and email `info@vindem.tech` from the Worker.
+The endpoint is configured in `docs/config.js` as `contactEndpoint`. If that value is empty, the
+page falls back to opening a prefilled email to `info@vindem.tech`.
