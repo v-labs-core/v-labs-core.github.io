@@ -1,6 +1,5 @@
 window.VINDEM_LABS_CONFIG = {
-  formEndpoint: "https://api.web3forms.com/submit",
-  formAccessKey: "",
+  contactEmail: "info@vindem.tech",
 };
 
 (() => {
@@ -53,21 +52,4 @@ window.VINDEM_LABS_CONFIG = {
     footerBar.appendChild(footerLinks);
   }
 
-  const contactForm = document.getElementById("contact-form");
-  const fallback = document.getElementById("contact-fallback");
-  const config = window.VINDEM_LABS_CONFIG || {};
-
-  if (!contactForm || !fallback) {
-    return;
-  }
-
-  fallback.setAttribute("role", "status");
-
-  if (config.formAccessKey) {
-    return;
-  }
-
-  contactForm.querySelectorAll(".field input, .field textarea").forEach((field) => {
-    field.disabled = true;
-  });
 })();
