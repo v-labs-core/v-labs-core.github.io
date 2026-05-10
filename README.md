@@ -28,3 +28,7 @@ the form details prefilled and addressed to `info@vindem.tech`; no backend or ho
 required.
 
 The destination email is configured in `docs/config.js` as `contactEmail`.
+
+To submit without opening an email client, deploy the Worker in `serverless/contact-worker.js` and
+set `contactEndpoint` in `docs/config.js` to the Worker URL. The static form will then POST to that
+endpoint and email `info@vindem.tech` from the Worker.

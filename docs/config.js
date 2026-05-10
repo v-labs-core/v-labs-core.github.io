@@ -1,5 +1,6 @@
 window.VINDEM_LABS_CONFIG = {
   contactEmail: "info@vindem.tech",
+  contactEndpoint: "",
 };
 
 (() => {
