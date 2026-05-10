@@ -1111,65 +1111,6 @@
         font-size: 0.92rem;
       }
 
-      .contact-fallback {
-        display: none;
-        width: 100%;
-        padding: 1rem 1.05rem;
-        border: 1px solid rgba(7, 84, 93, 0.16);
-        border-left: 4px solid var(--accent);
-        border-radius: 1rem;
-        background: rgba(255, 243, 221, 0.52);
-        color: var(--ink);
-        font-size: 0.92rem;
-        line-height: 1.55;
-      }
-
-      .contact-fallback p {
-        margin: 0;
-        color: var(--ink);
-      }
-
-      .contact-fallback strong {
-        display: block;
-        margin-bottom: 0.25rem;
-        color: var(--brand-deep);
-      }
-
-      .contact-fallback a {
-        display: inline-flex;
-        align-items: center;
-        min-height: 2.35rem;
-        margin-top: 0.7rem;
-        padding: 0.55rem 0.75rem;
-        border-radius: 0.65rem;
-        background: rgba(7, 84, 93, 0.09);
-        color: var(--brand-deep);
-        font-weight: 800;
-      }
-
-      .contact-fallback a:hover,
-      .contact-fallback a:focus-visible {
-        background: rgba(0, 167, 179, 0.16);
-        outline: 2px solid rgba(0, 167, 179, 0.25);
-        outline-offset: 2px;
-      }
-
-      .contact-form.is-unavailable .contact-fallback {
-        display: grid;
-        gap: 0.25rem;
-        box-shadow: 0 16px 34px rgba(7, 84, 93, 0.09);
-      }
-
-      .contact-form.is-unavailable .form-intro {
-        border-color: rgba(7, 84, 93, 0.12);
-        background: rgba(255, 255, 255, 0.78);
-      }
-
-      .contact-form.is-unavailable .form-meta,
-      .contact-form.is-unavailable .form-grid {
-        display: none;
-      }
-
       .privacy-note {
         display: grid;
         gap: 0.65rem;
@@ -2077,16 +2018,6 @@
             </aside>
 
             <form class="contact-form" id="contact-form" novalidate>
-              <div class="contact-fallback" id="contact-fallback" role="status">
-                <strong>Contact form temporarily unavailable</strong>
-                <p>
-                  Message delivery is being configured before inquiries can be sent. The planning
-                  prompts below remain available so you can shape the right project context before
-                  the form opens.
-                </p>
-                <a href="https://vindem.tech/privacy.html?v=20260505">Review privacy terms</a>
-              </div>
-
               <div class="form-intro" aria-labelledby="contact-form-title">
                 <div>
                   <strong id="contact-form-title">Start with the useful context.</strong>
@@ -2184,22 +2115,7 @@
       const contactForm = document.getElementById("contact-form");
       const formStatus = document.getElementById("form-status");
       const siteConfig = window.VINDEM_LABS_CONFIG || {};
-      const formEndpoint = siteConfig.formEndpoint || "https://api.web3forms.com/submit";
-      const formAccessKey = siteConfig.formAccessKey || "";
-
-      if (contactForm && !formAccessKey) {
-        contactForm.classList.add("is-unavailable");
-        const submitButton = contactForm.querySelector('button[type="submit"]');
-
-        if (submitButton) {
-          submitButton.disabled = true;
-          submitButton.textContent = "Message unavailable";
-        }
-
-        if (formStatus) {
-          formStatus.textContent = "Message delivery is temporarily unavailable.";
-        }
-      }
+      const contactEmail = siteConfig.contactEmail || "info@vindem.tech";
 
       const selectTab = (tab, shouldFocus = false) => {
           const targetId = tab.getAttribute("aria-controls");
@@ -2275,49 +2191,21 @@
             return;
           }
 
-          if (!formAccessKey) {
-            formStatus.textContent = "Message delivery is temporarily unavailable. Please try again shortly.";
-            return;
-          }
+          const subject = encodeURIComponent("New inquiry from vindem.tech");
+          const body = encodeURIComponent(
+            [
+              `Name: ${contactForm.name.value.trim()}`,
+              `Company: ${contactForm.company.value.trim() || "Not provided"}`,
+              `Email: ${contactForm.email.value.trim()}`,
+              `Area of interest: ${contactForm.interest.value.trim()}`,
+              "",
+              "Project details:",
+              contactForm.message.value.trim(),
+            ].join("\n")
+          );
 
-          formStatus.textContent = "Sending your message...";
-
-          const payload = {
-            access_key: formAccessKey,
-            subject: "New inquiry from vindemlabs.com",
-            from_name: "Vindem Labs",
-            name: contactForm.name.value.trim(),
-            company: contactForm.company.value.trim(),
-            email: contactForm.email.value.trim(),
-            interest: contactForm.interest.value.trim(),
-            message: contactForm.message.value.trim(),
-            botcheck: contactForm.botcheck.checked ? "1" : "",
-          };
-
-          try {
-            const response = await fetch(formEndpoint, {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json",
-              },
-              body: JSON.stringify(payload),
-            });
-
-            const result = await response.json();
-
-            if (!response.ok || !result.success) {
-              throw new Error(result.message || "Unable to send message right now.");
-            }
-
-            contactForm.reset();
-            formStatus.textContent = "Your message has been sent. Thank you.";
-          } catch (error) {
-            formStatus.textContent =
-              error instanceof Error
-                ? error.message
-                : "Something went wrong while sending your message.";
-          }
+          window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
+          formStatus.textContent = "Opening your email app to send the message.";
         });
       }
     </script>
