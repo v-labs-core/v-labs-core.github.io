@@ -1,0 +1,3 @@
+name = "vindem-labs-contact"
+main = "contact-worker.js"
+compatibility_date = "2025-12-01"
