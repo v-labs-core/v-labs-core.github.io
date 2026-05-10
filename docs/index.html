@@ -1071,8 +1071,26 @@
       }
 
       .field label {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 0.75rem;
         font-size: 0.88rem;
         font-weight: 700;
+      }
+
+      .required-mark {
+        color: var(--brand-deep);
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .field-hint {
+        color: var(--muted);
+        font-size: 0.8rem;
+        line-height: 1.45;
       }
 
       .field input,
@@ -1363,6 +1381,16 @@
         .stream-badge {
           justify-self: start;
           white-space: normal;
+        }
+
+        .field label {
+          display: grid;
+          justify-content: stretch;
+          gap: 0.25rem;
+        }
+
+        .required-mark {
+          justify-self: start;
         }
 
         .delivery-item {
@@ -2035,7 +2063,7 @@
 
               <div class="form-grid">
                 <div class="field">
-                  <label for="name">Name</label>
+                  <label for="name">Name <span class="required-mark">Required</span></label>
                   <input id="name" name="name" type="text" autocomplete="name" required />
                 </div>
                 <div class="field">
@@ -2043,11 +2071,11 @@
                   <input id="company" name="company" type="text" autocomplete="organization" />
                 </div>
                 <div class="field">
-                  <label for="email">Email</label>
+                  <label for="email">Email <span class="required-mark">Required</span></label>
                   <input id="email" name="email" type="email" autocomplete="email" required />
                 </div>
                 <div class="field">
-                  <label for="interest">Area of interest</label>
+                  <label for="interest">Area of interest <span class="required-mark">Required</span></label>
                   <input
                     id="interest"
                     name="interest"
@@ -2057,13 +2085,17 @@
                   />
                 </div>
                 <div class="field full">
-                  <label for="message">Project details</label>
+                  <label for="message">Project details <span class="required-mark">Required</span></label>
                   <textarea
                     id="message"
                     name="message"
+                    aria-describedby="message-hint"
                     placeholder="Share your goals, current stage, timeline, and the kind of support you are looking for."
                     required
                   ></textarea>
+                  <span class="field-hint" id="message-hint">
+                    Include the goal, current stage, timeline, and what kind of support would help.
+                  </span>
                 </div>
               </div>
 
