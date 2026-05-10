@@ -124,7 +124,8 @@
 
       button,
       input,
-      textarea {
+      textarea,
+      select {
         font: inherit;
       }
 
@@ -1094,7 +1095,8 @@
       }
 
       .field input,
-      .field textarea {
+      .field textarea,
+      .field select {
         width: 100%;
         border: 1px solid var(--line);
         border-radius: 1rem;
@@ -1103,13 +1105,28 @@
         color: var(--text);
       }
 
+      .field select {
+        appearance: none;
+        min-height: 3.45rem;
+        padding-right: 2.8rem;
+        background-image:
+          linear-gradient(45deg, transparent 50%, var(--brand-deep) 50%),
+          linear-gradient(135deg, var(--brand-deep) 50%, transparent 50%);
+        background-position:
+          calc(100% - 1.25rem) 50%,
+          calc(100% - 0.9rem) 50%;
+        background-size: 0.42rem 0.42rem, 0.42rem 0.42rem;
+        background-repeat: no-repeat;
+      }
+
       .field textarea {
         min-height: 168px;
         resize: vertical;
       }
 
       .field input:focus-visible,
-      .field textarea:focus-visible {
+      .field textarea:focus-visible,
+      .field select:focus-visible {
         outline: 2px solid rgba(0, 167, 179, 0.25);
         outline-offset: 1px;
         border-color: rgba(0, 167, 179, 0.46);
@@ -2076,13 +2093,19 @@
                 </div>
                 <div class="field">
                   <label for="interest">Area of interest <span class="required-mark">Required</span></label>
-                  <input
+                  <select
                     id="interest"
                     name="interest"
-                    type="text"
-                    placeholder="Consumer app, business software, publisher platform, IoT, or another focus"
                     required
-                  />
+                  >
+                    <option value="">Choose the closest fit</option>
+                    <option value="Consumer application">Consumer application</option>
+                    <option value="Enterprise product or internal tool">Enterprise product or internal tool</option>
+                    <option value="Service contract or delivery partnership">Service contract or delivery partnership</option>
+                    <option value="Publisher platform or content website">Publisher platform or content website</option>
+                    <option value="Connected system or IoT workflow">Connected system or IoT workflow</option>
+                    <option value="Not sure yet">Not sure yet</option>
+                  </select>
                 </div>
                 <div class="field full">
                   <label for="message">Project details <span class="required-mark">Required</span></label>
