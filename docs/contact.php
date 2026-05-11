@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-$allowedOrigins = ['https://vindem.tech', 'https://www.vindem.tech', 'http://693filler.com'];
+$allowedOrigins = ['https://vindem.tech', 'https://www.vindem.tech', 'http://693filler.com', 'http://www.693filler.com'];
 $origin = $_SERVER['HTTP_ORIGIN'] ?? 'https://vindem.tech';
 $responseOrigin = in_array($origin, $allowedOrigins, true) ? $origin : 'https://vindem.tech';
 
