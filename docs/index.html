@@ -232,11 +232,18 @@
       nav a {
         color: var(--muted);
         font-size: 0.95rem;
+        border-radius: 0.65rem;
       }
 
       nav a:hover,
       nav a:focus-visible {
         color: var(--text);
+      }
+
+      .site-header nav a:focus-visible {
+        background: rgba(0, 167, 179, 0.12);
+        outline: 2px solid rgba(0, 167, 179, 0.3);
+        outline-offset: 0.35rem;
       }
 
       .mobile-nav {
@@ -338,6 +345,11 @@
       .button:hover,
       .button:focus-visible {
         transform: translateY(-1px);
+      }
+
+      .button:focus-visible {
+        outline: 3px solid rgba(255, 152, 97, 0.5);
+        outline-offset: 3px;
       }
 
       .button.primary {
