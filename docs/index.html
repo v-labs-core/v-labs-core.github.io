@@ -475,16 +475,38 @@
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 0.7rem;
+        margin-top: 0.7rem;
+      }
+
+      .hero-start {
         margin-top: 1.35rem;
       }
 
+      .hero-start-label {
+        color: var(--brand-deep);
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
       .hero-fit-item {
+        position: relative;
         min-height: 100%;
-        padding: 0.9rem;
+        padding: 0.95rem 0.95rem 0.95rem 1.05rem;
         border: 1px solid rgba(7, 84, 93, 0.1);
         border-radius: 1rem;
         background: rgba(255, 255, 255, 0.7);
         box-shadow: 0 12px 26px rgba(7, 84, 93, 0.06);
+        overflow: hidden;
+      }
+
+      .hero-fit-item::before {
+        content: "";
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 4px;
+        background: linear-gradient(180deg, var(--brand), var(--accent));
       }
 
       .hero-fit-item strong {
@@ -1687,18 +1709,21 @@
               <span>Connected systems</span>
             </div>
 
-            <div class="hero-fit" aria-label="Common starting points">
-              <div class="hero-fit-item">
-                <strong>Launch</strong>
-                <span>Shape and build a new product, website, or platform from the ground up.</span>
-              </div>
-              <div class="hero-fit-item">
-                <strong>Modernize</strong>
-                <span>Improve an existing workflow, interface, or software experience.</span>
-              </div>
-              <div class="hero-fit-item">
-                <strong>Grow</strong>
-                <span>Extend a digital platform with clearer content, data, or connected systems.</span>
+            <div class="hero-start" aria-label="Common starting points">
+              <p class="hero-start-label">Common starting points</p>
+              <div class="hero-fit">
+                <div class="hero-fit-item">
+                  <strong>Launch</strong>
+                  <span>Shape and build a new product, website, or platform from the ground up.</span>
+                </div>
+                <div class="hero-fit-item">
+                  <strong>Modernize</strong>
+                  <span>Improve an existing workflow, interface, or software experience.</span>
+                </div>
+                <div class="hero-fit-item">
+                  <strong>Grow</strong>
+                  <span>Extend a digital platform with clearer content, data, or connected systems.</span>
+                </div>
               </div>
             </div>
 
