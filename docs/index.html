@@ -471,6 +471,58 @@
         box-shadow: 0 10px 24px rgba(7, 84, 93, 0.06);
       }
 
+      .hero-snapshot {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.65rem;
+        margin-top: 1rem;
+        padding: 0.75rem;
+        border: 1px solid rgba(0, 167, 179, 0.14);
+        border-radius: 1.15rem;
+        background: rgba(255, 255, 255, 0.58);
+        box-shadow: 0 14px 30px rgba(7, 84, 93, 0.065);
+      }
+
+      .hero-snapshot-item {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 0.65rem;
+        align-items: start;
+        min-width: 0;
+        padding: 0.78rem;
+        border-radius: 0.85rem;
+        background: rgba(216, 251, 245, 0.42);
+      }
+
+      .hero-snapshot-item span {
+        display: inline-grid;
+        place-items: center;
+        width: 1.9rem;
+        height: 1.9rem;
+        border-radius: 0.62rem;
+        background: #ffffff;
+        color: var(--brand-deep);
+        font-size: 0.72rem;
+        font-weight: 800;
+        box-shadow: 0 8px 18px rgba(7, 84, 93, 0.08);
+      }
+
+      .hero-snapshot-item strong {
+        display: block;
+        color: var(--text);
+        font-size: 0.9rem;
+        line-height: 1.25;
+      }
+
+      .hero-snapshot-item small {
+        display: block;
+        margin-top: 0.18rem;
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 700;
+        line-height: 1.38;
+      }
+
       .hero-fit {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1405,6 +1457,7 @@
         .section-head,
         .stream-shell,
         .stream-grid,
+        .hero-snapshot,
         .hero-fit,
         .path-grid,
         .pillar-grid,
@@ -1433,6 +1486,11 @@
 
         .roadmap-summary {
           padding: 0.75rem;
+        }
+
+        .hero-snapshot-item {
+          grid-template-columns: 1fr;
+          gap: 0.45rem;
         }
 
         .contact-bridge-actions {
@@ -1707,6 +1765,30 @@
               <span>Business software</span>
               <span>Publishing platforms</span>
               <span>Connected systems</span>
+            </div>
+
+            <div class="hero-snapshot" aria-label="Engagement snapshot">
+              <div class="hero-snapshot-item">
+                <span aria-hidden="true">01</span>
+                <div>
+                  <strong>Teams with a clear business need</strong>
+                  <small>Useful when product quality, operations, or growth depends on better digital execution.</small>
+                </div>
+              </div>
+              <div class="hero-snapshot-item">
+                <span aria-hidden="true">02</span>
+                <div>
+                  <strong>A practical first output</strong>
+                  <small>Start with a brief, prototype, site, workflow, or launch-ready product path.</small>
+                </div>
+              </div>
+              <div class="hero-snapshot-item">
+                <span aria-hidden="true">03</span>
+                <div>
+                  <strong>Scope before build</strong>
+                  <small>Clarify audience, constraints, and the first useful release before expanding.</small>
+                </div>
+              </div>
             </div>
 
             <div class="hero-start" aria-label="Common starting points">
