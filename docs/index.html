@@ -924,6 +924,41 @@
         gap: 1rem;
       }
 
+      .contact-direct {
+        display: grid;
+        gap: 0.45rem;
+        margin-top: 0.25rem;
+        padding: 1rem;
+        border: 1px solid rgba(0, 167, 179, 0.16);
+        border-radius: 1rem;
+        background: linear-gradient(135deg, rgba(216, 251, 245, 0.58), rgba(255, 255, 255, 0.72));
+      }
+
+      .contact-direct span {
+        color: var(--muted);
+        font-size: 0.88rem;
+        line-height: 1.45;
+      }
+
+      .contact-direct a {
+        justify-self: start;
+        display: inline-flex;
+        align-items: center;
+        min-height: 2.65rem;
+        padding: 0.62rem 0.82rem;
+        border-radius: 0.7rem;
+        background: rgba(7, 84, 93, 0.09);
+        color: var(--brand-deep);
+        font-weight: 800;
+      }
+
+      .contact-direct a:hover,
+      .contact-direct a:focus-visible {
+        background: rgba(0, 167, 179, 0.16);
+        outline: 2px solid rgba(0, 167, 179, 0.25);
+        outline-offset: 2px;
+      }
+
       .sub-item,
       .checkpoint,
       .timeline-card,
@@ -2401,6 +2436,11 @@
                   <strong>Getting started</strong>
                   <p>Share a little context about your project, your timeline, and the kind of support you are looking for.</p>
                 </div>
+              </div>
+              <div class="contact-direct">
+                <strong>Prefer email?</strong>
+                <span>Send the same project context directly and keep the conversation in your inbox.</span>
+                <a href="mailto:info@vindem.tech">info@vindem.tech</a>
               </div>
             </aside>
 
