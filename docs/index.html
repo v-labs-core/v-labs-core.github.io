@@ -766,6 +766,28 @@
         font-weight: 700;
       }
 
+      .fit-callout {
+        display: grid;
+        gap: 0.35rem;
+        padding: 1rem;
+        border: 1px solid rgba(0, 167, 179, 0.14);
+        border-radius: 1rem;
+        background: linear-gradient(135deg, rgba(216, 251, 245, 0.62), rgba(255, 255, 255, 0.76));
+      }
+
+      .fit-callout strong {
+        color: var(--brand-deep);
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .fit-callout p {
+        color: var(--ink);
+        font-size: 0.96rem;
+        line-height: 1.55;
+      }
+
       .pill-list span,
       .stat-list span {
         padding: 0.6rem 0.85rem;
@@ -1901,6 +1923,14 @@
                   <p>Interfaces and integrations for IoT, property operations, and data visibility.</p>
                 </div>
               </div>
+            </div>
+
+            <div class="fit-callout">
+              <strong>Best fit</strong>
+              <p>
+                Teams that need product, design, and engineering decisions connected before the
+                first build sprint.
+              </p>
             </div>
 
             <div class="delivery-note">
