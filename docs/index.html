@@ -1200,6 +1200,57 @@
         gap: 1rem;
       }
 
+      .response-strip {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.85rem;
+        margin: -0.25rem 0 1rem;
+        padding: 0.85rem;
+        border: 1px solid rgba(0, 167, 179, 0.14);
+        border-radius: 1.2rem;
+        background: rgba(255, 255, 255, 0.62);
+        box-shadow: 0 14px 30px rgba(7, 84, 93, 0.065);
+      }
+
+      .response-step {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 0.7rem;
+        align-items: start;
+        min-width: 0;
+        padding: 0.78rem;
+        border-radius: 0.9rem;
+        background: linear-gradient(135deg, rgba(216, 251, 245, 0.5), rgba(255, 255, 255, 0.76));
+      }
+
+      .response-step span {
+        display: inline-grid;
+        place-items: center;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 0.65rem;
+        background: #fff;
+        color: var(--brand-deep);
+        font-size: 0.76rem;
+        font-weight: 800;
+        box-shadow: 0 8px 18px rgba(7, 84, 93, 0.08);
+      }
+
+      .response-step strong {
+        display: block;
+        color: var(--text);
+        line-height: 1.25;
+      }
+
+      .response-step small {
+        display: block;
+        margin-top: 0.18rem;
+        color: var(--muted);
+        font-size: 0.8rem;
+        font-weight: 700;
+        line-height: 1.38;
+      }
+
       .contact-bridge {
         padding-top: 2.4rem;
       }
@@ -1520,6 +1571,7 @@
         .pillar-grid,
         .timeline-grid,
         .roadmap-summary,
+        .response-strip,
         .quote-grid,
         .contact-layout,
         .contact-bridge-inner,
@@ -1698,6 +1750,15 @@
           grid-template-columns: 1fr;
           gap: 0.45rem;
           align-items: start;
+        }
+
+        .response-strip {
+          padding: 0.75rem;
+        }
+
+        .response-step {
+          grid-template-columns: 1fr;
+          gap: 0.45rem;
         }
 
         .stream-badge {
@@ -2439,6 +2500,30 @@
                 If you are planning a new product, improving an existing platform, or launching a
                 new digital service, this is the place to start the conversation.
               </p>
+            </div>
+          </div>
+
+          <div class="response-strip" aria-label="What happens after you reach out">
+            <div class="response-step">
+              <span aria-hidden="true">01</span>
+              <div>
+                <strong>Fit check</strong>
+                <small>Confirm the goal, audience, timing, and whether the work is a practical match.</small>
+              </div>
+            </div>
+            <div class="response-step">
+              <span aria-hidden="true">02</span>
+              <div>
+                <strong>Scope outline</strong>
+                <small>Turn the request into a useful first release, brief, site update, or product path.</small>
+              </div>
+            </div>
+            <div class="response-step">
+              <span aria-hidden="true">03</span>
+              <div>
+                <strong>Next move</strong>
+                <small>Leave with a clear recommendation for discovery, build work, or ongoing support.</small>
+              </div>
             </div>
           </div>
 
