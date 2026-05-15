@@ -483,7 +483,6 @@
       .stream-panel,
       .path-card,
       .pillar,
-      .timeline-card,
       .contact-card,
       .contact-form {
         background: var(--panel);
@@ -599,7 +598,6 @@
       .stream-content p,
       .path-card p,
       .pillar p,
-      .timeline-card p,
       .contact-card p {
         color: var(--muted);
         line-height: 1.65;
@@ -655,28 +653,6 @@
         padding-left: 1rem;
         color: var(--ink);
         font-weight: 700;
-      }
-
-      .fit-callout {
-        display: grid;
-        gap: 0.35rem;
-        padding: 1rem;
-        border: 1px solid rgba(0, 167, 179, 0.14);
-        border-radius: 1rem;
-        background: linear-gradient(135deg, rgba(216, 251, 245, 0.62), rgba(255, 255, 255, 0.76));
-      }
-
-      .fit-callout strong {
-        color: var(--brand-deep);
-        font-size: 0.78rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      .fit-callout p {
-        color: var(--ink);
-        font-size: 0.96rem;
-        line-height: 1.55;
       }
 
       .pill-list span,
@@ -825,14 +801,6 @@
 
       .stream-grid {
         display: grid;
-        grid-template-columns: 1.3fr 0.9fr;
-        gap: 1rem;
-      }
-
-      .stream-content,
-      .stream-side,
-      .sub-list {
-        display: grid;
         gap: 1rem;
       }
 
@@ -871,20 +839,8 @@
         outline-offset: 2px;
       }
 
-      .sub-item,
-      .checkpoint,
-      .timeline-card {
-        padding: 1rem;
-        border-radius: 0.8rem;
-        background: rgba(19, 49, 56, 0.04);
-        border: 1px solid rgba(19, 49, 56, 0.06);
-      }
-
-      .sub-item strong,
-      .checkpoint strong,
       .pillar h3,
       .path-card h3,
-      .timeline-card strong,
       .contact-card h3 {
         display: block;
         margin-bottom: 0.4rem;
@@ -892,8 +848,7 @@
       }
 
       .path-grid,
-      .pillar-grid,
-      .timeline-grid {
+      .pillar-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 1rem;
@@ -901,7 +856,6 @@
 
       .path-card,
       .pillar,
-      .timeline-card,
       .contact-card,
       .contact-form {
         border-radius: 1.5rem;
@@ -910,8 +864,7 @@
       }
 
       .path-card:hover,
-      .pillar:hover,
-      .timeline-card:hover {
+      .pillar:hover {
         transform: translateY(-3px);
         box-shadow: 0 20px 44px rgba(7, 84, 93, 0.11);
       }
@@ -950,68 +903,9 @@
         min-height: 100%;
       }
 
-      .timeline-card {
-        position: relative;
-        overflow: hidden;
-      }
-
-      .timeline-grid {
-        position: relative;
-      }
-
-      .timeline-grid::before {
-        content: "";
-        position: absolute;
-        top: 1.95rem;
-        left: calc(16.666% + 0.5rem);
-        right: calc(16.666% + 0.5rem);
-        height: 2px;
-        background: linear-gradient(90deg, rgba(0, 167, 179, 0.42), rgba(255, 152, 97, 0.38));
-        z-index: 0;
-      }
-
-      .timeline-card::before {
-        content: "";
-        position: absolute;
-        inset: 0 0 auto;
-        height: 4px;
-        background: linear-gradient(90deg, var(--brand), var(--accent));
-      }
-
-      .timeline-card::after {
-        content: none;
-      }
-
-      .timeline-card strong {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.65rem;
-        margin-bottom: 0.65rem;
-        color: var(--brand-deep);
-      }
-
-      .timeline-card,
-      .timeline-card strong span {
-        z-index: 1;
-      }
-
-      .timeline-card strong span {
-        display: inline-grid;
-        position: relative;
-        place-items: center;
-        width: 2.1rem;
-        height: 2.1rem;
-        border-radius: 0.7rem;
-        background: rgba(0, 167, 179, 0.13);
-        color: var(--brand-deep);
-        font-size: 0.78rem;
-        font-weight: 800;
-        box-shadow: 0 0 0 0.45rem rgba(255, 255, 255, 0.78);
-      }
-
       .contact-layout {
         display: grid;
-        grid-template-columns: 0.92fr 1.08fr;
+        grid-template-columns: 0.72fr 1.28fr;
         gap: 1rem;
       }
 
@@ -1024,71 +918,6 @@
       .contact-form {
         display: grid;
         gap: 1rem;
-      }
-
-      .form-intro {
-        display: grid;
-        gap: 0.85rem;
-        padding: 1rem;
-        border-radius: 1rem;
-        border: 1px solid rgba(0, 167, 179, 0.14);
-        background: rgba(216, 251, 245, 0.42);
-      }
-
-      .form-intro strong {
-        display: block;
-      }
-
-      .form-intro p {
-        color: var(--muted);
-        font-size: 0.92rem;
-        line-height: 1.58;
-      }
-
-      .form-prompts {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 0.6rem;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      .form-prompts li {
-        min-height: 100%;
-        padding: 0.7rem 0.8rem;
-        border-radius: 0.75rem;
-        background: rgba(255, 255, 255, 0.72);
-        color: var(--ink);
-        font-size: 0.86rem;
-        font-weight: 700;
-        line-height: 1.38;
-      }
-
-      .form-next-step {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 0.55rem;
-        margin: 0;
-        padding-top: 0.85rem;
-        border-top: 1px solid rgba(0, 167, 179, 0.14);
-        color: var(--muted);
-        font-size: 0.9rem;
-        line-height: 1.55;
-      }
-
-      .form-next-step strong {
-        display: inline-flex;
-        align-items: center;
-        min-height: 2rem;
-        padding: 0.4rem 0.62rem;
-        border-radius: 0.65rem;
-        background: rgba(7, 84, 93, 0.09);
-        color: var(--brand-deep);
-        font-size: 0.76rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
       }
 
       .form-grid {
@@ -1267,13 +1096,10 @@
         .hero-grid,
         .section-head,
         .stream-shell,
-        .stream-grid,
         .path-grid,
         .pillar-grid,
-        .timeline-grid,
         .contact-layout,
-        .form-grid,
-        .form-prompts {
+        .form-grid {
           grid-template-columns: 1fr;
         }
 
@@ -1287,10 +1113,6 @@
 
         .stream-panel {
           min-height: auto;
-        }
-
-        .timeline-grid::before {
-          content: none;
         }
 
         h1 {
@@ -1443,15 +1265,6 @@
           justify-self: start;
         }
 
-        .form-next-step {
-          display: grid;
-          gap: 0.45rem;
-        }
-
-        .form-next-step strong {
-          justify-self: start;
-        }
-
         .delivery-item {
           grid-template-columns: 1fr;
           gap: 0.25rem;
@@ -1462,7 +1275,6 @@
         .stream-panel,
         .path-card,
         .pillar,
-        .timeline-card,
         .contact-card,
         .contact-form {
           border-radius: 1.25rem;
@@ -1500,7 +1312,6 @@
           <a href="#streams">Offerings</a>
           <a href="#focus">Sectors</a>
           <a href="#engine">Approach</a>
-          <a href="#roadmap">Roadmap</a>
           <a href="https://vindem.tech/privacy.html?v=20260505">Privacy</a>
           <a class="button secondary" href="#contact">Contact</a>
         </nav>
@@ -1518,7 +1329,6 @@
             <a href="#streams">Offerings</a>
             <a href="#focus">Sectors</a>
             <a href="#engine">Approach</a>
-            <a href="#roadmap">Roadmap</a>
             <a href="https://vindem.tech/privacy.html?v=20260505">Privacy</a>
             <a href="#contact">Contact</a>
           </div>
@@ -1610,14 +1420,6 @@
               </div>
             </div>
 
-            <div class="fit-callout">
-              <strong>Best fit</strong>
-              <p>
-                Teams that need product, design, and engineering decisions connected before the
-                first build sprint.
-              </p>
-            </div>
-
             <div class="delivery-note">
               <p>Built around outcomes, usability, and long-term maintainability.</p>
             </div>
@@ -1682,36 +1484,12 @@
                       that need strong user experiences, clear journeys, and scalable digital
                       products across web and mobile.
                     </p>
-                    <div class="sub-list">
-                      <div class="sub-item">
-                        <strong>Product-led experiences</strong>
-                        <p>Customer apps, member portals, self-service flows, and interactive tools built around everyday usage.</p>
-                      </div>
-                      <div class="sub-item">
-                        <strong>Mobile-first journeys</strong>
-                        <p>Responsive web apps and native-feeling mobile experiences for audiences that expect speed, clarity, and convenience.</p>
-                      </div>
-                      <div class="sub-item">
-                        <strong>Growth-ready foundations</strong>
-                        <p>Analytics-aware application builds that support retention, iteration, and future feature expansion.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <aside class="stream-side">
-                    <div class="checkpoint">
-                      <strong>Typical use cases</strong>
-                      <p>Customer apps, subscription products, booking flows, property experiences, and education-focused digital tools.</p>
-                    </div>
-                    <div class="checkpoint">
-                      <strong>Best fit</strong>
-                      <p>Teams looking to launch or modernize digital products where usability and adoption matter as much as the technology underneath.</p>
-                    </div>
                     <div class="stat-list">
                       <span>Customer apps</span>
                       <span>Member portals</span>
                       <span>Mobile UX</span>
                     </div>
-                  </aside>
+                  </div>
                 </div>
               </article>
 
@@ -1730,36 +1508,12 @@
                       work more clearly, automate repetitive processes, and gain visibility across
                       critical business operations.
                     </p>
-                    <div class="sub-list">
-                      <div class="sub-item">
-                        <strong>Operational dashboards</strong>
-                        <p>Software interfaces for tracking workflows, performance, team activity, and operational decision-making.</p>
-                      </div>
-                      <div class="sub-item">
-                        <strong>Process digitization</strong>
-                        <p>Business tools that replace fragmented spreadsheets, emails, and manual coordination with streamlined systems.</p>
-                      </div>
-                      <div class="sub-item">
-                        <strong>Sector-specific platforms</strong>
-                        <p>Tailored solutions for property operations, AI education workflows, and connected environments with real reporting needs.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <aside class="stream-side">
-                    <div class="checkpoint">
-                      <strong>Typical use cases</strong>
-                      <p>Property management software, internal tools, control centers, analytics platforms, and business workflow systems.</p>
-                    </div>
-                    <div class="checkpoint">
-                      <strong>Best fit</strong>
-                      <p>Organizations that need dependable custom software or new digital products to support teams, clients, or field operations.</p>
-                    </div>
                     <div class="stat-list">
                       <span>Dashboards</span>
                       <span>Automation</span>
                       <span>Internal tools</span>
                     </div>
-                  </aside>
+                  </div>
                 </div>
               </article>
 
@@ -1778,36 +1532,12 @@
                       trusted partner across discovery, design, development, delivery, and
                       continuous improvement.
                     </p>
-                    <div class="sub-list">
-                      <div class="sub-item">
-                        <strong>Discovery and product framing</strong>
-                        <p>Clarifying the problem, shaping the roadmap, and defining the right scope before build work accelerates.</p>
-                      </div>
-                      <div class="sub-item">
-                        <strong>Delivery and implementation</strong>
-                        <p>Building applications, websites, internal tools, and connected digital services with a practical execution focus.</p>
-                      </div>
-                      <div class="sub-item">
-                        <strong>Ongoing support</strong>
-                        <p>Post-launch evolution, maintenance, optimization, and product support for businesses that want continuity.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <aside class="stream-side">
-                    <div class="checkpoint">
-                      <strong>Typical use cases</strong>
-                      <p>New digital products, platform upgrades, connected systems, and ongoing delivery support.</p>
-                    </div>
-                    <div class="checkpoint">
-                      <strong>Best fit</strong>
-                      <p>Teams that want a capable digital partner rather than a disconnected set of freelancers or narrowly scoped vendors.</p>
-                    </div>
                     <div class="stat-list">
                       <span>Advisory</span>
                       <span>Delivery</span>
                       <span>Retainers</span>
                     </div>
-                  </aside>
+                  </div>
                 </div>
               </article>
 
@@ -1826,36 +1556,12 @@
                       brands or ventures that want stronger digital reach, better search
                       discoverability, and scalable web properties built around content.
                     </p>
-                    <div class="sub-list">
-                      <div class="sub-item">
-                        <strong>Content-driven websites</strong>
-                        <p>Editorial platforms, resource hubs, guides, and structured publishing experiences that support long-term growth.</p>
-                      </div>
-                      <div class="sub-item">
-                        <strong>Monetized media properties</strong>
-                        <p>Websites designed around advertising, affiliate partnerships, lead generation, or category authority.</p>
-                      </div>
-                      <div class="sub-item">
-                        <strong>Specialized publishing builds</strong>
-                        <p>Platforms for sectors such as PropTech, AI education, or comparison-based digital publishing models.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <aside class="stream-side">
-                    <div class="checkpoint">
-                      <strong>Typical use cases</strong>
-                      <p>Publisher websites, affiliate content platforms, niche media brands, and structured SEO-led web properties.</p>
-                    </div>
-                    <div class="checkpoint">
-                      <strong>Best fit</strong>
-                      <p>Businesses that want their digital presence to do more than present information and instead become an active acquisition asset.</p>
-                    </div>
                     <div class="stat-list">
                       <span>SEO platforms</span>
                       <span>Media sites</span>
                       <span>Affiliate models</span>
                     </div>
-                  </aside>
+                  </div>
                 </div>
               </article>
             </div>
@@ -1965,47 +1671,6 @@
         </div>
       </section>
 
-      <section id="roadmap">
-        <div class="shell">
-          <div class="section-head">
-            <div>
-              <p class="section-kicker">Engagement path</p>
-              <h2>A straightforward way to move from idea to launch and beyond.</h2>
-            </div>
-            <div class="section-copy">
-              <p>
-                Engagements can start small or broad, but the path usually becomes clearer when the
-                work moves through understanding, delivery, and continuous improvement in sequence.
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-grid">
-            <article class="timeline-card">
-              <strong><span aria-hidden="true">01</span>Clarify</strong>
-              <p>
-                Clarify the need, the audience, the business context, and the right digital shape
-                for the opportunity.
-              </p>
-            </article>
-            <article class="timeline-card">
-              <strong><span aria-hidden="true">02</span>Build</strong>
-              <p>
-                Design and build the right product, platform, or website with attention to
-                usability, technical quality, and future scalability.
-              </p>
-            </article>
-            <article class="timeline-card">
-              <strong><span aria-hidden="true">03</span>Improve</strong>
-              <p>
-                Improve, extend, and support the platform after launch so it continues to deliver
-                value as the business evolves.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
       <section id="contact">
         <div class="shell">
           <div class="section-head">
@@ -2023,15 +1688,6 @@
 
           <div class="contact-layout">
             <aside class="contact-card">
-              <div>
-                <p class="section-kicker">How we can help</p>
-                <h3>New products, business software, modern websites, and connected digital services.</h3>
-              </div>
-              <p>
-                Vindem Labs works across web, mobile, software, publishing platforms, and
-                connected experiences. If there is a digital product, website, or operational
-                platform to build, this is the right place to start the conversation.
-              </p>
               <div class="contact-direct">
                 <strong>Prefer email?</strong>
                 <span>Send the same project context directly and keep the conversation in your inbox.</span>
@@ -2040,25 +1696,6 @@
             </aside>
 
             <form class="contact-form" id="contact-form" novalidate>
-              <div class="form-intro" aria-labelledby="contact-form-title">
-                <div>
-                  <strong id="contact-form-title">Start with the useful context.</strong>
-                  <p>
-                    A clear note about the product, timeline, and decision point helps shape the
-                    first response around the right next step.
-                  </p>
-                </div>
-                <ul class="form-prompts" aria-label="Helpful project details">
-                  <li>What needs to be built or improved</li>
-                  <li>Who will use it and why it matters</li>
-                  <li>Target timeline or launch window</li>
-                </ul>
-                <p class="form-next-step">
-                  <strong>Next step</strong>
-                  Expect a direct reply focused on fit, scope, timeline, and the clearest first move.
-                </p>
-              </div>
-
               <div class="form-grid">
                 <div class="field">
                   <label for="name">Name <span class="required-mark">Required</span></label>
@@ -2094,11 +1731,11 @@
                     id="message"
                     name="message"
                     aria-describedby="message-hint"
-                    placeholder="Share your goals, current stage, timeline, and the kind of support you are looking for."
+                    placeholder="Share your project, goals, and support needed."
                     required
                   ></textarea>
                   <span class="field-hint" id="message-hint">
-                    Include the goal, current stage, timeline, and what kind of support would help.
+                    Include the goal and current stage if helpful.
                   </span>
                 </div>
               </div>
