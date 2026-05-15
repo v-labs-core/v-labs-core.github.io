@@ -229,7 +229,11 @@
         justify-content: flex-end;
       }
 
-      nav a {
+      .site-header nav a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 2.5rem;
+        padding: 0 0.45rem;
         position: relative;
         color: var(--muted);
         font-size: 0.95rem;
@@ -237,8 +241,8 @@
         transition: color 180ms ease, background 180ms ease, box-shadow 180ms ease;
       }
 
-      nav a:hover,
-      nav a:focus-visible {
+      .site-header nav a:hover,
+      .site-header nav a:focus-visible {
         color: var(--text);
       }
 
