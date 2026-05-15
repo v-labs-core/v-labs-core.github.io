@@ -3,7 +3,9 @@ Review the current website and make one bounded, public-facing UX improvement on
 Rules:
 - Keep the change static-site compatible.
 - Treat `docs/` as the public web root. Do not move hosted files back to the repository root.
-- Focus on visible UX, layout, visual clarity, copy polish, responsiveness, accessibility, or branding.
+- Focus only on visual UX: layout, spacing, color, typography, responsiveness, accessibility states, imagery, icons, or branding assets.
+- Do not add, remove, rewrite, or expand public-facing wording, content sections, navigation labels, metadata copy, form labels, privacy text, or service descriptions unless the user explicitly requests a content change.
+- Avoid blog-like, editorial, explanatory, or strategy-heavy sections. Future improvements should be visual refinements only.
 - Avoid backend work.
 - Keep the change small enough for a rolling PR.
 - Do not change this protected homepage line or its simple left-accent treatment: "Built around outcomes, usability, and long-term maintainability."

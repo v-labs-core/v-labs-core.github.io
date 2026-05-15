@@ -9,9 +9,16 @@ Expected repo setup:
 - labels: `enhancement`, `design`, `github-pages`, `codex-automation`
 
 Main scripts:
-- `run_ux_polish.sh`: runs a bounded Codex UX pass, then syncs the rolling PR and tracking issue
+- `run_ux_polish.sh`: runs a bounded visual UX pass, then syncs the rolling PR and tracking issue
 - `merge_open_prs.sh`: merges mergeable open PRs and closes linked issues
 - `launchd-v-labs-core-ux-polish.template.plist`: documents the local fallback scheduler
+
+UX pass scope:
+- Future automated `ux-only` changes are visual-only: layout, spacing, color, typography,
+  responsiveness, accessibility states, imagery, icons, and branding assets.
+- Automated runs must not add, remove, rewrite, or expand public-facing wording, content
+  sections, navigation labels, metadata copy, form labels, privacy text, or service descriptions
+  unless a user explicitly requests a content change.
 
 These scripts assume the folder is a real Git checkout of `v-labs-core/v-labs-core.github.io`.
 The hosted website lives in `docs/` and is deployed by the GitHub Pages workflow; root-level
@@ -24,5 +31,5 @@ Local fallback scheduler:
 - interval: `21600` seconds
 - run at load: enabled
 
-The fallback scheduler and the Codex cron automation both run `run_ux_polish.sh`; the script
+The fallback scheduler and the scheduled automation both run `run_ux_polish.sh`; the script
 remains the single source of truth for branch, PR, issue, and label handling.
