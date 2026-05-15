@@ -39,10 +39,84 @@
           linear-gradient(180deg, #fffefd 0%, var(--bg) 100%);
       }
 
+      .site-header {
+        width: min(920px, calc(100% - 2rem));
+        margin: 0 auto;
+        padding: 1.2rem 0 0;
+      }
+
+      .site-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 0.85rem;
+        border: 1px solid var(--line);
+        border-radius: 1.25rem;
+        background: rgba(255, 255, 255, 0.72);
+        box-shadow: 0 16px 42px rgba(7, 84, 93, 0.08);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: var(--text);
+        font-weight: 900;
+        text-decoration: none;
+      }
+
+      .brand img {
+        width: 2.55rem;
+        height: 2.55rem;
+        border-radius: 0.85rem;
+        box-shadow: 0 8px 22px rgba(7, 84, 93, 0.14);
+      }
+
+      .brand span {
+        display: grid;
+        gap: 0.12rem;
+      }
+
+      .brand small {
+        color: var(--muted);
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 0.35rem;
+      }
+
+      .nav-links a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 2.55rem;
+        padding: 0.6rem 0.8rem;
+        border-radius: 0.75rem;
+        color: var(--brand);
+        font-size: 0.92rem;
+        font-weight: 900;
+        text-decoration: none;
+      }
+
+      .nav-links a:hover,
+      .nav-links a:focus-visible {
+        background: rgba(0, 167, 179, 0.12);
+        outline: 2px solid rgba(0, 167, 179, 0.25);
+        outline-offset: 2px;
+      }
+
       main {
         width: min(920px, calc(100% - 2rem));
         margin: 0 auto;
-        padding: 4rem 0;
+        padding: 1.5rem 0 4rem;
       }
 
       .policy-card {
@@ -131,8 +205,21 @@
       }
 
       @media (max-width: 640px) {
+        .site-header {
+          padding-top: 0.85rem;
+        }
+
+        .site-nav {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .nav-links {
+          justify-content: flex-start;
+        }
+
         main {
-          padding: 2rem 0;
+          padding: 1rem 0 2rem;
         }
 
         .policy-card {
@@ -150,6 +237,22 @@
     </style>
   </head>
   <body>
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Privacy page">
+        <a class="brand" href="https://vindem.tech/" aria-label="Vindem Labs home">
+          <img src="assets/favicon.svg?v=10" alt="" />
+          <span>
+            Vindem Labs
+            <small>Privacy policy</small>
+          </span>
+        </a>
+        <div class="nav-links">
+          <a href="https://vindem.tech/">Home</a>
+          <a href="https://vindem.tech/#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
     <main>
       <article class="policy-card" aria-labelledby="privacy-title">
         <p class="eyebrow">Vindem Labs LLC</p>
