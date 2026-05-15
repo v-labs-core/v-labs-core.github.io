@@ -53,4 +53,62 @@ window.VINDEM_LABS_CONFIG = {
     footerBar.appendChild(footerLinks);
   }
 
+  const sectionNavLinks = document.querySelectorAll('.site-header a[href^="#"]:not(.brand)');
+  const linkedSections = Array.from(sectionNavLinks)
+    .map((link) => document.querySelector(link.hash))
+    .filter(Boolean);
+
+  if (sectionNavLinks.length && linkedSections.length) {
+    const navStyles = document.createElement("style");
+    navStyles.textContent = `
+      .site-header nav a[aria-current="location"],
+      .mobile-nav-panel a[aria-current="location"] {
+        background: rgba(0, 167, 179, 0.13);
+        color: var(--brand-deep);
+        font-weight: 800;
+        box-shadow: inset 0 0 0 1px rgba(0, 167, 179, 0.18);
+      }
+    `;
+    document.head.appendChild(navStyles);
+
+    let activeSectionFrame = null;
+
+    const setCurrentSection = (sectionId) => {
+      sectionNavLinks.forEach((link) => {
+        if (link.hash === `#${sectionId}`) {
+          link.setAttribute("aria-current", "location");
+        } else {
+          link.removeAttribute("aria-current");
+        }
+      });
+    };
+
+    const updateCurrentSection = () => {
+      const readingLine = window.innerHeight * 0.38;
+      let currentSectionId = linkedSections[0].id;
+
+      linkedSections.forEach((section) => {
+        if (section.getBoundingClientRect().top <= readingLine) {
+          currentSectionId = section.id;
+        }
+      });
+
+      setCurrentSection(currentSectionId);
+      activeSectionFrame = null;
+    };
+
+    const queueCurrentSectionUpdate = () => {
+      if (activeSectionFrame !== null) {
+        return;
+      }
+
+      activeSectionFrame = window.requestAnimationFrame(updateCurrentSection);
+    };
+
+    updateCurrentSection();
+    window.addEventListener("scroll", queueCurrentSectionUpdate, { passive: true });
+    window.addEventListener("resize", queueCurrentSectionUpdate);
+    window.addEventListener("hashchange", queueCurrentSectionUpdate);
+  }
+
 })();
