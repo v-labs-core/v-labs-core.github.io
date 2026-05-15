@@ -19,6 +19,8 @@ UX pass scope:
 - Automated runs must not add, remove, rewrite, or expand public-facing wording, content
   sections, navigation labels, metadata copy, form labels, privacy text, or service descriptions
   unless a user explicitly requests a content change.
+- PRs for visual work must include the latest applicable before and after screenshots. If
+  screenshot capture is not available, the PR must say that explicitly and include the reason.
 
 These scripts assume the folder is a real Git checkout of `v-labs-core/v-labs-core.github.io`.
 The hosted website lives in `docs/` and is deployed by the GitHub Pages workflow; root-level

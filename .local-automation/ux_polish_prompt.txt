@@ -9,4 +9,5 @@ Rules:
 - Avoid backend work.
 - Keep the change small enough for a rolling PR.
 - Do not change this protected homepage line or its simple left-accent treatment: "Built around outcomes, usability, and long-term maintainability."
+- For visual changes, capture the latest before and after screenshots for the affected viewport or section when screenshot tooling is available. Include the screenshot links, attachments, or a clear "not captured" note with the reason in the PR.
 - After the change, commit it to `ux-only` with a concise message and push it.

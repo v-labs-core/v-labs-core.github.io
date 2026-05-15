@@ -35,7 +35,17 @@ ensure_pull_request() {
     PR_NUMBER="$(extract_pr_number "$existing_pr")"
     PR_URL="${existing_pr##* }"
   else
-    PR_URL="$(gh pr create --base main --head ux-only --title "$PR_TITLE" --body "This PR tracks rolling UX-only improvements from the \`ux-only\` branch.")"
+    PR_URL="$(gh pr create --base main --head ux-only --title "$PR_TITLE" --body "$(cat <<'BODY'
+This PR tracks rolling visual UX-only improvements from the `ux-only` branch.
+
+Screenshots:
+- Before: pending for the latest applicable visual change
+- After: pending for the latest applicable visual change
+
+Validation:
+- Pending latest automation run summary
+BODY
+)")"
     PR_NUMBER="$(extract_pr_number "$PR_URL")"
   fi
 
