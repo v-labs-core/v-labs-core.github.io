@@ -851,10 +851,13 @@
         display: grid;
         gap: 0.45rem;
         margin-top: 0.25rem;
-        padding: 1rem;
+        padding: clamp(1rem, 2vw, 1.25rem);
         border: 1px solid rgba(0, 167, 179, 0.16);
         border-radius: 1rem;
-        background: linear-gradient(135deg, rgba(216, 251, 245, 0.58), rgba(255, 255, 255, 0.72));
+        background:
+          linear-gradient(135deg, rgba(216, 251, 245, 0.68), rgba(255, 255, 255, 0.78)),
+          linear-gradient(90deg, rgba(255, 152, 97, 0.28), transparent 48%);
+        box-shadow: inset 4px 0 0 rgba(255, 152, 97, 0.78);
       }
 
       .contact-direct span {
@@ -867,12 +870,14 @@
         justify-self: start;
         display: inline-flex;
         align-items: center;
+        max-width: 100%;
         min-height: 2.65rem;
         padding: 0.62rem 0.82rem;
         border-radius: 0.7rem;
         background: rgba(7, 84, 93, 0.09);
         color: var(--brand-deep);
         font-weight: 800;
+        overflow-wrap: anywhere;
       }
 
       .contact-direct a:hover,
@@ -958,19 +963,28 @@
 
       .contact-layout {
         display: grid;
-        grid-template-columns: 0.72fr 1.28fr;
-        gap: 1rem;
+        grid-template-columns: minmax(16rem, 0.64fr) minmax(0, 1.36fr);
+        gap: clamp(1rem, 2vw, 1.35rem);
+        align-items: start;
       }
 
       .contact-card {
         display: grid;
         gap: 1rem;
         align-content: start;
+        position: sticky;
+        top: 6.25rem;
+        overflow: hidden;
+        background:
+          linear-gradient(155deg, rgba(255, 255, 255, 0.94), rgba(221, 251, 240, 0.72)),
+          radial-gradient(circle at 100% 0%, rgba(255, 152, 97, 0.2), transparent 12rem);
       }
 
       .contact-form {
         display: grid;
         gap: 1rem;
+        background: rgba(255, 255, 255, 0.9);
+        border-color: rgba(255, 255, 255, 0.9);
       }
 
       .form-grid {
@@ -1166,6 +1180,10 @@
 
         .stream-panel {
           min-height: auto;
+        }
+
+        .contact-card {
+          position: static;
         }
 
         .stream-grid {
