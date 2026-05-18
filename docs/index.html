@@ -983,8 +983,18 @@
       .contact-form {
         display: grid;
         gap: 1rem;
+        position: relative;
+        overflow: hidden;
         background: rgba(255, 255, 255, 0.9);
         border-color: rgba(255, 255, 255, 0.9);
+      }
+
+      .contact-form::before {
+        content: "";
+        position: absolute;
+        inset: 0 0 auto;
+        height: 5px;
+        background: linear-gradient(90deg, var(--brand), var(--accent));
       }
 
       .form-grid {
@@ -1012,6 +1022,12 @@
       }
 
       .required-mark {
+        display: inline-flex;
+        align-items: center;
+        min-height: 1.35rem;
+        padding: 0.18rem 0.45rem;
+        border-radius: 0.45rem;
+        background: rgba(0, 167, 179, 0.1);
         color: var(--brand-deep);
         font-size: 0.72rem;
         font-weight: 800;
@@ -1034,6 +1050,11 @@
         padding: 0.95rem 1rem;
         background: rgba(255, 255, 255, 0.88);
         color: var(--text);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+        transition:
+          background 180ms ease,
+          border-color 180ms ease,
+          box-shadow 180ms ease;
       }
 
       .field select {
@@ -1058,9 +1079,20 @@
       .field input:focus-visible,
       .field textarea:focus-visible,
       .field select:focus-visible {
-        outline: 2px solid rgba(0, 167, 179, 0.25);
-        outline-offset: 1px;
+        outline: none;
         border-color: rgba(0, 167, 179, 0.46);
+        background: #fff;
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.9),
+          0 0 0 3px rgba(0, 167, 179, 0.16),
+          0 12px 26px rgba(7, 84, 93, 0.08);
+      }
+
+      .field input:hover,
+      .field textarea:hover,
+      .field select:hover {
+        border-color: rgba(0, 167, 179, 0.3);
+        background: rgba(255, 255, 255, 0.98);
       }
 
       .form-meta {
