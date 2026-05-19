@@ -484,14 +484,27 @@
       }
 
       .hero-proof span {
-        padding: 0.55rem 0.75rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.48rem;
+        padding: 0.58rem 0.78rem;
         border: 1px solid rgba(0, 126, 139, 0.12);
         border-radius: 0.75rem;
-        background: rgba(255, 255, 255, 0.54);
+        background: rgba(255, 255, 255, 0.68);
         color: var(--ink);
         font-size: 0.86rem;
         font-weight: 700;
         box-shadow: 0 10px 24px rgba(7, 84, 93, 0.06);
+      }
+
+      .hero-proof span::before {
+        content: "";
+        width: 0.52rem;
+        height: 0.52rem;
+        border-radius: 999px;
+        flex: 0 0 auto;
+        background: linear-gradient(135deg, var(--brand), var(--accent));
+        box-shadow: 0 0 0 4px rgba(0, 167, 179, 0.08);
       }
 
       .metric-row {
@@ -523,6 +536,10 @@
         padding: 1.15rem;
         position: relative;
         overflow: hidden;
+        background:
+          linear-gradient(160deg, rgba(255, 255, 255, 0.86), rgba(236, 252, 246, 0.64)),
+          radial-gradient(circle at 100% 0%, rgba(255, 152, 97, 0.12), transparent 8rem);
+        border-color: rgba(255, 255, 255, 0.86);
         transition: transform 180ms ease, box-shadow 180ms ease;
       }
 
@@ -554,6 +571,7 @@
         font-size: 1.35rem;
         line-height: 1.16;
         letter-spacing: 0;
+        max-width: 13ch;
       }
 
       .metric-card span {
@@ -1295,6 +1313,10 @@
           place-items: center;
           text-align: center;
           line-height: 1.25;
+        }
+
+        .hero-proof span::before {
+          margin-bottom: 0.1rem;
         }
 
         .metric-row {
