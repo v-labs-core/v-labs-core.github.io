@@ -193,8 +193,25 @@
         display: flex;
         align-items: center;
         gap: 0.9rem;
+        padding: 0.35rem 0.45rem 0.35rem 0.35rem;
+        margin-left: -0.35rem;
+        border-radius: 1rem;
         font-weight: 800;
         letter-spacing: 0;
+        transition: background 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+      }
+
+      .brand:hover {
+        background: rgba(255, 255, 255, 0.5);
+      }
+
+      .brand:focus-visible {
+        background: linear-gradient(135deg, rgba(216, 251, 245, 0.86), rgba(255, 248, 242, 0.76));
+        box-shadow:
+          0 0 0 3px rgba(255, 255, 255, 0.94),
+          0 0 0 6px rgba(0, 167, 179, 0.28),
+          0 10px 24px rgba(7, 84, 93, 0.12);
+        outline: none;
       }
 
       .brand-mark {
