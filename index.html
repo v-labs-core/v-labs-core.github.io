@@ -529,24 +529,32 @@
         display: inline-flex;
         align-items: center;
         gap: 0.48rem;
-        padding: 0.58rem 0.78rem;
-        border: 1px solid rgba(0, 126, 139, 0.12);
+        min-height: 2.85rem;
+        padding: 0.6rem 0.82rem;
+        border: 1px solid rgba(0, 126, 139, 0.16);
         border-radius: 0.75rem;
-        background: rgba(255, 255, 255, 0.68);
+        background:
+          linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(245, 251, 248, 0.72)),
+          radial-gradient(circle at 100% 0%, rgba(255, 152, 97, 0.14), transparent 5.8rem);
         color: var(--ink);
         font-size: 0.86rem;
         font-weight: 700;
-        box-shadow: 0 10px 24px rgba(7, 84, 93, 0.06);
+        line-height: 1.25;
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.86),
+          0 10px 24px rgba(7, 84, 93, 0.065);
       }
 
       .hero-proof span::before {
         content: "";
-        width: 0.52rem;
-        height: 0.52rem;
+        width: 0.58rem;
+        height: 0.58rem;
         border-radius: 999px;
         flex: 0 0 auto;
         background: linear-gradient(135deg, var(--brand), var(--accent));
-        box-shadow: 0 0 0 4px rgba(0, 167, 179, 0.08);
+        box-shadow:
+          0 0 0 4px rgba(0, 167, 179, 0.08),
+          0 0 0 1px rgba(255, 255, 255, 0.9);
       }
 
       .metric-row {
@@ -985,6 +993,24 @@
         transition: transform 180ms ease, box-shadow 180ms ease;
       }
 
+      .path-card,
+      .pillar {
+        position: relative;
+        overflow: hidden;
+        background:
+          linear-gradient(150deg, rgba(255, 255, 255, 0.9), rgba(236, 252, 246, 0.66)),
+          radial-gradient(circle at 100% 0%, rgba(255, 152, 97, 0.12), transparent 9rem);
+      }
+
+      .path-card::before,
+      .pillar::before {
+        content: "";
+        position: absolute;
+        inset: 0 0 auto;
+        height: 4px;
+        background: linear-gradient(90deg, var(--brand), var(--accent));
+      }
+
       .path-card:hover,
       .pillar:hover {
         transform: translateY(-3px);
@@ -1355,15 +1381,15 @@
         }
 
         .hero-proof span {
-          display: grid;
+          display: flex;
           min-height: 3.25rem;
-          place-items: center;
-          text-align: center;
+          align-items: center;
+          text-align: left;
           line-height: 1.25;
         }
 
         .hero-proof span::before {
-          margin-bottom: 0.1rem;
+          margin-bottom: 0;
         }
 
         .metric-row {
@@ -1387,6 +1413,27 @@
         .footer-bar,
         .footer-links {
           justify-content: flex-start;
+        }
+
+        .footer-bar {
+          display: grid;
+          align-items: start;
+        }
+
+        .footer-links {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          width: 100%;
+          gap: 0.5rem;
+        }
+
+        .footer-links a {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          background: rgba(255, 255, 255, 0.58);
+          border: 1px solid rgba(0, 126, 139, 0.1);
         }
 
         .section-head h2 {
@@ -1530,6 +1577,34 @@
           width: 100%;
         }
 
+        .contact-form {
+          gap: 1.15rem;
+          padding: 1.15rem;
+        }
+
+        .form-grid {
+          gap: 1rem;
+        }
+
+        .field {
+          gap: 0.55rem;
+        }
+
+        .field input,
+        .field textarea,
+        .field select {
+          min-height: 3.45rem;
+          border-radius: 0.9rem;
+        }
+
+        .field textarea {
+          min-height: 156px;
+        }
+
+        .privacy-note {
+          padding: 1.05rem;
+        }
+
         .delivery-item {
           grid-template-columns: 1fr;
           gap: 0.25rem;
@@ -1543,6 +1618,12 @@
         .contact-card,
         .contact-form {
           border-radius: 1.25rem;
+        }
+      }
+
+      @media (max-width: 430px) {
+        .hero-proof {
+          grid-template-columns: 1fr;
         }
       }
 
