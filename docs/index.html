@@ -529,6 +529,7 @@
         display: inline-flex;
         align-items: center;
         gap: 0.48rem;
+        flex: 0 1 auto;
         min-height: 2.85rem;
         padding: 0.6rem 0.82rem;
         border: 1px solid rgba(0, 126, 139, 0.16);
@@ -547,13 +548,15 @@
 
       .hero-proof span::before {
         content: "";
-        width: 0.58rem;
-        height: 0.58rem;
+        width: 1rem;
+        height: 1rem;
         border-radius: 999px;
         flex: 0 0 auto;
-        background: linear-gradient(135deg, var(--brand), var(--accent));
+        background:
+          radial-gradient(circle at 50% 50%, #fff 0 0.17rem, transparent 0.18rem),
+          linear-gradient(135deg, var(--brand), var(--accent));
         box-shadow:
-          0 0 0 4px rgba(0, 167, 179, 0.08),
+          0 0 0 3px rgba(0, 167, 179, 0.08),
           0 0 0 1px rgba(255, 255, 255, 0.9);
       }
 
@@ -1454,11 +1457,13 @@
         }
 
         .hero-proof span {
-          display: flex;
+          display: grid;
+          grid-template-columns: 1rem minmax(0, 1fr);
           min-height: 3.25rem;
           align-items: center;
           text-align: left;
           line-height: 1.25;
+          padding: 0.72rem 0.78rem;
         }
 
         .hero-proof span::before {
