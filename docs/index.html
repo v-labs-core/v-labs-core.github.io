@@ -1481,43 +1481,22 @@
         }
 
         .hero-proof {
-          display: flex;
-          flex-wrap: nowrap;
-          gap: 0.6rem;
-          margin-inline: -1rem;
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 0.65rem;
+          margin-inline: 0;
           max-width: none;
-          overflow-x: auto;
-          padding: 0.1rem 1rem 0.45rem;
-          scroll-padding-inline: 1rem;
-          scroll-snap-type: x mandatory;
-          scrollbar-color: rgba(0, 167, 179, 0.52) rgba(7, 84, 93, 0.08);
-          scrollbar-width: thin;
-        }
-
-        .hero-proof::-webkit-scrollbar {
-          height: 0.38rem;
-        }
-
-        .hero-proof::-webkit-scrollbar-track {
-          border-radius: 999px;
-          background: rgba(7, 84, 93, 0.08);
-        }
-
-        .hero-proof::-webkit-scrollbar-thumb {
-          border-radius: 999px;
-          background: linear-gradient(90deg, rgba(0, 167, 179, 0.62), rgba(255, 152, 97, 0.7));
+          padding: 0;
         }
 
         .hero-proof span {
           display: grid;
           grid-template-columns: 1rem minmax(0, 1fr);
-          flex: 0 0 min(78vw, 16rem);
           min-height: 3.25rem;
           align-items: center;
           text-align: left;
           line-height: 1.25;
           padding: 0.72rem 0.78rem;
-          scroll-snap-align: start;
         }
 
         .hero-proof span::before {
@@ -1775,8 +1754,12 @@
       }
 
       @media (max-width: 430px) {
+        .hero-proof {
+          grid-template-columns: 1fr;
+        }
+
         .hero-proof span {
-          flex-basis: min(82vw, 15.5rem);
+          min-height: 3rem;
         }
       }
 
