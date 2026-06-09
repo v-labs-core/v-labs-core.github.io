@@ -1304,6 +1304,33 @@
           0 12px 26px rgba(7, 84, 93, 0.08);
       }
 
+      .field input:user-invalid,
+      .field textarea:user-invalid,
+      .field select:user-invalid,
+      .contact-form.is-validated .field input:invalid,
+      .contact-form.is-validated .field textarea:invalid,
+      .contact-form.is-validated .field select:invalid {
+        border-color: rgba(188, 70, 45, 0.56);
+        background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(255, 246, 242, 0.86));
+        box-shadow:
+          inset 4px 0 0 rgba(188, 70, 45, 0.62),
+          0 0 0 3px rgba(188, 70, 45, 0.11);
+      }
+
+      .field input:user-invalid:focus-visible,
+      .field textarea:user-invalid:focus-visible,
+      .field select:user-invalid:focus-visible,
+      .contact-form.is-validated .field input:invalid:focus-visible,
+      .contact-form.is-validated .field textarea:invalid:focus-visible,
+      .contact-form.is-validated .field select:invalid:focus-visible {
+        border-color: rgba(188, 70, 45, 0.68);
+        box-shadow:
+          inset 4px 0 0 rgba(188, 70, 45, 0.68),
+          0 0 0 3px rgba(188, 70, 45, 0.14),
+          0 12px 26px rgba(7, 84, 93, 0.08);
+      }
+
       .field input:hover,
       .field textarea:hover,
       .field select:hover {
@@ -2493,9 +2520,12 @@
           event.preventDefault();
 
           if (!contactForm.reportValidity()) {
+            contactForm.classList.add("is-validated");
             formStatus.textContent = "Please complete the required fields.";
             return;
           }
+
+          contactForm.classList.remove("is-validated");
 
           const payload = {
             name: contactForm.name.value.trim(),
@@ -2525,6 +2555,7 @@
               }
 
               contactForm.reset();
+              contactForm.classList.remove("is-validated");
               formStatus.textContent = "Your message has been sent. Thank you.";
             } catch (error) {
               formStatus.textContent =
