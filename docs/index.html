@@ -1505,6 +1505,14 @@
           grid-template-columns: 1fr;
         }
 
+        .path-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .path-card:last-child {
+          grid-column: 1 / -1;
+        }
+
         h1 {
           font-size: 3.7rem;
         }
@@ -1629,6 +1637,7 @@
 
         .path-card {
           grid-template-rows: auto auto auto auto;
+          grid-column: auto;
           min-height: auto;
           padding-right: 4.4rem;
         }
