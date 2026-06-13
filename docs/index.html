@@ -1687,52 +1687,19 @@
         }
 
         .stream-tabs {
-          grid-template-columns: repeat(4, minmax(8.8rem, 1fr));
-          gap: 0.45rem;
-          overflow-x: auto;
-          overscroll-behavior-x: contain;
-          scroll-padding-inline: 0.75rem;
-          scroll-snap-type: x mandatory;
-          scrollbar-color: rgba(0, 167, 179, 0.52) rgba(7, 84, 93, 0.08);
-          scrollbar-width: thin;
-          padding: 0.65rem 0.75rem 0.85rem;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 0.5rem;
+          overflow: visible;
+          padding: 0.65rem;
           border-radius: 1.15rem;
-          position: sticky;
-          top: 5rem;
+          position: relative;
+          top: auto;
           z-index: 5;
           background:
             linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(250, 255, 252, 0.86)),
             radial-gradient(circle at 0 0, rgba(183, 242, 234, 0.56), transparent 12rem);
           box-shadow: 0 18px 38px rgba(7, 84, 93, 0.12);
           backdrop-filter: blur(16px);
-          -webkit-mask-image: linear-gradient(
-            90deg,
-            transparent 0,
-            #000 1rem,
-            #000 calc(100% - 1rem),
-            transparent 100%
-          );
-          mask-image: linear-gradient(
-            90deg,
-            transparent 0,
-            #000 1rem,
-            #000 calc(100% - 1rem),
-            transparent 100%
-          );
-        }
-
-        .stream-tabs::-webkit-scrollbar {
-          height: 0.45rem;
-        }
-
-        .stream-tabs::-webkit-scrollbar-track {
-          border-radius: 999px;
-          background: rgba(7, 84, 93, 0.08);
-        }
-
-        .stream-tabs::-webkit-scrollbar-thumb {
-          border-radius: 999px;
-          background: linear-gradient(90deg, rgba(0, 167, 179, 0.62), rgba(255, 152, 97, 0.7));
         }
 
         .stream-mobile-summary {
@@ -1771,7 +1738,6 @@
           border-radius: 0.9rem;
           display: grid;
           place-items: center;
-          scroll-snap-align: start;
           box-shadow: none;
         }
 
