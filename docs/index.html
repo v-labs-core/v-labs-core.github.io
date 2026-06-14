@@ -539,6 +539,23 @@
         margin-top: 1.75rem;
       }
 
+      .hero-actions .button::after {
+        content: "";
+        width: 0.48rem;
+        height: 0.48rem;
+        border-top: 2px solid currentColor;
+        border-right: 2px solid currentColor;
+        transform: rotate(45deg);
+        opacity: 0.78;
+        transition: transform 180ms ease, opacity 180ms ease;
+      }
+
+      .hero-actions .button:hover::after,
+      .hero-actions .button:focus-visible::after {
+        transform: translateX(0.14rem) rotate(45deg);
+        opacity: 1;
+      }
+
       .hero-proof {
         display: flex;
         flex-wrap: wrap;
