@@ -193,6 +193,7 @@
         display: flex;
         align-items: center;
         gap: 0.9rem;
+        min-width: 0;
         padding: 0.35rem 0.45rem 0.35rem 0.35rem;
         margin-left: -0.35rem;
         border-radius: 1rem;
@@ -221,6 +222,10 @@
         box-shadow: 0 8px 22px rgba(7, 84, 93, 0.18);
         overflow: hidden;
         flex: 0 0 auto;
+      }
+
+      .brand-copy {
+        min-width: 0;
       }
 
       .brand-mark img {
@@ -1582,6 +1587,7 @@
 
         .brand {
           gap: 0.7rem;
+          flex: 1 1 auto;
         }
 
         .brand-mark {
@@ -1591,7 +1597,7 @@
         }
 
         .brand-copy small {
-          max-width: 10.5rem;
+          max-width: 9.5rem;
           font-size: 0.68rem;
           line-height: 1.28;
           letter-spacing: 0.07em;
@@ -1890,6 +1896,12 @@
         .contact-card,
         .contact-form {
           border-radius: 1.25rem;
+        }
+      }
+
+      @media (max-width: 380px) {
+        .brand-copy small {
+          max-width: 8.5rem;
         }
       }
 
