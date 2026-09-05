@@ -6,6 +6,7 @@ Static GitHub Pages site for Vindem Labs.
 
 - `docs/`: public web root for GitHub Pages hosting
 - `docs/index.html`: the full single-page site
+- `docs/styles.css`: responsive homepage styling
 - `docs/config.js`: public client-side contact email configuration
 - `docs/assets/favicon.svg`: browser icon
 - `docs/assets/og-card.svg`: social sharing preview
@@ -29,3 +30,9 @@ message to `info@vindem.tech`, and returns JSON to the page.
 
 The endpoint is configured in `docs/config.js` as `contactEndpoint`. If that value is empty, the
 page falls back to opening a prefilled email to `info@vindem.tech`.
+
+## Validation
+
+Run `node --test tests/contact-form.test.cjs` for submission feedback and retry checks.
+These tests use simulated responses and do not send email. Run `node --check docs/config.js`,
+`php -l docs/contact.php`, and `git diff --check` for syntax and whitespace checks.
