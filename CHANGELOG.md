@@ -13,6 +13,7 @@
 - Consolidate homepage styling and version changed assets for returning visitors.
 - Improve the narrow mobile offerings tabs with a wider horizontal control and visible
   tab descriptions.
+- Add clearer mobile offerings tab edge affordance and selected-tab contrast.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance

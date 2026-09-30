@@ -502,8 +502,14 @@ footer { padding-block: 1.5rem; background: #f6faf7; border-top: 1px solid var(-
     margin-inline: -1.25rem;
     padding: 0.35rem 1.25rem 0.65rem;
     overflow-x: auto;
+    overscroll-behavior-x: contain;
     border-inline: 0;
     border-radius: 0;
+    background:
+      linear-gradient(90deg, #eef5f2 0, rgba(238, 245, 242, 0) 1.5rem),
+      linear-gradient(270deg, #eef5f2 0, rgba(238, 245, 242, 0) 1.5rem),
+      #eef5f2;
+    background-attachment: local, local, scroll;
     scroll-padding-inline: 1.25rem;
     scroll-snap-type: x proximity;
   }
@@ -514,7 +520,13 @@ footer { padding-block: 1.5rem; background: #f6faf7; border-top: 1px solid var(-
     flex: 0 0 min(78vw, 17.5rem);
     min-height: 4.75rem;
     padding: 0.9rem 0.95rem;
+    border-color: #d4e5df;
+    background: rgba(255, 255, 255, 0.58);
     scroll-snap-align: start;
+  }
+  .stream-tab[aria-selected="true"] {
+    border-color: #92c8ba;
+    box-shadow: 0 8px 18px -16px #07545d;
   }
   .stream-tab strong { font-size: 0.82rem; }
   .stream-tab span { display: block; margin-top: 0.35rem; font-size: 0.72rem; }
