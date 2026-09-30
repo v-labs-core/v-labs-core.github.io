@@ -14,6 +14,8 @@
 - Improve the narrow mobile offerings tabs with a wider horizontal control and visible
   tab descriptions.
 - Add clearer mobile offerings tab edge affordance and selected-tab contrast.
+- Refine the narrow mobile offerings tabs with stronger scroll-edge cues and selected-tab
+  emphasis.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance

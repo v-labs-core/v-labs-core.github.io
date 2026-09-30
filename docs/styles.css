@@ -500,14 +500,14 @@ footer { padding-block: 1.5rem; background: #f6faf7; border-top: 1px solid var(-
     display: flex;
     gap: 0.45rem;
     margin-inline: -1.25rem;
-    padding: 0.35rem 1.25rem 0.65rem;
+    padding: 0.45rem 1.25rem 0.75rem;
     overflow-x: auto;
     overscroll-behavior-x: contain;
     border-inline: 0;
     border-radius: 0;
     background:
-      linear-gradient(90deg, #eef5f2 0, rgba(238, 245, 242, 0) 1.5rem),
-      linear-gradient(270deg, #eef5f2 0, rgba(238, 245, 242, 0) 1.5rem),
+      linear-gradient(90deg, #eef5f2 0, rgba(238, 245, 242, 0.92) 1.2rem, rgba(238, 245, 242, 0) 2.6rem),
+      linear-gradient(270deg, #eef5f2 0, rgba(238, 245, 242, 0.92) 1.2rem, rgba(238, 245, 242, 0) 2.6rem),
       #eef5f2;
     background-attachment: local, local, scroll;
     scroll-padding-inline: 1.25rem;
@@ -524,9 +524,21 @@ footer { padding-block: 1.5rem; background: #f6faf7; border-top: 1px solid var(-
     background: rgba(255, 255, 255, 0.58);
     scroll-snap-align: start;
   }
+  .stream-tab::before {
+    content: "";
+    width: 1.5rem;
+    height: 0.18rem;
+    margin-bottom: 0.6rem;
+    border-radius: 999px;
+    background: #b7d6cc;
+  }
   .stream-tab[aria-selected="true"] {
+    background: #fff;
     border-color: #92c8ba;
-    box-shadow: 0 8px 18px -16px #07545d;
+    box-shadow: 0 10px 22px -17px #07545d;
+  }
+  .stream-tab[aria-selected="true"]::before {
+    background: linear-gradient(90deg, #eca95d, #ef8365);
   }
   .stream-tab strong { font-size: 0.82rem; }
   .stream-tab span { display: block; margin-top: 0.35rem; font-size: 0.72rem; }
