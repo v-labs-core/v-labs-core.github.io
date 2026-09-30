@@ -16,6 +16,8 @@
 - Add clearer mobile offerings tab edge affordance and selected-tab contrast.
 - Refine the narrow mobile offerings tabs with stronger scroll-edge cues and selected-tab
   emphasis.
+- Polish the narrow mobile offerings tab rail with clearer depth, edge fade, and selected
+  tab definition.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance
