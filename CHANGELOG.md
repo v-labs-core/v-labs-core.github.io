@@ -11,6 +11,8 @@
   after delivery is confirmed by the existing endpoint.
 - Keep privacy navigation on the current host, with a standalone policy page.
 - Consolidate homepage styling and version changed assets for returning visitors.
+- Improve the narrow mobile offerings tabs with a wider horizontal control and visible
+  tab descriptions.
 - Tracking: PR #97 and issue #98.
 
 ## Maintenance

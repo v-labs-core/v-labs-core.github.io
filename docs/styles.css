@@ -496,9 +496,28 @@ footer { padding-block: 1.5rem; background: #f6faf7; border-top: 1px solid var(-
   .metric-card + .metric-card { padding: 1rem 0 0; border-left: 0; border-top: 1px solid #c8ddd5; }
   .metric-card span { max-width: none; }
   .section-head { margin-bottom: 1.65rem; }
-  .stream-tabs { gap: 0.3rem; padding: 0.3rem; }
-  .stream-tab { padding: 0.85rem 0.55rem; }
-  .stream-tab strong { font-size: 0.76rem; }
+  .stream-tabs {
+    display: flex;
+    gap: 0.45rem;
+    margin-inline: -1.25rem;
+    padding: 0.35rem 1.25rem 0.65rem;
+    overflow-x: auto;
+    border-inline: 0;
+    border-radius: 0;
+    scroll-padding-inline: 1.25rem;
+    scroll-snap-type: x proximity;
+  }
+  .stream-tabs::-webkit-scrollbar { height: 0.45rem; }
+  .stream-tabs::-webkit-scrollbar-track { background: transparent; }
+  .stream-tabs::-webkit-scrollbar-thumb { background: #b7d6cc; border-radius: 999px; }
+  .stream-tab {
+    flex: 0 0 min(78vw, 17.5rem);
+    min-height: 4.75rem;
+    padding: 0.9rem 0.95rem;
+    scroll-snap-align: start;
+  }
+  .stream-tab strong { font-size: 0.82rem; }
+  .stream-tab span { display: block; margin-top: 0.35rem; font-size: 0.72rem; }
   .stream-header { display: grid; gap: 0.75rem; }
   .stream-badge { justify-self: start; white-space: normal; }
   .stream-side { grid-template-columns: 1fr; }
