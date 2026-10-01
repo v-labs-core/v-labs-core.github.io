@@ -272,7 +272,7 @@ h1 span { color: #087c78; }
 .section-head h2 { font-size: clamp(1.9rem, 3vw, 2.75rem); line-height: 1.16; font-weight: 600; letter-spacing: -0.045em; text-wrap: balance; }
 .section-copy p { color: var(--muted); font-size: 0.93rem; line-height: 1.8; }
 #streams { background: #fff; }
-.stream-shell { display: grid; gap: 0; min-width: 0; }
+.stream-shell { position: relative; display: grid; gap: 0; min-width: 0; }
 .stream-tabs {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -556,11 +556,28 @@ footer { padding-block: 1.5rem; background: #f6faf7; border-top: 1px solid var(-
     scroll-padding-inline: 1.25rem;
     scroll-snap-type: x proximity;
   }
+  .stream-shell::after {
+    content: "";
+    position: absolute;
+    top: 1.35rem;
+    right: -0.55rem;
+    z-index: 1;
+    width: 1.85rem;
+    height: 3rem;
+    border: 1px solid rgba(7, 84, 93, 0.12);
+    border-radius: 999px 0 0 999px;
+    background:
+      linear-gradient(45deg, transparent 48%, #07545d 50%, transparent 52%) 0.45rem 0.82rem / 0.42rem 0.42rem no-repeat,
+      linear-gradient(45deg, transparent 48%, #07545d 50%, transparent 52%) 0.85rem 0.82rem / 0.42rem 0.42rem no-repeat,
+      rgba(255, 255, 255, 0.86);
+    box-shadow: 0 10px 22px -18px #07545d;
+    pointer-events: none;
+  }
   .stream-tabs::-webkit-scrollbar { height: 0.45rem; }
   .stream-tabs::-webkit-scrollbar-track { background: transparent; }
   .stream-tabs::-webkit-scrollbar-thumb { background: #b7d6cc; border-radius: 999px; }
   .stream-tab {
-    flex: 0 0 min(78vw, 17.5rem);
+    flex: 0 0 min(74vw, 17.5rem);
     min-height: 4.75rem;
     padding: 0.9rem 0.95rem;
     border-color: #c9ddd5;

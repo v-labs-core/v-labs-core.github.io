@@ -22,6 +22,7 @@
   selected-tab text contrast.
 - Polish contact form control states with clearer hover, focus, and completed-field cues.
 - Refine sector cards with clearer icon badges, card depth, and hover treatment.
+- Add a compact mobile offerings rail scroll cue and increase the next-tab peek.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance
