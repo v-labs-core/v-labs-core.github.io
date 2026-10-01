@@ -19,6 +19,7 @@
 - Polish the narrow mobile offerings tab rail with clearer depth, edge fade, and selected
   tab definition.
 - Polish contact form control states with clearer hover, focus, and completed-field cues.
+- Refine sector cards with clearer icon badges, card depth, and hover treatment.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance
