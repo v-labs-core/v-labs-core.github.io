@@ -543,6 +543,8 @@ footer { padding-block: 1.5rem; background: #f6faf7; border-top: 1px solid var(-
     padding: 0.65rem 1.25rem 0.9rem;
     overflow-x: auto;
     overscroll-behavior-x: contain;
+    scrollbar-color: #9fcfc4 transparent;
+    scrollbar-gutter: stable;
     border-inline: 0;
     border-radius: 0;
     background:
@@ -582,8 +584,10 @@ footer { padding-block: 1.5rem; background: #f6faf7; border-top: 1px solid var(-
   .stream-tab[aria-selected="true"]::before {
     background: linear-gradient(90deg, #eca95d, #ef8365);
   }
-  .stream-tab strong { font-size: 0.82rem; }
-  .stream-tab span { display: block; margin-top: 0.35rem; font-size: 0.72rem; }
+  .stream-tab[aria-selected="true"] strong { color: #064d54; }
+  .stream-tab[aria-selected="true"] span { color: #3f6467; }
+  .stream-tab strong { font-size: 0.82rem; line-height: 1.35; }
+  .stream-tab span { display: block; margin-top: 0.35rem; font-size: 0.72rem; line-height: 1.45; }
   .stream-header { display: grid; gap: 0.75rem; }
   .stream-badge { justify-self: start; white-space: normal; }
   .stream-side { grid-template-columns: 1fr; }

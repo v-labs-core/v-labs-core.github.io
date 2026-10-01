@@ -18,12 +18,16 @@
   emphasis.
 - Polish the narrow mobile offerings tab rail with clearer depth, edge fade, and selected
   tab definition.
+- Refine the narrow mobile offerings tab rail with steadier scrollbar space and clearer
+  selected-tab text contrast.
 - Polish contact form control states with clearer hover, focus, and completed-field cues.
 - Refine sector cards with clearer icon badges, card depth, and hover treatment.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance
 
+- 2026-10-01: Checked for local dependency manifests; none are present. Attempted
+  GitHub dependency alert check, but the API was unreachable from the environment.
 - 2026-09-05: Checked repository dependency alerts; no open alerts reported.
   No package dependency manifest is present. No dependency security patch was indicated
   by this check. The hosting provider manages the production PHP runtime.
