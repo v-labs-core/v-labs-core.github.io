@@ -396,7 +396,8 @@ h1 span { color: #087c78; }
   background-color: #fafcfb;
   color: var(--text);
   font-size: 1rem;
-  transition: border-color 160ms ease, box-shadow 160ms ease;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
+  transition: background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
 }
 .field textarea { min-height: 150px; resize: vertical; }
 .field select {
@@ -406,7 +407,24 @@ h1 span { color: #087c78; }
   background-position: right 0.8rem center;
   background-repeat: no-repeat;
 }
-.field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible { outline: 2px solid #168b81; outline-offset: 2px; background-color: white; }
+.field input:hover, .field select:hover, .field textarea:hover {
+  border-color: #9ec8be;
+  background-color: white;
+}
+.field input:required:valid,
+.field textarea:not(:placeholder-shown),
+.field select:valid {
+  border-color: #9fcfc4;
+  background-color: white;
+  box-shadow: inset 3px 0 #7ac5b6, inset 0 1px 0 rgba(255, 255, 255, 0.75);
+}
+.field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible {
+  outline: 2px solid #168b81;
+  outline-offset: 2px;
+  border-color: #168b81;
+  background-color: white;
+  box-shadow: inset 3px 0 #168b81, 0 0 0 4px rgba(22, 139, 129, 0.12);
+}
 .field input:user-invalid, .field select:user-invalid, .field textarea:user-invalid,
 .is-validated :is(input, select, textarea):invalid { border-color: #b1492d; box-shadow: inset 3px 0 #b1492d; }
 .field-hint { color: var(--muted); font-size: 0.74rem; line-height: 1.5; }
