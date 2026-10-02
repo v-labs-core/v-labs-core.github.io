@@ -24,6 +24,7 @@
 - Refine sector cards with clearer icon badges, card depth, and hover treatment.
 - Add a compact mobile offerings rail scroll cue and increase the next-tab peek.
 - Refine tablet sector card spacing for cleaner responsive scanning.
+- Refine homepage service proof badges for clearer hero scanning across viewport sizes.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance
