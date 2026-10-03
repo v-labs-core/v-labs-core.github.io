@@ -620,13 +620,14 @@ footer { padding-block: 1.5rem; background: #f6faf7; border-top: 1px solid var(-
   .stream-tabs::-webkit-scrollbar-track { background: transparent; }
   .stream-tabs::-webkit-scrollbar-thumb { background: #b7d6cc; border-radius: 999px; }
   .stream-tab {
-    flex: 0 0 min(74vw, 17.5rem);
+    flex: 0 0 min(68vw, 16.25rem);
     min-height: 4.75rem;
     padding: 0.9rem 0.95rem;
     border-color: #c9ddd5;
     background: rgba(255, 255, 255, 0.78);
     box-shadow: 0 7px 18px -18px #07545d;
     scroll-snap-align: start;
+    scroll-snap-stop: always;
   }
   .stream-tab::before {
     content: "";
@@ -639,7 +640,10 @@ footer { padding-block: 1.5rem; background: #f6faf7; border-top: 1px solid var(-
   .stream-tab[aria-selected="true"] {
     background: #fff;
     border-color: #5fb9a6;
-    box-shadow: 0 12px 26px -18px #07545d, inset 0 0 0 1px rgba(95, 185, 166, 0.28);
+    box-shadow:
+      0 12px 26px -18px #07545d,
+      inset 0 0 0 1px rgba(95, 185, 166, 0.28),
+      inset 0 -0.28rem #f0a164;
   }
   .stream-tab[aria-selected="true"]::before {
     background: linear-gradient(90deg, #eca95d, #ef8365);
@@ -648,6 +652,10 @@ footer { padding-block: 1.5rem; background: #f6faf7; border-top: 1px solid var(-
   .stream-tab[aria-selected="true"] span { color: #3f6467; }
   .stream-tab strong { font-size: 0.82rem; line-height: 1.35; }
   .stream-tab span { display: block; margin-top: 0.35rem; font-size: 0.72rem; line-height: 1.45; }
+  .stream-tab:focus-visible {
+    outline-color: #07545d;
+    outline-offset: -0.35rem;
+  }
   .stream-header { display: grid; gap: 0.75rem; }
   .stream-badge { justify-self: start; white-space: normal; }
   .stream-side { grid-template-columns: 1fr; }
