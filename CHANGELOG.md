@@ -20,6 +20,7 @@
   tab definition.
 - Refine the narrow mobile offerings tab rail with steadier scrollbar space and clearer
   selected-tab text contrast.
+- Refine the mobile navigation panel with clearer item separation, depth, and focus states.
 - Polish contact form control states with clearer hover, focus, and completed-field cues.
 - Refine sector cards with clearer icon badges, card depth, and hover treatment.
 - Add a compact mobile offerings rail scroll cue and increase the next-tab peek.
