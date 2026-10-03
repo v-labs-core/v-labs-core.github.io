@@ -29,6 +29,8 @@
 - Refine mobile hero proof badges into a steadier two-column layout.
 - Refine the mobile offerings tab rail with a clearer next-tab peek, stronger selected
   tab anchor, and steadier snap behavior.
+- Refine the mobile offerings tab rail with roomier cards, a lighter scroll cue, and a
+  cleaner rail edge.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance
