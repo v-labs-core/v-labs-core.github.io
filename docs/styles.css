@@ -561,8 +561,17 @@ footer { padding-block: 1.5rem; background: #f6faf7; border-top: 1px solid var(-
   .hero-copy > p { font-size: 0.94rem; line-height: 1.75; }
   .hero-actions { flex-direction: column; }
   .hero-actions .button { justify-content: space-between; padding-inline: 1.1rem; }
-  .hero-proof { gap: 0.45rem; }
-  .hero-proof span { padding-inline: 0.6rem; font-size: 0.72rem; }
+  .hero-proof {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+  .hero-proof span {
+    width: 100%;
+    min-height: 2.65rem;
+    padding-inline: 0.65rem;
+    font-size: 0.72rem;
+  }
   .hero-board { padding: 1.3rem; }
   .delivery-list { grid-template-columns: 1fr; }
   .hero-board h2 { font-size: 1.3rem; }

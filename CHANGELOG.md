@@ -26,6 +26,7 @@
 - Refine tablet sector card spacing for cleaner responsive scanning.
 - Refine homepage service proof badges for clearer hero scanning across viewport sizes.
 - Polish the contact form action row and submission status treatment.
+- Refine mobile hero proof badges into a steadier two-column layout.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance
