@@ -37,6 +37,7 @@
 - Refine approach pillars with clearer card grouping, numbered visual anchors, and hover
   depth.
 - Polish the mobile offerings tab rail with clearer card separation and selected-tab contrast.
+- Refine narrow mobile sector cards with calmer one-column flow and balanced highlight chips.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance
