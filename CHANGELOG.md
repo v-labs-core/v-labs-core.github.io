@@ -34,6 +34,8 @@
   cleaner rail edge.
 - Refine the hero metric row with clearer card grouping and tighter responsive spacing.
 - Polish sector cards with subtle top accents and clearer focus-area tags.
+- Refine approach pillars with clearer card grouping, numbered visual anchors, and hover
+  depth.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance
