@@ -33,6 +33,7 @@
 - Refine the mobile offerings tab rail with roomier cards, a lighter scroll cue, and a
   cleaner rail edge.
 - Refine the hero metric row with clearer card grouping and tighter responsive spacing.
+- Polish sector cards with subtle top accents and clearer focus-area tags.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance
