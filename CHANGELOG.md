@@ -36,6 +36,7 @@
 - Polish sector cards with subtle top accents and clearer focus-area tags.
 - Refine approach pillars with clearer card grouping, numbered visual anchors, and hover
   depth.
+- Polish the mobile offerings tab rail with clearer card separation and selected-tab contrast.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance
