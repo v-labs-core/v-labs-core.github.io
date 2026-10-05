@@ -40,6 +40,7 @@
 - Refine narrow mobile sector cards with calmer one-column flow and balanced highlight chips.
 - Polish the narrow mobile contact form rhythm with roomier fields and clearer action spacing.
 - Polish the footer with clearer link affordances, spacing, and responsive alignment.
+- Polish the narrow mobile contact support card and privacy note for clearer tap targets and grouping.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance

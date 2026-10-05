@@ -792,6 +792,57 @@ footer {
     padding: 1.2rem;
     border-radius: 0.9rem;
   }
+  .contact-direct {
+    gap: 0.75rem;
+    padding: 1rem;
+    border: 1px solid #c9ddd2;
+    border-radius: 0.8rem;
+    background: rgba(255, 255, 255, 0.68);
+    box-shadow: 0 12px 28px -26px rgba(7, 84, 93, 0.55);
+  }
+  .contact-direct strong {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+  }
+  .contact-direct strong::before {
+    content: "";
+    width: 1.8rem;
+    height: 1.8rem;
+    flex: 0 0 auto;
+    border-radius: 0.5rem;
+    background:
+      linear-gradient(145deg, rgba(255, 255, 255, 0.75), rgba(182, 226, 214, 0.18)),
+      #e4f5ef;
+    box-shadow: inset 0 0 0 1px rgba(7, 84, 93, 0.14);
+  }
+  .contact-direct strong::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0.43rem;
+    width: 0.95rem;
+    height: 0.72rem;
+    background: var(--brand-deep);
+    transform: translateY(-50%);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 20'%3E%3Cpath fill='black' d='M3 0h22a3 3 0 0 1 3 3v14a3 3 0 0 1-3 3H3a3 3 0 0 1-3-3V3a3 3 0 0 1 3-3Zm.7 2.4 10.3 8 10.3-8H3.7Zm21.9 2.1-10.7 8.3a1.5 1.5 0 0 1-1.8 0L2.4 4.5V17c0 .3.3.6.6.6h22c.3 0 .6-.3.6-.6V4.5Z'/%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 20'%3E%3Cpath fill='black' d='M3 0h22a3 3 0 0 1 3 3v14a3 3 0 0 1-3 3H3a3 3 0 0 1-3-3V3a3 3 0 0 1 3-3Zm.7 2.4 10.3 8 10.3-8H3.7Zm21.9 2.1-10.7 8.3a1.5 1.5 0 0 1-1.8 0L2.4 4.5V17c0 .3.3.6.6.6h22c.3 0 .6-.3.6-.6V4.5Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  }
+  .contact-direct a {
+    min-height: 48px;
+    padding: 0 0.8rem;
+    border: 1px solid #b7d6cc;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.72);
+    text-decoration: none;
+  }
+  .privacy-note {
+    padding: 1rem;
+    border: 1px solid #d4e7df;
+    border-radius: 0.75rem;
+    background: #f7fbf8;
+  }
   .form-grid { grid-template-columns: 1fr; gap: 1rem; }
   .field { gap: 0.45rem; }
   .field input, .field textarea, .field select {
