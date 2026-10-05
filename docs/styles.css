@@ -752,10 +752,26 @@ footer { padding-block: 1.5rem; background: #f6faf7; border-top: 1px solid var(-
   }
   .path-highlights span { flex: 1 1 8.5rem; justify-content: center; text-align: center; }
   .pillar-grid { grid-template-columns: 1fr; gap: 1.75rem; }
-  .contact-form { padding: 1.3rem; }
-  .form-grid { grid-template-columns: 1fr; }
-  .form-meta { align-items: stretch; flex-direction: column; }
+  .contact-form {
+    gap: 1.25rem;
+    padding: 1.2rem;
+    border-radius: 0.9rem;
+  }
+  .form-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .field { gap: 0.45rem; }
+  .field input, .field textarea, .field select {
+    min-height: 52px;
+    padding-inline: 0.85rem;
+  }
+  .field textarea { min-height: 132px; }
+  .form-meta {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding-top: 0.25rem;
+  }
   .form-meta, .form-meta .button, .form-status { width: 100%; }
+  .form-status { padding: 0.7rem 0.8rem; }
   .footer-links { gap: 0; margin-left: -0.7rem; }
 }
 @media (prefers-reduced-motion: reduce) {
