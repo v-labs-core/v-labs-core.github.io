@@ -564,11 +564,45 @@ h1 span { color: #087c78; }
 .privacy-note h3 { font-size: 0.82rem; font-weight: 700; }
 .privacy-note p { color: var(--muted); font-size: 0.77rem; line-height: 1.65; }
 .privacy-note a { display: inline-flex; align-items: center; justify-self: start; min-height: 44px; color: var(--brand-deep); text-decoration: underline; text-underline-offset: 0.25rem; font-size: 0.8rem; font-weight: 600; }
-footer { padding-block: 1.5rem; background: #f6faf7; border-top: 1px solid var(--line); }
-.footer-bar { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
-.footer-bar > span { max-width: 53ch; color: var(--muted); font-size: 0.76rem; line-height: 1.65; }
-.footer-links { display: flex; flex-wrap: wrap; gap: 0.25rem; }
-.footer-links a { padding-inline: 0.7rem; font-size: 0.76rem; }
+footer {
+  padding-block: 1.25rem;
+  border-top: 1px solid #c9ddd5;
+  background:
+    linear-gradient(90deg, rgba(234, 248, 242, 0.9), rgba(255, 249, 239, 0.78)),
+    #f6faf7;
+}
+.footer-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 0.55rem 0;
+}
+.footer-bar > span {
+  max-width: 53ch;
+  color: #45686b;
+  font-size: 0.78rem;
+  line-height: 1.65;
+}
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.35rem;
+}
+.footer-links a {
+  min-height: 40px;
+  padding-inline: 0.78rem;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.46);
+  font-size: 0.76rem;
+}
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  border-color: #b7d6cc;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--brand-deep);
+}
 
 @keyframes arrive { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: no-preference) {
@@ -625,6 +659,7 @@ footer { padding-block: 1.5rem; background: #f6faf7; border-top: 1px solid var(-
   .contact-card { grid-row: 3; }
   .contact-direct span { max-width: none; }
   .footer-bar { align-items: start; flex-direction: column; gap: 0.75rem; }
+  .footer-links { justify-content: flex-start; }
 }
 @media (max-width: 520px) {
   html { scroll-padding-top: 6.5rem; }
@@ -772,7 +807,8 @@ footer { padding-block: 1.5rem; background: #f6faf7; border-top: 1px solid var(-
   }
   .form-meta, .form-meta .button, .form-status { width: 100%; }
   .form-status { padding: 0.7rem 0.8rem; }
-  .footer-links { gap: 0; margin-left: -0.7rem; }
+  .footer-links { gap: 0.35rem; margin-left: -0.1rem; }
+  .footer-links a { padding-inline: 0.7rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

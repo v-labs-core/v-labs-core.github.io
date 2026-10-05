@@ -39,6 +39,7 @@
 - Polish the mobile offerings tab rail with clearer card separation and selected-tab contrast.
 - Refine narrow mobile sector cards with calmer one-column flow and balanced highlight chips.
 - Polish the narrow mobile contact form rhythm with roomier fields and clearer action spacing.
+- Polish the footer with clearer link affordances, spacing, and responsive alignment.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance
