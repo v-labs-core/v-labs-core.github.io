@@ -44,6 +44,7 @@
 - Refine the narrow mobile offerings rail with stronger selected and focus states.
 - Polish the offerings side summary with clearer visual anchoring and scan cues.
 - Refine mobile hero proof badges with steadier spacing and clearer card definition.
+- Polish the hero metric cards with clearer visual anchors and top accents.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance
