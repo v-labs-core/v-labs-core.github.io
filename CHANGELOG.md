@@ -43,6 +43,7 @@
 - Polish the narrow mobile contact support card and privacy note for clearer tap targets and grouping.
 - Refine the narrow mobile offerings rail with stronger selected and focus states.
 - Polish the offerings side summary with clearer visual anchoring and scan cues.
+- Refine mobile hero proof badges with steadier spacing and clearer card definition.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance
