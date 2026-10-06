@@ -355,8 +355,43 @@ h1 span { color: #087c78; }
 .sub-item::before { content: ""; position: absolute; left: 0; top: 1.4rem; width: 5px; height: 5px; border: 1px solid #008f92; transform: rotate(45deg); }
 .sub-item strong, .checkpoint strong { display: block; margin-bottom: 0.3rem; font-size: 0.91rem; }
 .sub-item p { font-size: 0.88rem; }
-.stream-side { display: grid; gap: 1.4rem; padding: 1.75rem; border: 1px solid #d3e9df; border-radius: 1rem; background: linear-gradient(145deg, #eaf8ef, #f6faf1); }
+.stream-side {
+  position: relative;
+  display: grid;
+  gap: 1.4rem;
+  overflow: hidden;
+  padding: 1.75rem;
+  border: 1px solid #d3e9df;
+  border-radius: 1rem;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.66), rgba(255, 255, 255, 0) 44%),
+    linear-gradient(145deg, #eaf8ef, #f6faf1);
+  box-shadow: 0 18px 38px -34px rgba(7, 84, 93, 0.42);
+}
+.stream-side::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0.32rem;
+  background: linear-gradient(180deg, #63c2b4, #f1a063);
+}
+.checkpoint {
+  position: relative;
+  padding-left: 0.95rem;
+}
+.checkpoint::before {
+  content: "";
+  position: absolute;
+  top: 0.42rem;
+  left: 0;
+  width: 0.38rem;
+  height: 0.38rem;
+  border-radius: 50%;
+  background: #087c78;
+  box-shadow: 0 0 0 0.22rem rgba(8, 124, 120, 0.12);
+}
 .checkpoint + .checkpoint { border-top: 1px solid #cce1d6; padding-top: 1.2rem; }
+.checkpoint + .checkpoint::before { top: 1.62rem; }
 .checkpoint p { font-size: 0.87rem; }
 .stat-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .stat-list span { font-size: 0.72rem; color: var(--brand-deep); padding: 0.35rem 0.55rem; border: 1px solid #cce1d6; border-radius: 0.3rem; }
@@ -786,7 +821,7 @@ footer {
   .stream-header { display: grid; gap: 0.75rem; }
   .stream-badge { justify-self: start; white-space: normal; }
   .stream-side { grid-template-columns: 1fr; }
-  .checkpoint + .checkpoint { border-left: 0; border-top: 1px solid #cce1d6; padding: 1.2rem 0 0; }
+  .checkpoint + .checkpoint { border-left: 0; border-top: 1px solid #cce1d6; padding: 1.2rem 0 0 0.95rem; }
   .path-card { display: grid; grid-template-columns: 1fr; grid-template-rows: auto auto auto auto; gap: 0.8rem; }
   .path-card > * { grid-column: auto; grid-row: auto; }
   .path-card h3 { max-width: 18ch; }
