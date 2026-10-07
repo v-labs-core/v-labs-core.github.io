@@ -47,6 +47,7 @@
 - Polish the hero metric cards with clearer visual anchors and top accents.
 - Polish the hero delivery summary with clearer card grouping and numbered anchors.
 - Refine the narrow mobile offerings rail with a clearer scroll cue and steadier selected-tab depth.
+- Refine the narrow mobile offerings rail spacing so adjacent tabs peek more clearly.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance

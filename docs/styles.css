@@ -802,9 +802,9 @@ footer {
   .section-head { margin-bottom: 1.65rem; }
   .stream-tabs {
     display: flex;
-    gap: 0.55rem;
+    gap: 0.65rem;
     margin-inline: -1.25rem;
-    padding: 0.8rem 1.25rem 1.1rem;
+    padding: 0.85rem 1.25rem 1.15rem;
     overflow-x: auto;
     overscroll-behavior-x: contain;
     scrollbar-color: #9fcfc4 transparent;
@@ -829,8 +829,8 @@ footer {
   .stream-shell::after {
     content: "";
     position: absolute;
-    top: 1.72rem;
-    right: -0.55rem;
+    top: 1.85rem;
+    right: -0.35rem;
     z-index: 1;
     width: 1.9rem;
     height: 2.75rem;
@@ -841,16 +841,16 @@ footer {
       linear-gradient(45deg, transparent 46%, #07545d 49%, #07545d 55%, transparent 58%) 0.48rem 0.78rem / 0.44rem 0.44rem no-repeat,
       linear-gradient(45deg, transparent 46%, #07545d 49%, #07545d 55%, transparent 58%) 0.86rem 0.78rem / 0.44rem 0.44rem no-repeat,
       linear-gradient(90deg, rgba(255, 255, 255, 0.86), rgba(236, 248, 243, 0.96));
-    box-shadow: 0 10px 22px -16px rgba(7, 84, 93, 0.82);
+    box-shadow: 0 10px 22px -18px rgba(7, 84, 93, 0.72);
     pointer-events: none;
   }
   .stream-tabs::-webkit-scrollbar { height: 0.45rem; }
   .stream-tabs::-webkit-scrollbar-track { background: transparent; }
   .stream-tabs::-webkit-scrollbar-thumb { background: #b7d6cc; border-radius: 999px; }
   .stream-tab {
-    flex: 0 0 min(76vw, 17.5rem);
-    min-height: 5.35rem;
-    padding: 0.9rem 0.95rem;
+    flex: 0 0 min(72vw, 17rem);
+    min-height: 5.6rem;
+    padding: 0.95rem 1rem;
     border-color: #bed8cf;
     background: rgba(255, 255, 255, 0.86);
     box-shadow:
@@ -862,7 +862,7 @@ footer {
   }
   .stream-tab::before {
     content: "";
-    width: 1.5rem;
+    width: 1.7rem;
     height: 0.18rem;
     margin-bottom: 0.6rem;
     border-radius: 999px;
