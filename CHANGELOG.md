@@ -45,6 +45,7 @@
 - Polish the offerings side summary with clearer visual anchoring and scan cues.
 - Refine mobile hero proof badges with steadier spacing and clearer card definition.
 - Polish the hero metric cards with clearer visual anchors and top accents.
+- Polish the hero delivery summary with clearer card grouping and numbered anchors.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance
