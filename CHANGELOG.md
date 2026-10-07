@@ -46,10 +46,13 @@
 - Refine mobile hero proof badges with steadier spacing and clearer card definition.
 - Polish the hero metric cards with clearer visual anchors and top accents.
 - Polish the hero delivery summary with clearer card grouping and numbered anchors.
+- Refine the narrow mobile offerings rail with a clearer scroll cue and steadier selected-tab depth.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance
 
+- 2026-10-07: Checked for local dependency manifests; none are present. Attempted
+  GitHub dependency alert check, but the API was unreachable from the environment.
 - 2026-10-01: Checked for local dependency manifests; none are present. Attempted
   GitHub dependency alert check, but the API was unreachable from the environment.
 - 2026-09-05: Checked repository dependency alerts; no open alerts reported.
