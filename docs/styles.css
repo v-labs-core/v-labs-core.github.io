@@ -804,7 +804,7 @@ footer {
     display: flex;
     gap: 0.65rem;
     margin-inline: -1.25rem;
-    padding: 0.85rem 1.25rem 1.15rem;
+    padding: 0.95rem 2.3rem 1.2rem 1.25rem;
     overflow-x: auto;
     overscroll-behavior-x: contain;
     scrollbar-color: #9fcfc4 transparent;
@@ -829,19 +829,21 @@ footer {
   .stream-shell::after {
     content: "";
     position: absolute;
-    top: 1.85rem;
-    right: -0.35rem;
+    top: 1.72rem;
+    right: -0.65rem;
     z-index: 1;
-    width: 1.9rem;
-    height: 2.75rem;
-    border: 1px solid rgba(7, 84, 93, 0.18);
+    width: 2.35rem;
+    height: 3rem;
+    border: 1px solid rgba(7, 84, 93, 0.22);
     border-right: 0;
     border-radius: 999px 0 0 999px;
     background:
-      linear-gradient(45deg, transparent 46%, #07545d 49%, #07545d 55%, transparent 58%) 0.48rem 0.78rem / 0.44rem 0.44rem no-repeat,
-      linear-gradient(45deg, transparent 46%, #07545d 49%, #07545d 55%, transparent 58%) 0.86rem 0.78rem / 0.44rem 0.44rem no-repeat,
-      linear-gradient(90deg, rgba(255, 255, 255, 0.86), rgba(236, 248, 243, 0.96));
-    box-shadow: 0 10px 22px -18px rgba(7, 84, 93, 0.72);
+      linear-gradient(45deg, transparent 45%, #07545d 48%, #07545d 56%, transparent 59%) 0.62rem 0.9rem / 0.48rem 0.48rem no-repeat,
+      linear-gradient(45deg, transparent 45%, #07545d 48%, #07545d 56%, transparent 59%) 1.02rem 0.9rem / 0.48rem 0.48rem no-repeat,
+      linear-gradient(90deg, rgba(255, 255, 255, 0.9), rgba(236, 248, 243, 0.98));
+    box-shadow:
+      0 10px 24px -18px rgba(7, 84, 93, 0.78),
+      inset 0 1px rgba(255, 255, 255, 0.9);
     pointer-events: none;
   }
   .stream-tabs::-webkit-scrollbar { height: 0.45rem; }

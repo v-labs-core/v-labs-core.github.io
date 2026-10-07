@@ -48,6 +48,8 @@
 - Polish the hero delivery summary with clearer card grouping and numbered anchors.
 - Refine the narrow mobile offerings rail with a clearer scroll cue and steadier selected-tab depth.
 - Refine the narrow mobile offerings rail spacing so adjacent tabs peek more clearly.
+- Strengthen the narrow mobile offerings rail scroll affordance with roomier right-edge spacing
+  and a clearer cue.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance
