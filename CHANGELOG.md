@@ -53,6 +53,8 @@
 - Refine tablet hero metric cards into a steadier two-row layout for clearer scanning.
 - Polish the approach cards with clearer visual anchors, subtle depth, and steadier
   mobile spacing.
+- Refine the narrow mobile offerings rail with steadier edge boundaries and a clearer
+  right-side scroll cue.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance
