@@ -50,6 +50,7 @@
 - Refine the narrow mobile offerings rail spacing so adjacent tabs peek more clearly.
 - Strengthen the narrow mobile offerings rail scroll affordance with roomier right-edge spacing
   and a clearer cue.
+- Refine tablet hero metric cards into a steadier two-row layout for clearer scanning.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance
