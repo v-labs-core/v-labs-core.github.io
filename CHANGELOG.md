@@ -55,6 +55,8 @@
   mobile spacing.
 - Refine the narrow mobile offerings rail with steadier edge boundaries and a clearer
   right-side scroll cue.
+- Polish the narrow mobile offerings rail with stronger card depth and clearer active-tab
+  feedback.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance

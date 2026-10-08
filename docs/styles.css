@@ -842,7 +842,7 @@ footer {
     display: flex;
     gap: 0.65rem;
     margin-inline: -1.25rem;
-    padding: 0.95rem 2.3rem 1.2rem 1.25rem;
+    padding: 1rem 2.45rem 1.25rem 1.25rem;
     overflow-x: auto;
     overscroll-behavior-x: contain;
     scrollbar-color: #9fcfc4 transparent;
@@ -855,10 +855,11 @@ footer {
       linear-gradient(180deg, #f8fcfa 0%, #edf7f2 54%, #e2f0eb 100%);
     background-attachment: local, local, scroll;
     box-shadow:
-      inset 0 -1px #c8ddd5,
+      inset 0 -1px #b9d4ca,
       inset 0 1px rgba(255, 255, 255, 0.85),
-      inset 1.25rem 0 rgba(255, 255, 255, 0.24),
-      inset -1.25rem 0 rgba(7, 84, 93, 0.06);
+      inset 1.4rem 0 rgba(255, 255, 255, 0.34),
+      inset -1.55rem 0 rgba(7, 84, 93, 0.09),
+      0 12px 28px -30px rgba(7, 84, 93, 0.7);
     scroll-padding-inline: 1.25rem;
     scroll-snap-type: x proximity;
   }
@@ -866,8 +867,8 @@ footer {
     box-shadow:
       inset 0 -1px #a9cec3,
       inset 0 1px rgba(255, 255, 255, 0.9),
-      inset 1.25rem 0 rgba(255, 255, 255, 0.28),
-      inset -1.25rem 0 rgba(7, 84, 93, 0.08),
+      inset 1.4rem 0 rgba(255, 255, 255, 0.36),
+      inset -1.55rem 0 rgba(7, 84, 93, 0.1),
       0 8px 22px -24px #07545d;
   }
   .stream-shell::after {
@@ -901,11 +902,16 @@ footer {
     border-color: #bed8cf;
     background: rgba(255, 255, 255, 0.86);
     box-shadow:
-      0 8px 18px -18px #07545d,
+      0 12px 24px -22px rgba(7, 84, 93, 0.72),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.66),
       inset 0 1px rgba(255, 255, 255, 0.9);
     scroll-margin-inline: 1.25rem;
     scroll-snap-align: start;
     scroll-snap-stop: always;
+  }
+  .stream-tab:hover {
+    border-color: #9fcfc4;
+    background: #fff;
   }
   .stream-tab::before {
     content: "";
@@ -920,7 +926,7 @@ footer {
     border-color: #087c78;
     transform: translateY(-1px);
     box-shadow:
-      0 16px 30px -18px rgba(7, 84, 93, 0.82),
+      0 18px 34px -18px rgba(7, 84, 93, 0.84),
       inset 0 0 0 1px rgba(8, 124, 120, 0.4),
       inset 0 -0.28rem #f0a164;
   }
