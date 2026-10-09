@@ -59,6 +59,8 @@
   feedback.
 - Refine the small-screen contact form action area with earlier stacked spacing for steadier
   button and status-message layout.
+- Refine the narrow mobile offerings rail with a clearer adjacent-tab peek and right-edge
+  scroll cue.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance
