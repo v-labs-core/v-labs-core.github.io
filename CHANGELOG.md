@@ -57,6 +57,8 @@
   right-side scroll cue.
 - Polish the narrow mobile offerings rail with stronger card depth and clearer active-tab
   feedback.
+- Refine the small-screen contact form action area with earlier stacked spacing for steadier
+  button and status-message layout.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance
