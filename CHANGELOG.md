@@ -61,6 +61,7 @@
   button and status-message layout.
 - Refine the narrow mobile offerings rail with a clearer adjacent-tab peek and right-edge
   scroll cue.
+- Polish the contact support card with clearer grouping, depth, and email link affordance.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance
