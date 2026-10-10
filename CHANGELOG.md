@@ -66,6 +66,7 @@
   easier to scan.
 - Polish the contact form frame and field grouping with clearer depth and focus rhythm.
 - Polish the narrow mobile offerings tab focus and selected states for clearer keyboard scanning.
+- Polish sector highlight chips with clearer grouping, contrast, and scan anchors.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance
