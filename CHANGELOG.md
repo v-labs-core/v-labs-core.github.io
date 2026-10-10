@@ -65,6 +65,7 @@
 - Refine the narrow mobile offerings rail edge fade and cue spacing so the next tab remains
   easier to scan.
 - Polish the contact form frame and field grouping with clearer depth and focus rhythm.
+- Polish the narrow mobile offerings tab focus and selected states for clearer keyboard scanning.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance
