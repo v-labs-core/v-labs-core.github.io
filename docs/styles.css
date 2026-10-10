@@ -472,7 +472,7 @@ h1 span { color: #087c78; }
   border-radius: 1rem;
   background: #fbfefc;
   box-shadow: 0 14px 34px -30px rgba(7, 84, 93, 0.5);
-  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease, background 160ms ease;
 }
 .path-card:nth-child(2) { background: #fffcf5; border-color: #e7e3d4; }
 .path-card:nth-child(3) { background: #f2faf9; border-color: #cce3df; }
@@ -489,6 +489,12 @@ h1 span { color: #087c78; }
   border-color: #9ccdc0;
   box-shadow: 0 22px 44px -30px rgba(7, 84, 93, 0.55);
   transform: translateY(-2px);
+}
+.path-card:focus-within {
+  border-color: #87c4b7;
+  box-shadow:
+    0 22px 44px -30px rgba(7, 84, 93, 0.58),
+    0 0 0 0.18rem rgba(8, 124, 120, 0.12);
 }
 .path-card em { position: relative; display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; color: var(--brand-deep); font-size: 0.72rem; font-weight: 700; font-style: normal; letter-spacing: 0.1em; text-transform: uppercase; }
 .path-card em::before {
@@ -1071,16 +1077,48 @@ footer {
   .stream-badge { justify-self: start; white-space: normal; }
   .stream-side { grid-template-columns: 1fr; }
   .checkpoint + .checkpoint { border-left: 0; border-top: 1px solid #cce1d6; padding: 1.2rem 0 0 0.95rem; }
-  .path-card { display: grid; grid-template-columns: 1fr; grid-template-rows: auto auto auto auto; gap: 0.8rem; }
-  .path-card > * { grid-column: auto; grid-row: auto; }
-  .path-card h3 { max-width: 18ch; }
-  .path-card > p { margin-top: 0.1rem; }
-  .path-highlights {
-    gap: 0.45rem;
-    margin-top: 0.4rem;
-    padding-top: 0.85rem;
+  .path-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 0.75rem;
+    padding: 1.35rem 1.15rem 1.15rem;
+    border-radius: 0.85rem;
+    box-shadow: 0 16px 34px -32px rgba(7, 84, 93, 0.62);
   }
-  .path-highlights span { flex: 1 1 8.5rem; justify-content: center; text-align: center; }
+  .path-card > * { grid-column: auto; grid-row: auto; }
+  .path-card em {
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 0.15rem;
+  }
+  .path-card em::before {
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 0.5rem;
+  }
+  .path-card em::after {
+    top: 0.38rem;
+    left: 0.38rem;
+  }
+  .path-card h3 {
+    max-width: 20ch;
+    font-size: 1.16rem;
+  }
+  .path-card > p { margin-top: 0; }
+  .path-highlights {
+    gap: 0.5rem;
+    margin-top: 0.35rem;
+    padding-top: 0.95rem;
+    border-color: rgba(207, 228, 218, 0.95);
+  }
+  .path-highlights span {
+    flex: 1 1 9.25rem;
+    justify-content: flex-start;
+    min-height: 2.15rem;
+    padding-block: 0.42rem;
+    text-align: left;
+  }
   .pillar-grid { grid-template-columns: 1fr; gap: 1rem; }
   .pillar {
     padding: 1.2rem 1.1rem 1.25rem;
