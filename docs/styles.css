@@ -899,7 +899,7 @@ footer {
     display: flex;
     gap: 0.7rem;
     margin-inline: -1.25rem;
-    padding: 1rem 3.25rem 1.25rem 1.25rem;
+    padding: 1rem 3.65rem 1.25rem 1.25rem;
     overflow-x: auto;
     overscroll-behavior-x: contain;
     scrollbar-color: #9fcfc4 transparent;
@@ -917,6 +917,7 @@ footer {
       inset 1.4rem 0 rgba(255, 255, 255, 0.34),
       inset -2rem 0 rgba(7, 84, 93, 0.1),
       0 12px 28px -30px rgba(7, 84, 93, 0.7);
+    mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 2.65rem), transparent 100%);
     scroll-padding-inline: 1.25rem;
     scroll-snap-type: x proximity;
   }
@@ -932,9 +933,9 @@ footer {
     content: "";
     position: absolute;
     top: 1.72rem;
-    right: -0.5rem;
+    right: -0.85rem;
     z-index: 1;
-    width: 2.55rem;
+    width: 2.35rem;
     height: 3.15rem;
     border: 1px solid rgba(7, 84, 93, 0.22);
     border-right: 0;
@@ -953,7 +954,7 @@ footer {
   .stream-tabs::-webkit-scrollbar-track { background: transparent; }
   .stream-tabs::-webkit-scrollbar-thumb { background: #b7d6cc; border-radius: 999px; }
   .stream-tab {
-    flex: 0 0 min(68vw, 16.5rem);
+    flex: 0 0 min(70vw, 16.75rem);
     min-height: 5.75rem;
     padding: 1rem 1rem 1.05rem;
     border-color: #bed8cf;

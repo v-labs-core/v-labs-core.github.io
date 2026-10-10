@@ -62,6 +62,8 @@
 - Refine the narrow mobile offerings rail with a clearer adjacent-tab peek and right-edge
   scroll cue.
 - Polish the contact support card with clearer grouping, depth, and email link affordance.
+- Refine the narrow mobile offerings rail edge fade and cue spacing so the next tab remains
+  easier to scan.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance
