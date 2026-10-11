@@ -71,6 +71,7 @@
 - Polish the narrow mobile offerings rail with clearer selected-tab anchoring and edge spacing.
 - Polish the approach cards with subtler depth, clearer numbered anchors, and steadier hover states.
 - Refine the narrow mobile offerings rail with clearer edge boundaries and a stronger adjacent-tab peek.
+- Polish the narrow mobile offerings rail with roomier edge spacing and stronger selected-tab depth.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance

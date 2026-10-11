@@ -999,7 +999,7 @@ footer {
     display: flex;
     gap: 0.75rem;
     margin-inline: -1.25rem;
-    padding: 1rem 4.25rem 1.25rem 1.25rem;
+    padding: 1rem 4.55rem 1.3rem 1.25rem;
     overflow-x: auto;
     overscroll-behavior-x: contain;
     scrollbar-color: #9fcfc4 transparent;
@@ -1016,7 +1016,7 @@ footer {
       inset 0 1px rgba(255, 255, 255, 0.85),
       inset 0 0 0 1px rgba(185, 212, 202, 0.5),
       inset 1.4rem 0 rgba(255, 255, 255, 0.34),
-      inset -2.55rem 0 rgba(7, 84, 93, 0.13),
+      inset -3rem 0 rgba(7, 84, 93, 0.13),
       0 12px 28px -30px rgba(7, 84, 93, 0.7);
     mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent 100%);
     scroll-padding-inline: 1.25rem;
@@ -1028,7 +1028,7 @@ footer {
       inset 0 1px rgba(255, 255, 255, 0.9),
       inset 0 0 0 1px rgba(159, 207, 196, 0.72),
       inset 1.4rem 0 rgba(255, 255, 255, 0.36),
-      inset -2.35rem 0 rgba(7, 84, 93, 0.14),
+      inset -2.75rem 0 rgba(7, 84, 93, 0.14),
       0 8px 22px -24px #07545d;
   }
   .stream-shell::after {
@@ -1058,7 +1058,7 @@ footer {
   .stream-tab {
     flex: 0 0 min(68vw, 16.25rem);
     min-height: 5.95rem;
-    padding: 1.05rem 1rem 1.1rem;
+    padding: 1.05rem 1rem 1.15rem;
     border-color: #b3d2c8;
     background:
       linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(247, 252, 249, 0.9)),
@@ -1087,14 +1087,14 @@ footer {
   }
   .stream-tab[aria-selected="true"] {
     background:
-      linear-gradient(180deg, #ffffff 0%, #fbfefc 58%, #f4fbf7 100%);
+      linear-gradient(180deg, #ffffff 0%, #fbfefc 58%, #f0faf5 100%);
     border-color: #07545d;
     transform: translateY(-1px);
     box-shadow:
-      0 1rem 1.8rem -0.95rem rgba(7, 84, 93, 0.84),
-      0 0 0 0.2rem rgba(8, 124, 120, 0.12),
+      0 1.15rem 2rem -0.95rem rgba(7, 84, 93, 0.88),
+      0 0 0 0.22rem rgba(8, 124, 120, 0.14),
       inset 0 0 0 1px rgba(8, 124, 120, 0.48),
-      inset 0.32rem 0 #087c78,
+      inset 0.38rem 0 #087c78,
       inset 0 -0.3rem #f0a164;
   }
   .stream-tab[aria-selected="true"]::before {
