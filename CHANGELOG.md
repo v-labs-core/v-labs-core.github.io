@@ -68,6 +68,7 @@
 - Polish the narrow mobile offerings tab focus and selected states for clearer keyboard scanning.
 - Polish sector highlight chips with clearer grouping, contrast, and scan anchors.
 - Refine narrow mobile sector cards with steadier card rhythm and clearer highlight chip alignment.
+- Polish the narrow mobile offerings rail with clearer selected-tab anchoring and edge spacing.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance
