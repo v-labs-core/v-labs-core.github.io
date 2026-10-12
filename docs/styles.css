@@ -793,8 +793,36 @@ h1 span { color: #087c78; }
   background: #fff;
   box-shadow: 0 14px 28px -26px rgba(7, 84, 93, 0.58);
 }
-.field label { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.2rem 0.5rem; font-size: 0.8rem; font-weight: 700; }
-.required-mark { color: var(--muted); font-size: 0.65rem; font-weight: 400; }
+.field label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem 0.55rem;
+  color: #244d51;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: color 160ms ease;
+}
+.field:focus-within label { color: var(--brand-deep); }
+.required-mark {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.35rem;
+  padding: 0.16rem 0.44rem;
+  border: 1px solid rgba(7, 84, 93, 0.12);
+  border-radius: 999px;
+  background: #edf8f4;
+  color: #45686b;
+  font-size: 0.62rem;
+  font-weight: 650;
+  line-height: 1;
+}
+.field:focus-within .required-mark {
+  border-color: rgba(22, 139, 129, 0.26);
+  background: #e2f5ef;
+  color: var(--brand-deep);
+}
 .field input, .field textarea, .field select {
   width: 100%;
   min-width: 0;
