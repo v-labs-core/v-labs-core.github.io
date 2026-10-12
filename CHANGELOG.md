@@ -75,6 +75,7 @@
 - Refine the narrow mobile offerings rail with clearer edge boundaries and a stronger adjacent-tab peek.
 - Polish the narrow mobile offerings rail with roomier edge spacing and stronger selected-tab depth.
 - Refine the approach cards on tablet-width screens with an earlier stacked layout for easier reading.
+- Polish the offerings tab cards with clearer visual anchors, selected depth, and focus feedback.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance

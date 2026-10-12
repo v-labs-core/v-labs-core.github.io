@@ -395,12 +395,35 @@ h1 span { color: #087c78; }
   color: var(--text);
   text-align: left;
   cursor: pointer;
-  transition: background 160ms ease, border-color 160ms ease;
+  transition: background 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
 }
-.stream-tab:hover { background: #e0ece7; }
-.stream-tab[aria-selected="true"] { background: #fff; border-color: #b9d4ca; box-shadow: 0 3px 10px -7px #0d5b4a; }
+.stream-tab::before {
+  content: "";
+  width: 1.85rem;
+  height: 0.22rem;
+  margin-bottom: 0.72rem;
+  border-radius: 999px;
+  background: #9bc9bd;
+  transition: background 160ms ease, width 160ms ease;
+}
+.stream-tab:hover {
+  border-color: #c8ddd5;
+  background: #e0ece7;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.58);
+}
+.stream-tab[aria-selected="true"] {
+  background: #fff;
+  border-color: #a5cfc2;
+  box-shadow:
+    0 10px 22px -18px rgba(7, 84, 93, 0.62),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.72);
+}
+.stream-tab[aria-selected="true"]::before {
+  width: 2.35rem;
+  background: linear-gradient(90deg, #eca95d, #ef8365);
+}
 .stream-tab[aria-selected="true"]::after { content: ""; position: absolute; inset: auto 1.1rem -1px; height: 3px; background: linear-gradient(90deg, #eca95d, #ef8365); }
-.stream-tab:focus-visible { outline-offset: -3px; }
+.stream-tab:focus-visible { outline-offset: -3px; box-shadow: 0 0 0 3px rgba(8, 124, 120, 0.16); }
 .stream-tab strong { display: block; margin-bottom: 0.4rem; font-size: 0.9rem; font-weight: 700; }
 .stream-tab span { color: var(--muted); font-size: 0.76rem; line-height: 1.5; }
 .stream-panel { min-height: 30rem; padding: 2.5rem 0 0; }
