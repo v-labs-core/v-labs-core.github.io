@@ -66,6 +66,8 @@
   easier to scan.
 - Polish the contact form frame and field grouping with clearer depth and focus rhythm.
 - Polish the narrow mobile offerings tab focus and selected states for clearer keyboard scanning.
+- Keep the selected mobile offerings tab visually anchored while focused and improve touch
+  panning on the horizontal rail.
 - Polish sector highlight chips with clearer grouping, contrast, and scan anchors.
 - Refine narrow mobile sector cards with steadier card rhythm and clearer highlight chip alignment.
 - Polish the narrow mobile offerings rail with clearer selected-tab anchoring and edge spacing.

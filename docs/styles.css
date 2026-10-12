@@ -1001,6 +1001,8 @@ footer {
     margin-inline: -1.25rem;
     padding: 1rem 4.55rem 1.3rem 1.25rem;
     overflow-x: auto;
+    touch-action: pan-x;
+    -webkit-overflow-scrolling: touch;
     overscroll-behavior-x: contain;
     scrollbar-color: #9fcfc4 transparent;
     scrollbar-gutter: stable;
@@ -1118,6 +1120,7 @@ footer {
       0 1rem 1.75rem -1rem rgba(7, 84, 93, 0.82),
       0 0 0 0.28rem rgba(244, 180, 96, 0.24),
       inset 0 0 0 1px rgba(8, 124, 120, 0.42),
+      inset 0.38rem 0 #087c78,
       inset 0 -0.28rem #f0a164;
   }
   .stream-header { display: grid; gap: 0.75rem; }
