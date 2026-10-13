@@ -1076,7 +1076,7 @@ footer {
     display: flex;
     gap: 0.75rem;
     margin-inline: -1.25rem;
-    padding: 1rem 4.55rem 1.3rem 1.25rem;
+    padding: 1rem 4.55rem 1.45rem 1.25rem;
     overflow-x: auto;
     touch-action: pan-x;
     -webkit-overflow-scrolling: touch;
@@ -1100,6 +1100,16 @@ footer {
     mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent 100%);
     scroll-padding-inline: 1.25rem;
     scroll-snap-type: x proximity;
+  }
+  .stream-shell::before {
+    content: "";
+    position: absolute;
+    top: 6.95rem;
+    left: -0.2rem;
+    right: -0.2rem;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(7, 84, 93, 0.22) 18%, rgba(7, 84, 93, 0.22) 82%, transparent);
+    pointer-events: none;
   }
   .stream-tabs:focus-within {
     box-shadow:
@@ -1133,10 +1143,14 @@ footer {
   }
   .stream-tabs::-webkit-scrollbar { height: 0.45rem; }
   .stream-tabs::-webkit-scrollbar-track { background: transparent; }
-  .stream-tabs::-webkit-scrollbar-thumb { background: #b7d6cc; border-radius: 999px; }
+  .stream-tabs::-webkit-scrollbar-thumb {
+    border: 2px solid rgba(246, 251, 248, 0.92);
+    border-radius: 999px;
+    background: #8fc2b8;
+  }
   .stream-tab {
     flex: 0 0 min(68vw, 16.25rem);
-    min-height: 5.95rem;
+    min-height: 6.05rem;
     padding: 1.05rem 1rem 1.15rem;
     border-color: #b3d2c8;
     background:

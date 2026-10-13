@@ -78,10 +78,13 @@
 - Polish the offerings tab cards with clearer visual anchors, selected depth, and focus feedback.
 - Polish contact form labels and required markers with clearer visual hierarchy and focus feedback.
 - Polish the desktop header navigation rail with clearer grouping, current-section contrast, and focus feedback.
+- Refine the narrow mobile offerings rail with a steadier lower boundary and clearer scrollbar contrast.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance
 
+- 2026-10-13: Checked for local dependency manifests; none are present. Attempted
+  GitHub dependency alert check, but the API was unreachable from the environment.
 - 2026-10-07: Checked for local dependency manifests; none are present. Attempted
   GitHub dependency alert check, but the API was unreachable from the environment.
 - 2026-10-01: Checked for local dependency manifests; none are present. Attempted
