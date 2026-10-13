@@ -505,19 +505,34 @@ h1 span { color: #087c78; }
 .path-card {
   position: relative;
   display: grid;
-  grid-template-rows: subgrid;
+  grid-template-rows: auto auto 1fr auto;
   grid-row: span 4;
-  gap: 0.8rem;
+  gap: 0.9rem;
   overflow: hidden;
+  min-height: 100%;
   padding: 1.75rem;
   border: 1px solid #cfe4da;
   border-radius: 1rem;
-  background: #fbfefc;
-  box-shadow: 0 14px 34px -30px rgba(7, 84, 93, 0.5);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(248, 254, 251, 0.78)),
+    #fbfefc;
+  box-shadow:
+    0 18px 38px -32px rgba(7, 84, 93, 0.48),
+    inset 0 1px rgba(255, 255, 255, 0.86);
   transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease, background 160ms ease;
 }
-.path-card:nth-child(2) { background: #fffcf5; border-color: #e7e3d4; }
-.path-card:nth-child(3) { background: #f2faf9; border-color: #cce3df; }
+.path-card:nth-child(2) {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 250, 241, 0.78)),
+    #fffcf5;
+  border-color: #e7e3d4;
+}
+.path-card:nth-child(3) {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(241, 251, 250, 0.78)),
+    #f2faf9;
+  border-color: #cce3df;
+}
 .path-card::before {
   content: "";
   position: absolute;
@@ -538,24 +553,26 @@ h1 span { color: #087c78; }
     0 22px 44px -30px rgba(7, 84, 93, 0.58),
     0 0 0 0.18rem rgba(8, 124, 120, 0.12);
 }
-.path-card em { position: relative; display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; color: var(--brand-deep); font-size: 0.72rem; font-weight: 700; font-style: normal; letter-spacing: 0.1em; text-transform: uppercase; }
+.path-card em { position: relative; display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.4rem; color: var(--brand-deep); font-size: 0.72rem; font-weight: 700; font-style: normal; letter-spacing: 0.1em; text-transform: uppercase; }
 .path-card em::before {
   content: "";
-  width: 1.9rem;
-  height: 1.9rem;
+  width: 2.15rem;
+  height: 2.15rem;
   flex: 0 0 auto;
-  border-radius: 0.55rem;
+  border-radius: 0.62rem;
   background-color: #dff3ed;
   background-image: linear-gradient(145deg, rgba(255, 255, 255, 0.7), rgba(182, 226, 214, 0.15));
-  box-shadow: inset 0 0 0 1px rgba(7, 84, 93, 0.14);
+  box-shadow:
+    inset 0 0 0 1px rgba(7, 84, 93, 0.14),
+    0 12px 22px -18px rgba(7, 84, 93, 0.62);
 }
 .path-card em::after {
   content: "";
   position: absolute;
-  top: 0.45rem;
-  left: 0.45rem;
-  width: 1rem;
-  height: 1rem;
+  top: 0.52rem;
+  left: 0.52rem;
+  width: 1.1rem;
+  height: 1.1rem;
   background: currentColor;
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none' stroke='black' stroke-width='1.3'%3E%3Cpath d='M6 27V11l10-6 10 6v16H6ZM12 27v-7h8v7M11 12h2m6 0h2m-10 4h2m6 0h2'/%3E%3C/svg%3E") center / contain no-repeat;
 }
@@ -570,10 +587,14 @@ h1 span { color: #087c78; }
   flex-wrap: wrap;
   gap: 0.55rem 0.65rem;
   align-self: end;
-  padding-top: 1.05rem;
-  margin-top: 0.5rem;
-  border-top: 1px solid rgba(207, 228, 218, 0.86);
+  padding: 0.9rem;
+  margin: 0.45rem -0.45rem -0.45rem;
+  border: 1px solid rgba(207, 228, 218, 0.74);
+  border-radius: 0.7rem;
+  background: rgba(238, 249, 245, 0.58);
 }
+.path-card:nth-child(2) .path-highlights { background: rgba(255, 246, 229, 0.68); border-color: rgba(231, 227, 212, 0.9); }
+.path-card:nth-child(3) .path-highlights { background: rgba(232, 248, 247, 0.66); border-color: rgba(204, 227, 223, 0.88); }
 .path-highlights span {
   display: inline-flex;
   align-items: center;
