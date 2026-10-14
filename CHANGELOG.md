@@ -81,6 +81,7 @@
 - Refine the narrow mobile offerings rail with a steadier lower boundary and clearer scrollbar contrast.
 - Polish sector cards with steadier card rhythm, stronger icon anchors, and clearer highlight grouping.
 - Refine the small-screen contact form with an earlier single-column field layout and steadier spacing.
+- Polish the contact support card with a consistent email icon anchor across viewport sizes.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance
