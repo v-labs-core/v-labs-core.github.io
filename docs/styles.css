@@ -1035,6 +1035,13 @@ footer {
   .footer-links { justify-content: flex-start; }
 }
 @media (max-width: 680px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .field {
+    padding: 0.7rem;
+  }
   .form-meta {
     align-items: stretch;
     flex-direction: column;

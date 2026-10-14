@@ -80,6 +80,7 @@
 - Polish the desktop header navigation rail with clearer grouping, current-section contrast, and focus feedback.
 - Refine the narrow mobile offerings rail with a steadier lower boundary and clearer scrollbar contrast.
 - Polish sector cards with steadier card rhythm, stronger icon anchors, and clearer highlight grouping.
+- Refine the small-screen contact form with an earlier single-column field layout and steadier spacing.
 - Tracking: PR #97, issue #98, PR #99, and issue #100.
 
 ## Maintenance
