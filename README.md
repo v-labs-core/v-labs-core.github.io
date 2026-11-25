@@ -33,6 +33,7 @@ page falls back to opening a prefilled email to `info@vindem.tech`.
 
 ## Validation
 
-Run `node --test tests/contact-form.test.cjs` for submission feedback and retry checks.
+Run `node --test tests/*.test.cjs` for submission feedback, retry, and stylesheet cache-version checks.
+The stylesheet URL uses the first 12 characters of its SHA-256 hash; update it whenever CSS changes.
 These tests use simulated responses and do not send email. Run `node --check docs/config.js`,
 `php -l docs/contact.php`, and `git diff --check` for syntax and whitespace checks.
