@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Version the current stylesheet by its content hash and test that the homepage cache key stays current.
 - Refresh the homepage with a light aqua palette, balanced hero, compact overview,
   clearer offering tabs, aligned sector cards, and a simplified contact layout.
 - Preserve the existing copy, logo, favicon, and protected delivery statement.
